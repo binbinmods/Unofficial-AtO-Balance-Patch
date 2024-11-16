@@ -1,0 +1,19 @@
+{
+    "Name": "Binbin Balances - Nerfs",
+    "Author": "Binbin",
+    "Description": "Nerfs for overused or overtuned cards.",
+    "Version": "1.0",
+    "Date": 20240928,
+    "Link": "https://thunderstore.io/c/across-the-obelisk/p/Binbin/Ursur_The_Tyrant/",
+    "Dependencies": [
+		"stiffmeds-Obeliskial_Content-1.1.0"
+    ],
+    "ContentFolder": "Binbin Balances - Nerfs",
+    "Priority": 100,
+    "Type": [
+        "card",
+        "sprite"
+    ],
+    "Comment": "Any additional comments.",
+    "Enabled": true
+}
