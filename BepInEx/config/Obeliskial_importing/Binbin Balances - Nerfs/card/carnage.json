@@ -210,6 +210,6 @@
     "UpgradesTo1": "CarnageA",
     "UpgradesTo2": "CarnageB",
     "UpgradesToRare": "carnagerare",
-    "Vanish": false,
+    "Vanish": true,
     "Visible": false
 }

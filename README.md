@@ -12,9 +12,17 @@ All of the modules created by me start with "Binbin Balances" though if other co
 
 ## Items
 
-### Part 1
+### Part 1 - Items that add cards to your deck
 
 The first module for items are targeting items such as Dart Pouch or Imp Statuette which add cards to your deck. In general, these items are not very good since they dilute your deck with mediocre cards. 
+
+### Part 2 - (Un)common Items
+
+The focus on these is mostly to improve the corrupted versions of common and uncommon items, giving them a bit more longevity and utility throughout a run
+
+### Part 3 - Pets
+
+Minor buffs to some pets that are never taken.
 
 ## Nerfs
 
