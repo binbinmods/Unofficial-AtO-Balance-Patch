@@ -22,7 +22,10 @@ The focus on these is mostly to improve the corrupted versions of common and unc
 
 ### Part 3 - Pets
 
-Minor buffs to some pets that are never taken.
+Minor buffs to some pets that are rarely or never taken.
+
+
+# Card Modules
 
 ## Nerfs
 
