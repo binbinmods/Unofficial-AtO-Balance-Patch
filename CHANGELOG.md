@@ -4,5 +4,5 @@ Initial release including:
 Nerfs
 Generating Items
 Pets
-Uncommon Items
+(Un)common Items
 Thorns

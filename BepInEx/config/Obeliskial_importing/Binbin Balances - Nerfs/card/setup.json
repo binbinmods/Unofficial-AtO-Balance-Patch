@@ -38,7 +38,7 @@
     "CardClass": "Scout",
     "CardName": "Setup",
     "CardNumber": 0,
-    "CardRarity": "Rare",
+    "CardRarity": "Uncommon",
     "CardType": "Skill",
     "CardTypeAux": [],
     "CardTypeList": [],
@@ -208,6 +208,6 @@
     "UpgradesTo1": "SetupA",
     "UpgradesTo2": "SetupB",
     "UpgradesToRare": "setuprare",
-    "Vanish": false,
+    "Vanish": true,
     "Visible": false
 }
