@@ -21,37 +21,37 @@ Lastly, this mod will be continually updated with new cards, modules, and will a
 The first module for items are targeting items such as Dart Pouch or Imp Statuette which add cards to your deck. In general, these items are not very good since they dilute your deck with mediocre cards. 
 
 Modified Cards:
-Belphyor's Pipe
-Dart Pouch
-Imp Statuette
-Large Pouch
-Searing Dagger
-Small Pouch
-Stormcaller Feather
-Weapon Pouch
+- Belphyor's Pipe
+- Dart Pouch
+- Imp Statuette
+- Large Pouch
+- Searing Dagger
+- Small Pouch
+- Stormcaller Feather
+- Weapon Pouch
 
 ### Part 2 - (Un)common Items
 
 The focus on these is mostly to improve the corrupted versions of common and uncommon items, giving them a bit more longevity and utility throughout a run
 
 Modified Cards:
-Alarm Bell
-Ball of Wool
-Cooling SErvos
-Obsidian Ring
-Primal Neckalce
-Razor
-Slingshot
-Soap
+- Alarm Bell
+- Ball of Wool
+- Cooling SErvos
+- Obsidian Ring
+- Primal Neckalce
+- Razor
+- Slingshot
+- Soap
 
 ### Part 3 - Pets
 
 Minor buffs to some pets that are rarely or never taken.
 
 Modified Cards:
-Fenny
-Bunny
-Lianty
+- Fenny
+- Bunny
+- Lianty
 
 # Card Modules
 
@@ -62,62 +62,62 @@ Some overused cards will receive some nerfs. This will mostly come in the form o
 Targets mostly: low cost draw cards, undercosted cards, cards that provide too much benefit, and cards that deal too much damage for their cost.
 
 Modified Cards:
-Carnage
-Clarity
-Cold Snap
-Enrage
-Expected Prophecy
-Helping Hand
-Repetition Training
-Scavenge
-Setup
+- Carnage
+- Clarity
+- Cold Snap
+- Enrage
+- Expected Prophecy
+- Helping Hand
+- Repetition Training
+- Scavenge
+- Setup
 
 ## Thorns
 
 Balance patch to help make thorns more viable. Focuses on improving the card quality of thorns cards.
 
 Modified Cards:
-Amulet of Thorns
-Garden of Thorns
-Heart of Thorns
-Horned Helmet
-Screwdriver
-Shield of Thorns
-Shoulder Plate
-Spiked Ball
-Spiked Bracers
-Spiked Shield
-Spiked Shoulderpads
-Stockade
-Thorny Ring
-Thousand Needles
-Torment of Thorns
-Yggdrasil Root
+- Amulet of Thorns
+- Garden of Thorns
+- Heart of Thorns
+- Horned Helmet
+- Screwdriver
+- Shield of Thorns
+- Shoulder Plate
+- Spiked Ball
+- Spiked Bracers
+- Spiked Shield
+- Spiked Shoulderpads
+- Stockade
+- Thorny Ring
+- Thousand Needles
+- Torment of Thorns
+- Yggdrasil Root
 
 ## Speed
 
 This module is intended to go along with the release of the Nenukil Update, and add some more synergies for comps that want to focus around speeding up allies or slowing down enemies.
 
 New Cards:
-Blitz
-Circle of Healing
-Thermal Exchange
+- Blitz
+- Circle of Healing
+- Thermal Exchange
 
 Modified Cards
-Debilitate
-Delay Response
-Desperate Prayer
-Disengage
-Gunshot
-Hit and Run
-Ice Shot
-Ignite
-Maim
-Precise Strike
-Quick Shot
-Ray of Frost
-Rupture
-Searing Touch
+- Debilitate
+- Delay Response
+- Desperate Prayer
+- Disengage
+- Gunshot
+- Hit and Run
+- Ice Shot
+- Ignite
+- Maim
+- Precise Strike
+- Quick Shot
+- Ray of Frost
+- Rupture
+- Searing Touch
 
 
 ## Installation (manual)
