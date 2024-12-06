@@ -5,19 +5,21 @@ using BepInEx.Logging;
 using BepInEx.Configuration;
 using HarmonyLib;
 using static Obeliskial_Essentials.Essentials;
+using System;
 
 
 // The Plugin csharp file is used to 
 
 
 // Make sure all your files have the same namespace and this namespace matches the RootNamespace in the .csproj file
-namespace SamplePlugin{
+namespace UnofficialBalancePatch{
     // These are used to create the actual plugin. If you don't need Obeliskial Essentials for your mod, 
     // delete the BepInDependency and the associated code "RegisterMod()" below.
 
     // If you have other dependencies, such as obeliskial content, make sure to include them here.
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     [BepInDependency("com.stiffmeds.obeliskialessentials")] // this is the name of the .dll in the !libs folder.
+    [BepInDependency("com.stiffmeds.obeliskialcontent")]
     [BepInProcess("AcrossTheObelisk.exe")] //Don't change this
 
     // If PluginInfo isn't working, you are either:
@@ -33,12 +35,15 @@ namespace SamplePlugin{
         // and then use config = Config.Bind() to set the title, default value, and description of the config.
         // It automatically creates the appropriate configs.
         
-        public static ConfigEntry<bool> SampleBooleanConfig { get; set; }
-        public static ConfigEntry<int> SampleIntegerConfig { get; set; }
+        // public static ConfigEntry<bool> SampleBooleanConfig { get; set; }
+        // public static ConfigEntry<int> SampleIntegerConfig { get; set; }
 
-        internal const int ModDate = int.Parse(DateTime.Today.ToString("yyyyMMdd"));;
+        internal const int ModDate = 20241206; //int.Parse(DateTime.Today.ToString("yyyyMMdd"));
         private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
         internal static ManualLogSource Log;
+
+        public static string debugBase = PluginInfo.PLUGIN_GUID;
+
         private void Awake()
         {
 
@@ -47,22 +52,35 @@ namespace SamplePlugin{
             Log.LogInfo($"{PluginInfo.PLUGIN_GUID} {PluginInfo.PLUGIN_VERSION} has loaded!");
             
             // Sets the title, default values, and descriptions
-            SampleBooleanConfig = Config.Bind(new ConfigDefinition("Debug", "Name of Config"), true, new ConfigDescription("Description of Config"));
-            SampleIntegerConfig = Config.Bind(new ConfigDefinition("Debug", "Name of Config"), 3, new ConfigDescription("Description of Config)"));
+            // SampleBooleanConfig = Config.Bind(new ConfigDefinition("Debug", "Name of Config"), true, new ConfigDescription("Description of Config"));
+            // SampleIntegerConfig = Config.Bind(new ConfigDefinition("Debug", "Name of Config"), 3, new ConfigDescription("Description of Config)"));
             
 
             // Register with Obeliskial Essentials, delete this if you don't need it.
             RegisterMod(
                 _name: PluginInfo.PLUGIN_NAME,
                 _author: "binbin",
-                _description: "Sample Plugin",
+                _description: "Unofficial Balance Patch",
                 _version: PluginInfo.PLUGIN_VERSION,
                 _date: ModDate,
-                _link: @"https://github.com/binbinmods/SampleCSharpWorkspace"
+                _link: @"https://github.com/binbinmods/Unofficial-AtO-Balance-Patch"
             );
 
             // apply patches
             harmony.PatchAll();
+        }
+
+        internal static void LogDebug(string msg)
+        {
+            Log.LogDebug(debugBase + msg);
+        }
+        internal static void LogInfo(string msg)
+        {
+            Log.LogInfo(debugBase + msg);
+        }
+        internal static void LogError(string msg)
+        {
+            Log.LogError(debugBase + msg);
         }
     }
 }

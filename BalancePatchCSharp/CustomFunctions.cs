@@ -8,7 +8,7 @@ using System.IO;
 using static UnityEngine.Mathf;
 using UnityEngine.TextCore.LowLevel;
 
-namespace SamplePlugin
+namespace UnofficialBalancePatch
 {
     public class CustomFunctions
     {

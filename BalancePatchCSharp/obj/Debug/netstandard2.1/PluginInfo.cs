@@ -1,4 +1,4 @@
-namespace SamplePlugin
+namespace UnofficialBalancePatch
 {
     public static class PluginInfo
     {

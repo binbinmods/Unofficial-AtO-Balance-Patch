@@ -2689,9 +2689,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kevinmccoy/Library/Application Support/Steam/steamapps/common/Across the Obelisk/BepInEx/Mod Development/Unofficial Balance Patch/BalancePatchCSharp/SamplePlugin.csproj",
+      "projectUniqueName": "/Users/kevinmccoy/Library/Application Support/Steam/steamapps/common/Across the Obelisk/BepInEx/Mod Development/Unofficial Balance Patch/BalancePatchCSharp/UnofficialBalancePatch.csproj",
       "projectName": "com.binbin.sampleplugin",
-      "projectPath": "/Users/kevinmccoy/Library/Application Support/Steam/steamapps/common/Across the Obelisk/BepInEx/Mod Development/Unofficial Balance Patch/BalancePatchCSharp/SamplePlugin.csproj",
+      "projectPath": "/Users/kevinmccoy/Library/Application Support/Steam/steamapps/common/Across the Obelisk/BepInEx/Mod Development/Unofficial Balance Patch/BalancePatchCSharp/UnofficialBalancePatch.csproj",
       "packagesPath": "/Users/kevinmccoy/.nuget/packages/",
       "outputPath": "/Users/kevinmccoy/Library/Application Support/Steam/steamapps/common/Across the Obelisk/BepInEx/Mod Development/Unofficial Balance Patch/BalancePatchCSharp/obj/",
       "projectStyle": "PackageReference",
