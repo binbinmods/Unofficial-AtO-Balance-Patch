@@ -1,3 +1,7 @@
+# Version 1.0.3
+
+Reworked a bunch of items
+
 # Version 1.0.2
 
 Hopefully fixed quick shot, blitz, and added rare items. Added Miscellaneous category.
