@@ -191,7 +191,7 @@
     "CardNumber": 0,
     "CardTypeList": [],
     "Corrupted": false,
-    "Description": "",
+    "Description": "At the start of your third turn, all heroes gain a significant random buff.",
     "DescriptionID": "",
     "EndTurn": false,
     "EnergyCostForShow": 0,

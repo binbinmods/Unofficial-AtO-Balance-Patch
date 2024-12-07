@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("com.binbin.sampleplugin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9507c7d2f25a97527df524958810672b946a4939")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c20bd78c3453e43af34b3631642eaa1c90445e61")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sample Plugin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("com.binbin.sampleplugin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
