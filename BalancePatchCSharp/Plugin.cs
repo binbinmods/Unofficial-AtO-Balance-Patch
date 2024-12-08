@@ -41,6 +41,7 @@ namespace UnofficialBalancePatch{
         internal const int ModDate = 20241206; //int.Parse(DateTime.Today.ToString("yyyyMMdd"));
         private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
         internal static ManualLogSource Log;
+        public static string itemStem = "binbin_balances_";
 
         public static string debugBase = PluginInfo.PLUGIN_GUID;
 
@@ -65,6 +66,22 @@ namespace UnofficialBalancePatch{
                 _date: ModDate,
                 _link: @"https://github.com/binbinmods/Unofficial-AtO-Balance-Patch"
             );
+            
+            // Custom Text for % Damage increase
+            var damageTypeArray = Enum.GetValues(typeof(Enums.DamageType));
+            foreach (Enums.DamageType damageType in damageTypeArray)
+            {
+                string dt = nameof(damageType);
+                medsTexts[$"item{dt}Damages"] = "<spritename=" + dt + "> damage {0}";
+            }            
+
+            
+            // Custom Text for Items
+            medsTexts[itemStem + "surprisebox"] = "At the start of your third turn, gain a significant random buff.";
+            medsTexts[itemStem + "surpriseboxrare"] = "At the start of your third turn, gain a significant random buff.";
+            medsTexts[itemStem + "surprisegiftbox"] = "At the start of your third turn, all heroes gain a significant random buff.";
+            medsTexts[itemStem + "surprisegiftboxrare"] = "At the start of your third turn, all heroes gain a significant random buff.";
+
 
             // apply patches
             harmony.PatchAll();

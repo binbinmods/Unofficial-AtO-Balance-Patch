@@ -192,7 +192,7 @@
     "CardTypeList": [],
     "Corrupted": false,
     "Description": "At the start of your third turn, gain a significant random buff.",
-    "DescriptionID": "",
+    "DescriptionID": "binbin_balances_surpriseboxrare",
     "EndTurn": false,
     "EnergyCostForShow": 0,
     "EnergyReductionPermanent": 0,

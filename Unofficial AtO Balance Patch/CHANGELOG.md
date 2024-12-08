@@ -1,3 +1,7 @@
+# Version 1.1.0
+
+Finished all item modules
+
 # Version 1.0.3
 
 Reworked a bunch of items

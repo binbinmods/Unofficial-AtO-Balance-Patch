@@ -51,5 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Custom
+*.git*
 BalancePatchCSharp/bin
-BalancePatchCSharp/obj/
+BalancePatchCSharp/obj
+*.py

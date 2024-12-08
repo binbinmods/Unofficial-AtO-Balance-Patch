@@ -7,6 +7,7 @@ using Obeliskial_Essentials;
 using System.IO;
 using static UnityEngine.Mathf;
 using UnityEngine.TextCore.LowLevel;
+using static UnofficialBalancePatch.Plugin;
 
 namespace UnofficialBalancePatch
 {
@@ -15,7 +16,7 @@ namespace UnofficialBalancePatch
         /// <summary>
         /// This is just used to help find the debugging
         /// </summary>
-        public static string debugBase = "<RenameThis>";
+        // public static string debugBase = "<RenameThis>";
 
         /// <summary>
         /// This is used as the base when naming perks in a perk mod. Ignore if you aren't making a perk mod/using this syntax.
