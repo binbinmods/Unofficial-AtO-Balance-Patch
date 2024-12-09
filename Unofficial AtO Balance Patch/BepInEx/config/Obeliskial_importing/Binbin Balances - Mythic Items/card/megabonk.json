@@ -23,7 +23,7 @@
     "CardRarity": "Epic",
     "Curse": "slow",
     "Curse2": "vulnerable",
-    "Curse3": "weak",
+    "Curse3": "paralyze",
     "CurseCharges": 4,
     "CurseCharges2": 3,
     "CurseCharges3": 1,

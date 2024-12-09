@@ -1,6 +1,6 @@
 # Version 1.1.0
 
-Finished all item modules
+Finished all item modules, updates to some bugged cards. Added new descriptions.
 
 # Version 1.0.3
 

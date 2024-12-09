@@ -43,7 +43,7 @@ namespace UnofficialBalancePatch{
         internal static ManualLogSource Log;
         public static string itemStem = "binbin_balances_";
 
-        public static string debugBase = PluginInfo.PLUGIN_GUID;
+        public static string debugBase = "Custom Descriptions - ";
 
         private void Awake()
         {
@@ -71,8 +71,9 @@ namespace UnofficialBalancePatch{
             var damageTypeArray = Enum.GetValues(typeof(Enums.DamageType));
             foreach (Enums.DamageType damageType in damageTypeArray)
             {
-                string dt = nameof(damageType);
-                medsTexts[$"item{dt}Damages"] = "<spritename=" + dt + "> damage {0}";
+                string dt = damageType.ToString().ToLower();
+                medsTexts[$"item{dt}Damages"] = "<space=.3><size=+.1><sprite name="+dt+"></size> damage  {0}";
+                LogDebug("Setting medsText for itemDamageType: " + dt);
             }            
 
             
