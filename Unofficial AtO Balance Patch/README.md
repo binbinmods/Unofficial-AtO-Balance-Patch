@@ -6,7 +6,7 @@ There will also be reworks to several cards, as well as completely new cards.
 
 This patch will attempt to keep things balanced, so won't be introducing too many overpowered cards/ideas, but rather should flesh out concepts that are already in the game. 
 
-The mod will be packaged into several "modules". You are welcome to turn off any of the modules you think are not fun for the game, though I would recommend leaving them all in.
+The mod will be packaged into numerous "modules". You are welcome to turn off any of the modules you think are not fun for the game, though I would recommend leaving them all in.
 
 All of the modules created by me start with "Binbin Balances" though if other community members wish to contribute their own modules, I am more than happy to include them.
 
@@ -37,7 +37,7 @@ The focus on these is mostly to improve the corrupted versions of common and unc
 Modified Cards:
 - Alarm Bell
 - Ball of Wool
-- Cooling SErvos
+- Cooling Servos
 - Obsidian Ring
 - Primal Neckalce
 - Razor
@@ -52,6 +52,77 @@ Modified Cards:
 - Fenny
 - Bunny
 - Lianty
+
+### Part 4 - Rare Items
+- Orbs of all sorts
+- Amber Amulet
+- Battle Axe
+- Crescent Moon
+- Dream Sphere
+- Frozen Arrows
+- Gladiator Helmet
+- Golden Cross
+- Lava Potion
+- Mixed Salad
+- Noble Shield
+- Obsidian Rod
+- Poisoned Dagger
+- Raider Slicer
+- Sidearm
+- Tiki Mask
+- War Hammer
+
+### Part 5 - Rare Item Reworks
+- Runes of all sorts
+- Potions of all sorts
+- Desert Jame
+- Hypno Shell
+- Necromancer Robe
+- Pyromancer Robe
+- Pointy Hat
+- Runic Dice
+- Scarab Shield
+- Scholar Robe
+- Temple Amulet
+- Tourist Map
+- Turban
+- Undeath Ichor
+
+### Part 6 - Epic Items
+
+Updated:
+- Cloaks of all sorts
+- Albatross Pendent
+- Antique Figurine
+- Blood Goblet
+- Burial Mask
+- Crimson Raiment
+- Dracomancer Staff
+- Druidic Amulet
+- Durandal
+- Energy Shield
+- Faeborg Scale
+- Fist of the Damned
+- Frozen Heirloom
+- Osmium feet
+- Raincoat
+- Sacred Axe
+- Suppression Helmet
+- The Porcupine
+- Topaz Ring
+- Unholy Hammer
+- Venom Fang
+
+### Part 7 - Mythic Items
+
+Updated:
+- Ankh of Life
+- Bonk Hammer
+- Nightveil
+- Pandora's Box
+- Retaliator
+- The Defiler
+
 
 # Card Modules
 

@@ -236,7 +236,7 @@ namespace UnofficialBalancePatch
             LogDebug("GetText - " + Texts.Instance.GetText(damageTypeText));
             // stringBuilder.Append(string.Format(medsTexts[damageTypeText], (object)NumFormatItem(percentDamageIncrease, true, true)));
 
-            // this should use Texts.Instance.GetText(damageTypeText)) for translation. Don't know how to get it working.
+            // this should use Texts.Instance.GetText(damageTypeText)) for translation. Don't know how to get it working. Need to add MedsTexts to Texts
             string toAdd = string.Format(medsTexts[damageTypeText], (object)NumFormatItem(percentDamageIncrease, true, true)) + "\n";
 
             // Adds it either to the start of the stringbuilder or immediately after

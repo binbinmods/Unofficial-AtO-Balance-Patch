@@ -1,6 +1,15 @@
+# Version 1.1.1
+
+
+
 # Version 1.1.0
 
 Finished all item modules, updates to some bugged cards. Added new descriptions.
+Item modules include:  
+Rare Items (these are buffs to existing cards)  
+Rare Item Reworks (these change the way certain cards work)  
+Epic Items  
+Mythic item
 
 # Version 1.0.3
 
@@ -16,9 +25,9 @@ Updated manifest and README. Fixed issue with game freezing if you have a Warrio
 
 # Version 1.0.0
 
-Initial release including:
-Nerfs
-Generating Items
-Pets
-(Un)common Items
+Initial release including:  
+Nerfs  
+Generating Items  
+Pets  
+(Un)common Items  
 Thorns
