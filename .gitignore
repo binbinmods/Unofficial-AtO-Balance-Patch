@@ -56,3 +56,5 @@ dkms.conf
 BalancePatchCSharp/bin
 BalancePatchCSharp/obj
 *.py
+
+*/.DS_Store
