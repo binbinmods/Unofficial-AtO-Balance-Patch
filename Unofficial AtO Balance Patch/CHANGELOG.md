@@ -1,6 +1,6 @@
-# Version 1.1.1
+# Version 1.2.0
 
-
+Added Dark module. This is a fairly significant module. Let me know if anything ends up being too unbalanced.
 
 # Version 1.1.0
 

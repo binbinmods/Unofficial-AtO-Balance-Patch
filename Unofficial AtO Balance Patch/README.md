@@ -126,13 +126,63 @@ Updated:
 
 # Card Modules
 
+## Dark
+A patch to add more synergies to Healer and Mage dark cards. 
+
+### New Items:
+- Demonic Ring
+- Demonic Staff
+
+### New Cards:
+- Black Brand
+- Dark Cremation
+
+### Modified Cards
+- Bad Augury
+- Black Hole
+- Black Karma
+- Condemnation
+- Curse of Agony
+- Curse of Decay
+- Curse of Elements
+- Curse of Madness
+- Curse of Shadows
+- Curse of Vulnerability
+- Curse of Weakness
+- Dark Blow
+- Darkness Falls
+- Dark Outbreak
+- Dark Pact
+- Death Coil
+- Death's Reach
+- Deep Darkness
+- Drain Life
+- Endless Abyss
+- Entomb
+- Hallucination
+- Necrotic Burst
+- Noxious Eruption
+- Pestilence
+- Profane
+- Ruin Bolt
+- Shadow Bolt
+- Shadow Flame
+- Siphon Life
+- Terrorize
+- Tremors
+- Twilight Swamp
+- Vampiric Touch
+- Vile Lance
+- Void Crush
+- Yin Yang Bolt
+
 ## Nerfs
 
 Some overused cards will receive some nerfs. This will mostly come in the form of increasing the rarity of the card, increasing the cost of the card, or making the card vanish.
 
 Targets mostly: low cost draw cards, undercosted cards, cards that provide too much benefit, and cards that deal too much damage for their cost.
 
-Modified Cards:
+### Modified Cards:
 - Carnage
 - Clarity
 - Cold Snap
@@ -143,11 +193,12 @@ Modified Cards:
 - Scavenge
 - Setup
 
+
 ## Thorns
 
 Balance patch to help make thorns more viable. Focuses on improving the card quality of thorns cards.
 
-Modified Cards:
+### Modified Cards:
 - Amulet of Thorns
 - Garden of Thorns
 - Heart of Thorns
@@ -169,12 +220,12 @@ Modified Cards:
 
 This module is intended to go along with the release of the Nenukil Update, and add some more synergies for comps that want to focus around speeding up allies or slowing down enemies.
 
-New Cards:
+### New Cards:
 - Blitz
 - Circle of Healing
 - Thermal Exchange
 
-Modified Cards
+### Modified Cards
 - Debilitate
 - Delay Response
 - Desperate Prayer
