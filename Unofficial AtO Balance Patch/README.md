@@ -123,6 +123,29 @@ Updated:
 - Retaliator
 - The Defiler
 
+### Part 8 - Restricted Power
+
+This module updates 15+ items to increase the max charges of aura/curses that are limited by restricted power.
+
+Updated:
+- Bloodstone
+- Bronze Gear
+- Bucket
+- Crusader Helmet
+- Heart Amulet
+- Iron Kanobo
+- Luna Ring
+- Neverfrost
+- Ring of Fire
+- Shield of Thorns
+- Sol Ring
+- The Polluter
+- Thorny Ring
+- Topaz Ring
+- Venom Amulet
+- Yggdrasil Root
+- Yogger's Cleaver
+
 
 # Card Modules
 

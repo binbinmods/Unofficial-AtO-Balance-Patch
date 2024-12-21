@@ -283,6 +283,75 @@ namespace UnofficialBalancePatch
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
         }
 
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(AtOManager), nameof(AtOManager.GlobalAuraCurseModificationByTraitsAndItems))]
+        public static void GlobalAuraCurseModificationByTraitsAndItemsPostfixGeneral(ref AtOManager __instance, ref AuraCurseData __result, string _type, string _acId, Character _characterCaster, Character _characterTarget)
+        {
+            Character characterOfInterest = _type == "set" ? _characterTarget : _characterCaster;
+            string itemID;
 
+            string[] items = ["bloodstone","bronzegear","bucket","crusaderhelmet","heartamulet","ironkanobo","lunaring","ringoffire","shieldofthorns","solring","thepolluter","thornyring","topazring","venomamulet","yggdrasilroot"];
+            foreach(string item in items)
+            {
+                ItemData itemData = Globals.Instance.GetItemData(item);
+                ItemData itemDataRare = Globals.Instance.GetItemData(item+"rare");
+                if ((itemData.AuracurseCustomAC.Id ==_acId||itemDataRare.AuracurseCustomAC.Id==_acId)&&itemData!=null&&itemDataRare!=null)
+                {
+                    UpdateChargesByItem(ref __result, characterOfInterest,itemData);
+                }
+            }
+
+            switch (_acId)
+            {
+                case "bleed":
+                    itemID = "bloodstone";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;                
+            }
+
+        }
+
+        public static void UpdateChargesByItem(ref AuraCurseData __result, Character characterOfInterest, ItemData itemData)
+        {
+            if (itemData==null)
+                return;
+         
+            
+            string itemID = itemData.Id;
+            LogDebug("UpdateChargesByItem: " + itemID);    
+            if(IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID,AppliesTo.Heroes)||IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID+"rare",AppliesTo.Heroes))
+                {
+                    if (__result.MaxCharges!=-1)
+                    {
+                        __result.MaxCharges+=itemData.AuracurseCustomModValue1;
+                    }
+                    if(__result.MaxMadnessCharges!=-1)
+                    {
+                        __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
+                    }
+                }
+
+        }
+
+        public static void UpdateChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
+        {
+            
+            if(IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID,AppliesTo.Heroes)||IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID+"rare",AppliesTo.Heroes))
+                {
+                    ItemData itemData = Globals.Instance.GetItemData(itemID);
+                    if (itemData==null)
+                        return;
+
+                    if (__result.MaxCharges!=-1)
+                    {
+                        __result.MaxCharges+=itemData.AuracurseCustomModValue1;
+                    }                        
+                    if(__result.MaxMadnessCharges!=-1)
+                    {
+                        __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
+                    }
+                }
+
+        }
     }
 }
