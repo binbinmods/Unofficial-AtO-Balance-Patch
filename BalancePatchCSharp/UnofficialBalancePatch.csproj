@@ -47,7 +47,7 @@
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="../Unofficial Ato Balance Patch/plugins" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="../Unofficial Ato Balance Patch/BepInEx/plugins" />
   </Target>
 
 </Project>

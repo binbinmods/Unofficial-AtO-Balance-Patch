@@ -289,24 +289,80 @@ namespace UnofficialBalancePatch
         {
             Character characterOfInterest = _type == "set" ? _characterTarget : _characterCaster;
             string itemID;
+            LogDebug("GACM for Balance Patch");
 
-            string[] items = ["bloodstone","bronzegear","bucket","crusaderhelmet","heartamulet","ironkanobo","lunaring","ringoffire","shieldofthorns","solring","thepolluter","thornyring","topazring","venomamulet","yggdrasilroot"];
-            foreach(string item in items)
-            {
-                ItemData itemData = Globals.Instance.GetItemData(item);
-                ItemData itemDataRare = Globals.Instance.GetItemData(item+"rare");
-                if ((itemData.AuracurseCustomAC.Id ==_acId||itemDataRare.AuracurseCustomAC.Id==_acId)&&itemData!=null&&itemDataRare!=null)
-                {
-                    UpdateChargesByItem(ref __result, characterOfInterest,itemData);
-                }
-            }
+            // string[] items = ["bloodstone","bronzegear","bucket","crusaderhelmet","heartamulet","ironkanabo","lunaring","neverfrost","ringoffire","shieldofthorns","solring","thepolluter","thornyring","topazring","venomamulet","yggdrasilroot","yoggercleaver"];
+            // foreach(string item in items)
+            // {
+            //     LogDebug("GACM item: "+item);
+            //     ItemData itemData = Globals.Instance.GetItemData(item);
+            //     ItemData itemDataRare = Globals.Instance.GetItemData(item+"rare");
+            //     if ((itemData.AuracurseCustomAC.Id ==_acId||itemDataRare.AuracurseCustomAC.Id==_acId)&&itemData!=null&&itemDataRare!=null)
+            //     {
+            //         LogDebug($"GACM inside conditions: {item}");
+            //         UpdateChargesByItem(ref __result, characterOfInterest,itemData);
+            //     }
+            //     LogDebug($"End GACM");
+            // }
 
             switch (_acId)
             {
                 case "bleed":
                     itemID = "bloodstone";
                     UpdateChargesByItem(ref __result,characterOfInterest,itemID);
-                    break;                
+                    itemID = "yoggercleaver";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;
+                case "bless":
+                    itemID = "topazring";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;        
+                case "block":
+                    itemID = "crusaderhelmet";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;
+                case "burn":
+                    itemID = "solring";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    itemID = "ringoffire";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;       
+                case "chill":
+                    itemID = "lunaring";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    itemID = "neverfrost";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;       
+                case "crack":
+                    itemID = "bronzegear";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    itemID = "ironkanabo";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;       
+                case "poison":
+                    itemID = "thepolluter";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    itemID = "venomamulet";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break; 
+                case "thorns":
+                    itemID = "corruptedplateb";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    itemID = "shieldofthorns";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    itemID = "thornyring";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    itemID = "yggdrasilroot";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;  
+                case "vitality":
+                    itemID = "heartamulet";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;     
+                case "wet":
+                    itemID = "bucket";
+                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;       
             }
 
         }
@@ -335,6 +391,7 @@ namespace UnofficialBalancePatch
 
         public static void UpdateChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
         {
+            LogDebug("UpdateChargesByItem: " + itemID);    
             
             if(IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID,AppliesTo.Heroes)||IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID+"rare",AppliesTo.Heroes))
                 {
