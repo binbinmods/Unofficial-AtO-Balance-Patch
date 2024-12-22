@@ -1,3 +1,7 @@
+# Version 1.2.2
+
+Added Mind Module.
+
 # Version 1.2.1
 
 Added the Restricted Power module.

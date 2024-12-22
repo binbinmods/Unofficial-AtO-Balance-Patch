@@ -149,6 +149,33 @@ Updated:
 
 # Card Modules
 
+## Mind
+A patch to add more synergies to Healer and Mage mind cards. 
+
+### New Cards:
+- Ethereal Bolt
+- Foretelling
+- Inner Sight
+- Mind Break
+- Soul Rend
+- Spectral Assault
+- Spectral Barrage
+- Spectral Explosion
+
+### Modified Cards
+- Clairvoyance
+- Enervate
+- Foresight
+- Mental Shake
+- Mesmeric Mirage
+- Mind Blast
+- Mind Twist
+- Mind Visions
+- Pandemonium
+- Spectral Cold
+- Spectral Missiles
+- Temporal Chains
+
 ## Dark
 A patch to add more synergies to Healer and Mage dark cards. 
 
