@@ -41,7 +41,7 @@
     "DamageEnergyBonus": 0,
     "DiscardCard": 4,
     "DiscardCardAutomatic": false,
-    "DiscardCardPlace": "Discard",
+    "DiscardCardPlace": "Vanish",
     "DiscardCardType": "None",
     "DiscardCardTypeAux": [],
     "DispelAuras": 0,
