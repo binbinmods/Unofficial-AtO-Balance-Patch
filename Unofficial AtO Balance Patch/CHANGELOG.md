@@ -1,3 +1,7 @@
+# Version 1.2.3
+
+Fixed Inner Sight. Added Songs.
+
 # Version 1.2.2
 
 Added Mind Module.

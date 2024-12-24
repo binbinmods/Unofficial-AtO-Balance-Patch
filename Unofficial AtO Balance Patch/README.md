@@ -149,8 +149,36 @@ Updated:
 
 # Card Modules
 
+
+## Songs
+A patch to add more synergies to Scout Song Spell cards. 
+
+### New Cards:
+- Duet
+- Quartet
+- Discordant Ditty
+- Harmonious Hymn
+
+### Modified Cards
+- Annoying Whistle
+- Captivating Voice
+- Energizing Serenade 
+- Eternal Lullaby
+- Last Requiem
+- Neverending Story
+- Reverberant Verse
+- Sarcastic Sonnet
+- Song of Quickness
+- Tedious Poem
+- Tune Up
+- Vexing Crescendo
+
 ## Mind
 A patch to add more synergies to Healer and Mage mind cards. 
+
+### New Items
+- Mind Flail
+- Mindflayer's Ring
 
 ### New Cards:
 - Ethereal Bolt
