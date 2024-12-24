@@ -22,7 +22,7 @@
         "Spell"
     ],
     "CardName": "Tedious Poem",
-    "CardRarity": "Rare",
+    "CardRarity": "Epic",
     "Curse": "insane",
     "Curse2": "weak",
     "Curse3": "",
@@ -65,7 +65,7 @@
     "EffectRepeatModificator": 0,
     "EffectRepeatEnergyBonus": 0,
     "EffectTrailRepeat": false,
-    "EnergyCost": 5,
+    "EnergyCost": 7,
     "EnergyRecharge": 0,
     "Heal": 0,
     "HealAuraCurseName": "",

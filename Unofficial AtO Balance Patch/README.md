@@ -159,6 +159,7 @@ A patch to add more synergies to Scout Song Spell cards.
 - Discordant Ditty
 - Harmonious Hymn
 - Bludgeoning Words
+- Abyssal Sonata
 
 ### Modified Cards
 - Annoying Whistle
