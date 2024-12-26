@@ -102,7 +102,7 @@
     "GoldGainQuantity": 0,
     "ShardsGainQuantity": 0,
     "HealSelfPerDamageDonePercent": 0,
-    "EffectRequired": "stanzai",
+    "EffectRequired": "stanzaii",
     "AuraChargesSpecialValue1": false,
     "AuraChargesSpecialValue2": false,
     "AuraChargesSpecialValueGlobal": false,

@@ -160,6 +160,7 @@ A patch to add more synergies to Scout Song Spell cards.
 - Harmonious Hymn
 - Bludgeoning Words
 - Abyssal Sonata
+- Prelude/Crescendo/Finale  
 
 ### Modified Cards
 - Annoying Whistle
