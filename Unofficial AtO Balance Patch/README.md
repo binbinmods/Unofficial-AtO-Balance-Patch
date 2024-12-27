@@ -122,6 +122,8 @@ Updated:
 - Pandora's Box
 - Retaliator
 - The Defiler
+- Holy Grail
+- Lightbringer
 
 ### Part 8 - Restricted Power
 
