@@ -155,6 +155,12 @@ Updated:
 ## Songs
 A patch to add more synergies to Scout Song Spell cards. 
 
+### New Items:
+- Electric Guitar
+- Holy Harpsichord
+- Ethereal Flute
+- Hurdygurdy
+
 ### New Cards:
 - Duet
 - Quartet
