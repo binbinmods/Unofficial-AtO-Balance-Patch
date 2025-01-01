@@ -1,6 +1,6 @@
 # Version 1.2.3
 
-Fixed Inner Sight. Added Songs.
+Fixed Inner Sight, Demonic Ring, and some descriptions. Added Songs.
 
 # Version 1.2.2
 

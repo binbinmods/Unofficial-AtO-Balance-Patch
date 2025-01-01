@@ -42,12 +42,11 @@
     </Reference>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="../../../plugins" />
-  </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="../../../plugins" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="../Unofficial Ato Balance Patch/BepInEx/plugins" />
   </Target>
+
 
 </Project>
