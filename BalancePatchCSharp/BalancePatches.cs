@@ -172,6 +172,22 @@ namespace UnofficialBalancePatch
             }
             
             HandleAllDamagePercentDescriptions(ref __instance);
+
+            if(__instance.Item!=null && __instance.Item.Activation==Enums.EventActivation.BeginTurnCardsDealt&&__instance.Item.ExactRound>=2){
+                LogDebug($"Attempting to alter description for {__instance.Id}");
+                LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
+                stringBuilder1.Replace("Every Turn",$"On Turn {__instance.Item.ExactRound}");
+                LogDebug($"Description {__instance.Id} after replace: {stringBuilder1}");
+            }
+            if(__instance.Item!=null && __instance.Item.Activation==Enums.EventActivation.BeginRound&&__instance.Item.ExactRound>=2){
+                LogDebug($"Attempting to alter description for {__instance.Id}");
+                LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
+                stringBuilder1.Replace("Every Round",$"On Round {__instance.Item.ExactRound}");
+                LogDebug($"Description {__instance.Id} after replace: {stringBuilder1}");
+            }
+
+            BinbinNormalizeDescription(ref __instance, stringBuilder1);
+
         }
 
         private static string NumFormatItem(int num, bool plus = false, bool percent = false)

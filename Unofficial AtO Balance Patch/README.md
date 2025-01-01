@@ -159,7 +159,10 @@ A patch to add more synergies to Scout Song Spell cards.
 - Electric Guitar
 - Holy Harpsichord
 - Ethereal Flute
-- Hurdygurdy
+- Lyre
+
+### Modified Items:
+- War Drum
 
 ### New Cards:
 - Duet
@@ -183,6 +186,7 @@ A patch to add more synergies to Scout Song Spell cards.
 - Tedious Poem
 - Tune Up
 - Vexing Crescendo
+- Vitalizing Serenade
 
 ## Mind
 A patch to add more synergies to Healer and Mage mind cards. 
