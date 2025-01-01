@@ -21,7 +21,7 @@
     "CardTypeAux": [
         "Book"
     ],
-    "CardName": "Quartet",
+    "CardName": "Quartet (WIP)",
     "CardRarity": "Epic",
     "Curse": "",
     "Curse2": "",
@@ -102,7 +102,7 @@
     "GoldGainQuantity": 0,
     "ShardsGainQuantity": 0,
     "HealSelfPerDamageDonePercent": 0,
-    "EffectRequired": "stanzaii",
+    "EffectRequired": "stanzai",
     "AuraChargesSpecialValue1": false,
     "AuraChargesSpecialValue2": false,
     "AuraChargesSpecialValueGlobal": false,
@@ -152,14 +152,17 @@
     "AddCardReducedCost": 0,
     "AddCardCostTurn": false,
     "AddCardFrom": "Game",
-    "AddCardId": "bbbdiscordantdittyrare",
-    "AddCardList": [],
+    "AddCardId": "",
+    "AddCardList": [
+        "bbbdiscordantdittyrare",
+        "bbbharmonioushymnrare"
+    ],
     "AddCardPlace": "TopDeck",
     "AddCardType": "None",
     "AddCardTypeAux": [],
     "AddCardVanish": false,
     "RelatedCard": "bbbdiscordantdittyrare",
-    "RelatedCard2": "",
+    "RelatedCard2": "bbbharmonioushymnrare",
     "RelatedCard3": "",
     "SummonAura": "",
     "SummonAura2": "",

@@ -163,7 +163,7 @@ A patch to add more synergies to Scout Song Spell cards.
 
 ### New Cards:
 - Duet
-- Quartet
+- Quartet (Untested)
 - Discordant Ditty
 - Harmonious Hymn
 - Bludgeoning Words
