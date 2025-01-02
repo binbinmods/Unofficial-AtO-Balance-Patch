@@ -151,6 +151,38 @@ Updated:
 
 # Card Modules
 
+## Lightning
+
+### New Items:
+- Arcing Armor
+- Crackling Shield
+- Disintegrating Rod
+- Electrical Firestarter
+- Plasma Laser
+- Thunderbuss
+
+
+### Modified Items:
+
+### New Cards:
+- Clap of Thunder
+- Electrical Fire
+- Electiry Current
+- Fry
+- Lightning Rod
+- Pillar of Lightning
+- Plasma Beam
+- Volcanic Lightning
+
+### Modified Cards:
+- Ball Lightning
+- Chain Lightning
+- Disintegrate
+- Electric Discharge
+- Electricity Manual
+- Electrocute
+- Elemental Ward
+- Zap
 
 ## Songs
 A patch to add more synergies to Scout Song Spell cards. 
@@ -275,6 +307,8 @@ Some overused cards will receive some nerfs. This will mostly come in the form o
 
 Targets mostly: low cost draw cards, undercosted cards, cards that provide too much benefit, and cards that deal too much damage for their cost.
 
+In Exchange, I also nerf Monty and Colin's base speed by 1.
+
 ### Modified Cards:
 - Carnage
 - Clarity
@@ -333,6 +367,11 @@ This module is intended to go along with the release of the Nenukil Update, and 
 - Ray of Frost
 - Rupture
 - Searing Touch
+
+## Miscellaneous
+
+- Elemental Bolt
+
 
 
 ## Installation (manual)

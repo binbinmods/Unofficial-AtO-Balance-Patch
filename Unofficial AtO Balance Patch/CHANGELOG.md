@@ -1,3 +1,7 @@
+# Version 1.3.0
+
+Added Lightning Module. Nerfed Monty, Colin, and Jasper by 1 base speed.
+
 # Version 1.2.3
 
 Fixed Inner Sight, Demonic Ring, and some descriptions. Added Songs.
