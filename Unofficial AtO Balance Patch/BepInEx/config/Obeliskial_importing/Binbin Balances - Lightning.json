@@ -1,19 +1,18 @@
 {
-    "Name": "Binbin Balances - Nerfs",
+    "Name": "Binbin Balances - Lightning",
     "Author": "Binbin",
-    "Description": "Nerfs for overused or overtuned cards.",
+    "Description": "QoL improvements for Lightning cards.",
     "Version": "1.0",
-    "Date": 20241116,
+    "Date": 20241223,
     "Link": "https://thunderstore.io/c/across-the-obelisk/p/Binbin/Unofficial_AtO_Balance_Patch/",
     "Dependencies": [
-		"stiffmeds-Obeliskial_Content-1.1.0"
+		"stiffmeds-Obeliskial_Content-1.3.0"
     ],
-    "ContentFolder": "Binbin Balances - Nerfs",
+    "ContentFolder": "Binbin Balances - Lightning",
     "Priority": 100,
     "Type": [
         "card",
-        "sprite",
-        "npc"
+        "sprite"
     ],
     "Comment": "Any additional comments.",
     "Enabled": true
