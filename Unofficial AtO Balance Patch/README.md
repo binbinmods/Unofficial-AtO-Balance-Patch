@@ -14,6 +14,17 @@ All of the modules created by me start with "Binbin Balances" though if other co
 
 Lastly, this mod will be continually updated with new cards, modules, and will also eventually grow to include bug fixes, and mechanics changes (as well as potentially new game modes).
 
+## NPCs
+
+Just a couple of Nerfs/Buffs to some enemies
+
+### Nerfs
+- Colin
+- Monty
+
+### Buffs
+- Rabbit (kind of)
+
 ## Items
 
 ### Part 1 - Items that add cards to your deck
@@ -159,12 +170,16 @@ Updated:
 - Disintegrating Rod
 - Electrical Firestarter
 - Plasma Laser
+- Stun Baton
 - Thunderbuss
+- Voltaic Standard
 
 
 ### Modified Items:
 
 ### New Cards:
+- Arcing Shot
+- Charged Shot
 - Clap of Thunder
 - Electrical Fire
 - Electiry Current
@@ -172,6 +187,9 @@ Updated:
 - Lightning Rod
 - Pillar of Lightning
 - Plasma Beam
+- Rainstorm
+- Stun Grenade
+- Thunderstorm
 - Volcanic Lightning
 
 ### Modified Cards:
@@ -182,6 +200,8 @@ Updated:
 - Electricity Manual
 - Electrocute
 - Elemental Ward
+- Storm Javelin
+- Superconductor
 - Zap
 
 ## Songs
@@ -307,7 +327,6 @@ Some overused cards will receive some nerfs. This will mostly come in the form o
 
 Targets mostly: low cost draw cards, undercosted cards, cards that provide too much benefit, and cards that deal too much damage for their cost.
 
-In Exchange, I also nerf Monty and Colin's base speed by 1.
 
 ### Modified Cards:
 - Carnage

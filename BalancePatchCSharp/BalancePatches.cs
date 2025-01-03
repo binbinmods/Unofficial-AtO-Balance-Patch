@@ -328,66 +328,67 @@ namespace UnofficialBalancePatch
             {
                 case "bleed":
                     itemID = "bloodstone";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "yoggercleaver";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;
                 case "bless":
                     itemID = "topazring";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;        
                 case "block":
                     itemID = "crusaderhelmet";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;
                 case "burn":
                     itemID = "solring";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "ringoffire";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;       
                 case "chill":
                     itemID = "lunaring";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "neverfrost";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;       
                 case "crack":
                     itemID = "bronzegear";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "ironkanabo";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;       
                 case "poison":
                     itemID = "thepolluter";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "venomamulet";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break; 
                 case "thorns":
                     itemID = "corruptedplateb";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "shieldofthorns";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "thornyring";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "yggdrasilroot";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;  
                 case "vitality":
                     itemID = "heartamulet";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;     
                 case "wet":
                     itemID = "bucket";
-                    UpdateChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break;       
             }
 
         }
 
-        public static void UpdateChargesByItem(ref AuraCurseData __result, Character characterOfInterest, ItemData itemData)
+        public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, ItemData itemData)
         {
+            // Updates Max Madness Charges
             if (itemData==null)
                 return;
          
@@ -408,7 +409,7 @@ namespace UnofficialBalancePatch
 
         }
 
-        public static void UpdateChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
+        public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
         {
             LogDebug("UpdateChargesByItem: " + itemID);    
             
