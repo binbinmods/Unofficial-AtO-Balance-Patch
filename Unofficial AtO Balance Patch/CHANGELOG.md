@@ -1,6 +1,6 @@
 # Version 1.3.0
 
-Added Lightning Module. Nerfed Monty, Colin, and Jasper by 1 base speed.
+Added Lightning Module. Nerfed Monty and Colin by 1 base speed. Monty is now worse against thorns.
 
 # Version 1.2.3
 
