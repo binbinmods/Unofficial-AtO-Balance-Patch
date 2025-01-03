@@ -3,7 +3,7 @@
         "{\n    \"AddCardRound\": 1,\n    \"AuraCurseCastIf\": \"\",\n    \"Card\": \"bunnyhoppingm\",\n    \"OnlyCastIf\": \"Always\",\n    \"PercentToCast\": 0.0,\n    \"Priority\": 0,\n    \"TargetCast\": \"Random\",\n    \"UnitsInDeck\": 1,\n    \"ValueCastIf\": 0.0\n}",
         "{\n    \"AddCardRound\": 1,\n    \"AuraCurseCastIf\": \"\",\n    \"Card\": \"killerbite\",\n    \"OnlyCastIf\": \"Always\",\n    \"PercentToCast\": 0.0,\n    \"Priority\": 2,\n    \"TargetCast\": \"Random\",\n    \"UnitsInDeck\": 1,\n    \"ValueCastIf\": 0.0\n}",
         "{\n    \"AddCardRound\": 0,\n    \"AuraCurseCastIf\": \"\",\n    \"Card\": \"fluffy\",\n    \"OnlyCastIf\": \"Always\",\n    \"PercentToCast\": 0.0,\n    \"Priority\": 1,\n    \"TargetCast\": \"Random\",\n    \"UnitsInDeck\": 1,\n    \"ValueCastIf\": 0.0\n}",
-        "{\n    \"AddCardRound\": 0,\n    \"AuraCurseCastIf\": \"\",\n    \"Card\": \"rapidmultiplication\",\n    \"OnlyCastIf\": \"Always\",\n    \"PercentToCast\": 0.0,\n    \"Priority\": 1,\n    \"TargetCast\": \"Random\",\n    \"UnitsInDeck\": 1,\n    \"ValueCastIf\": 0.0\n}"
+        "{\n    \"AddCardRound\": 0,\n    \"AuraCurseCastIf\": \"\",\n    \"Card\": \"rapidmultiplication\",\n    \"OnlyCastIf\": \"Always\",\n    \"PercentToCast\": 0.0,\n    \"Priority\": 3,\n    \"TargetCast\": \"Random\",\n    \"UnitsInDeck\": 1,\n    \"ValueCastIf\": 0.0\n}"
     ],
     "AuraCurseImmune": [
         "shackle"
