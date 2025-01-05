@@ -1,3 +1,7 @@
+# Version 1.3.1
+
+Added Blunt Module.
+
 # Version 1.3.0
 
 Added Lightning Module. Nerfed Monty and Colin by 1 base speed. Monty is now worse against thorns.
