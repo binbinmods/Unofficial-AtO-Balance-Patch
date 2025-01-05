@@ -72,7 +72,7 @@
     "HealAuraCurseName2": "",
     "HealAuraCurseName3": "",
     "HealAuraCurseName4": "",
-    "HealAuraCurseSelf": "block",
+    "HealAuraCurseSelf": "",
     "HealCurses": 0,
     "HealEnergyBonus": 0,
     "HealSelf": 0,
