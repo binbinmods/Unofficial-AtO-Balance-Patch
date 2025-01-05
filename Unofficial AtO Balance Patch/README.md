@@ -162,6 +162,41 @@ Updated:
 
 # Card Modules
 
+## Blunt
+
+### Modified Cards:
+- All in
+- Bludgeon
+- Bouncing Shield
+- Charge
+- Colossal Blow
+- Dark Blow
+- Demolishing Blow
+- Ground Slam
+- Headbutt
+- Heavy Strike
+- Invigorating Blow
+- Leap Slam
+- Maim
+- Overpower
+- Pommel
+- Pulverize
+- Pummel
+- Punch
+- Shield Bash
+- Shield Breaker
+- Shield Charge
+- Shield Slam
+- Shield Throw
+- Siege Breaker
+- Skull Splitter
+- Spiked Ball
+- Sunder Armor
+- Throw Bolas
+- Titan Fall
+- Void Crush
+- Wrecking Ball
+
 ## Lightning
 
 ### New Items:
