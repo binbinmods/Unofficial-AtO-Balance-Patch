@@ -170,7 +170,6 @@ Updated:
 - Bouncing Shield
 - Charge
 - Colossal Blow
-- Dark Blow
 - Demolishing Blow
 - Ground Slam
 - Headbutt
@@ -194,7 +193,6 @@ Updated:
 - Sunder Armor
 - Throw Bolas
 - Titan Fall
-- Void Crush
 - Wrecking Ball
 
 ## Lightning
