@@ -1,3 +1,7 @@
+# Version 1.3.2
+
+Added Small Weapons Module.
+
 # Version 1.3.1
 
 Added Blunt Module.

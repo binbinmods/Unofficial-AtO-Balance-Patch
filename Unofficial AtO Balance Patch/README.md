@@ -162,6 +162,33 @@ Updated:
 
 # Card Modules
 
+## Small Weapons
+
+### Modified Cards
+- Corrupted Blade
+- Dark Concoction
+- Poison Catalyst
+- Poison Dart
+- Poisoned Daggers
+- Poison Flask
+- Revealing Flask
+- Saw Blade
+- Sawtooth Knife
+- Sharpening Knife
+- Shiv
+- Weapon Cache
+- Wicked Craftsman
+
+### New Cards
+- Corrupted Harpoon
+- Poisous Caltrops
+
+### New Items
+- Brace of Knives
+- Catalytic Flasks
+- Dirk
+- Hidden Knife
+
 ## Blunt
 
 ### Modified Cards:
@@ -194,6 +221,10 @@ Updated:
 - Throw Bolas
 - Titan Fall
 - Wrecking Ball
+
+## New Items
+- Skull Smasher
+- Vigorous Hammer
 
 ## Lightning
 
