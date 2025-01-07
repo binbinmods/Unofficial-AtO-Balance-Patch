@@ -167,6 +167,7 @@ Updated:
 ### Modified Cards
 - Corrupted Blade
 - Dark Concoction
+- Neurotoxin
 - Poison Catalyst
 - Poison Dart
 - Poisoned Daggers
@@ -180,8 +181,10 @@ Updated:
 - Wicked Craftsman
 
 ### New Cards
-- Corrupted Harpoon
-- Poisous Caltrops
+- Brass Knuckles
+- Corrosive Dagger
+- Corrupted Needle
+
 
 ### New Items
 - Brace of Knives
