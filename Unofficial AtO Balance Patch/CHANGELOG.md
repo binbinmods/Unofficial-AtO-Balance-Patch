@@ -1,6 +1,10 @@
+# Version 1.3.3
+
+Added Holy Module. Updated README.
+
 # Version 1.3.2
 
-Added Small Weapons Module.
+Added Small Weapons Module. Added some miscellaneous cards too.
 
 # Version 1.3.1
 

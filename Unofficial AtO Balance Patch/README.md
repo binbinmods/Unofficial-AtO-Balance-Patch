@@ -14,7 +14,7 @@ All of the modules created by me start with "Binbin Balances" though if other co
 
 Lastly, this mod will be continually updated with new cards, modules, and will also eventually grow to include bug fixes, and mechanics changes (as well as potentially new game modes).
 
-## NPCs
+# NPCs
 
 Just a couple of Nerfs/Buffs to some enemies
 
@@ -25,7 +25,10 @@ Just a couple of Nerfs/Buffs to some enemies
 ### Buffs
 - Rabbit (kind of)
 
-## Items
+# Items
+
+<details>
+  <summary>Generating Items</summary>
 
 ### Part 1 - Items that add cards to your deck
 
@@ -40,6 +43,11 @@ Modified Cards:
 - Small Pouch
 - Stormcaller Feather
 - Weapon Pouch
+</details>
+
+
+<details>
+  <summary>(Un)Common Items</summary>
 
 ### Part 2 - (Un)common Items
 
@@ -54,6 +62,11 @@ Modified Cards:
 - Razor
 - Slingshot
 - Soap
+</details>
+
+
+<details>
+  <summary>Pets</summary>
 
 ### Part 3 - Pets
 
@@ -63,6 +76,12 @@ Modified Cards:
 - Fenny
 - Bunny
 - Lianty
+</details>
+
+
+
+<details>
+  <summary>Rare Items</summary>
 
 ### Part 4 - Rare Items
 - Orbs of all sorts
@@ -82,6 +101,11 @@ Modified Cards:
 - Sidearm
 - Tiki Mask
 - War Hammer
+</details>
+
+
+<details>
+  <summary>Rare Item Reworkds</summary>
 
 ### Part 5 - Rare Item Reworks
 - Runes of all sorts
@@ -98,6 +122,11 @@ Modified Cards:
 - Tourist Map
 - Turban
 - Undeath Ichor
+</details>
+
+
+<details>
+  <summary>Epic Items</summary>
 
 ### Part 6 - Epic Items
 
@@ -123,6 +152,12 @@ Updated:
 - Topaz Ring
 - Unholy Hammer
 - Venom Fang
+</details>
+
+
+
+<details>
+  <summary>Mythic Items</summary>
 
 ### Part 7 - Mythic Items
 
@@ -135,6 +170,12 @@ Updated:
 - The Defiler
 - Holy Grail
 - Lightbringer
+</details>
+
+
+
+<details>
+  <summary>Restricted Power</summary>
 
 ### Part 8 - Restricted Power
 
@@ -159,8 +200,15 @@ Updated:
 - Yggdrasil Root
 - Yogger's Cleaver
 
+New:
+- The Hedgehog
+
+</details>
 
 # Card Modules
+
+<details>
+  <summary>Small Weapons</summary>
 
 ## Small Weapons
 
@@ -194,6 +242,12 @@ Updated:
 - Disitllation Flask
 - Hidden Knife
 - Harvesting Sickle
+</details>
+
+
+
+<details>
+  <summary>Blunt</summary>
 
 ## Blunt
 
@@ -228,9 +282,15 @@ Updated:
 - Titan Fall
 - Wrecking Ball
 
-## New Items
+### New Items
 - Skull Smasher
 - Vigorous Hammer
+</details>
+
+
+
+<details>
+  <summary>Lightning</summary>
 
 ## Lightning
 
@@ -273,6 +333,12 @@ Updated:
 - Storm Javelin
 - Superconductor
 - Zap
+</details>
+
+
+
+<details>
+  <summary>Songs</summary>
 
 ## Songs
 A patch to add more synergies to Scout Song Spell cards. 
@@ -309,6 +375,13 @@ A patch to add more synergies to Scout Song Spell cards.
 - Tune Up
 - Vexing Crescendo
 - Vitalizing Serenade
+</details>
+
+
+
+
+<details>
+  <summary>Mind</summary>
 
 ## Mind
 A patch to add more synergies to Healer and Mage mind cards. 
@@ -340,6 +413,12 @@ A patch to add more synergies to Healer and Mage mind cards.
 - Spectral Cold
 - Spectral Missiles
 - Temporal Chains
+</details>
+
+
+
+<details>
+  <summary>Dark</summary>
 
 ## Dark
 A patch to add more synergies to Healer and Mage dark cards. 
@@ -391,6 +470,13 @@ A patch to add more synergies to Healer and Mage dark cards.
 - Void Crush
 - Yin Yang Bolt
 
+</details>
+
+
+
+<details>
+  <summary>Nerfs</summary>
+
 ## Nerfs
 
 Some overused cards will receive some nerfs. This will mostly come in the form of increasing the rarity of the card, increasing the cost of the card, or making the card vanish.
@@ -408,7 +494,12 @@ Targets mostly: low cost draw cards, undercosted cards, cards that provide too m
 - Repetition Training
 - Scavenge
 - Setup
+</details>
 
+
+
+<details>
+  <summary>Thorns</summary>
 
 ## Thorns
 
@@ -431,6 +522,12 @@ Balance patch to help make thorns more viable. Focuses on improving the card qua
 - Thousand Needles
 - Torment of Thorns
 - Yggdrasil Root
+</details>
+
+
+
+<details>
+  <summary>Speed</summary>
 
 ## Speed
 
@@ -456,10 +553,28 @@ This module is intended to go along with the release of the Nenukil Update, and 
 - Ray of Frost
 - Rupture
 - Searing Touch
+</details>
+
+
+
+<details>
+  <summary>Generating Items</summary>
 
 ## Miscellaneous
 
+- Elemental Manual
 - Elemental Bolt
+- Fireproof
+- Inner Combustion
+- Acclimate
+- Bravery
+- Dauntless Charge
+- Surprise Box
+- Surprise Gift Box
+- Vicious Mockery
+
+</details>
+
 
 
 
