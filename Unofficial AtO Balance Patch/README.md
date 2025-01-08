@@ -182,15 +182,18 @@ Updated:
 
 ### New Cards
 - Brass Knuckles
-- Corrosive Dagger
-- Corrupted Needle
+- Corrosive Stab
+- Corrupted Needles
+- Vile Dagger
 
 
 ### New Items
 - Brace of Knives
 - Catalytic Flasks
 - Dirk
+- Disitllation Flask
 - Hidden Knife
+- Harvesting Sickle
 
 ## Blunt
 
