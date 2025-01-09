@@ -233,9 +233,9 @@ New:
 - Sunbeam
 
 ### New Cards
-- Antithesis
-- Arise from Darkness
 - Dark Penance
+- Unholy Punishment
+- Yang Blast
 
 
 
