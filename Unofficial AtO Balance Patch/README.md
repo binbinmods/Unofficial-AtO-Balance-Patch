@@ -241,7 +241,12 @@ New:
 
 
 ### New Items
-- Fanatic's Ring
+- Crucifix
+- Fanatic's Hammer
+- Heretic's Potion
+- Yang Staff
+- Yin Staff
+- Yin Yang Staff
 - Zealot's Robe
 
 </details>
