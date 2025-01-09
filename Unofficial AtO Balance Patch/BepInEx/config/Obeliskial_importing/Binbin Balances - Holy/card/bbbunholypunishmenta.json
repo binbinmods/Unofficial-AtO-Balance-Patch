@@ -23,7 +23,7 @@
         "Spell"
     ],
     "CardName": "Unholy Punishment",
-    "CardRarity": "Rare",
+    "CardRarity": "Epic",
     "Curse": "sanctify",
     "Curse2": "",
     "Curse3": "",
@@ -53,7 +53,7 @@
     "EffectCaster": "",
     "EffectCasterRepeat": false,
     "EffectPreAction": "",
-    "EffectTarget": "shadowimpact3",
+    "EffectTarget": "holyshadowimpact1",
     "EffectTrail": "shadowtrail2",
     "EffectTrailAngle": "Horizontal",
     "AcEnergyBonus": "",

@@ -234,6 +234,7 @@ New:
 
 ### New Cards
 - Dark Penance
+- Solar Ray
 - Unholy Punishment
 - Yang Blast
 
