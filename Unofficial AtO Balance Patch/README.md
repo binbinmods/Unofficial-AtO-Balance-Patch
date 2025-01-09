@@ -206,6 +206,45 @@ New:
 </details>
 
 # Card Modules
+<details>
+  <summary>Holy</summary>
+
+## Small Weapons
+
+### Modified Cards
+- Celestial Brilliance
+- Crescent Light
+- Dawnlight
+- Divine Insight
+- Divine Ire
+- Flash
+- Holy Blast
+- Holy Fire
+- Holy Nova
+- Holy Ripple
+- Holy Smite
+- Holy Storm
+- Penance
+- Purging Ray
+- Radiant Assault
+- Sacred Bolt
+- Sanctification
+- Shining Force
+- Sunbeam
+
+### New Cards
+- Antithesis
+- Arise from Darkness
+- Dark Penance
+
+
+
+### New Items
+- Fanatic's Ring
+- Zealot's Robe
+
+</details>
+
 
 <details>
   <summary>Small Weapons</summary>
