@@ -1,6 +1,10 @@
+# Version 1.3.4 and 1.3.5
+
+Updated Thorns. Added Healing. Added Defenses
+
 # Version 1.3.3
 
-Added Holy Module. Updated README.
+Added Holy Module. Updated README. 
 
 # Version 1.3.2
 

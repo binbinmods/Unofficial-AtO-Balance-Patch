@@ -375,7 +375,10 @@ namespace UnofficialBalancePatch
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "bbbthehedgehog";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
-                    break;
+                    itemID = "bbbphalanx";
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    itemID = "heartofthorns";
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);break;
                 case "vitality":
                     itemID = "heartamulet";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);

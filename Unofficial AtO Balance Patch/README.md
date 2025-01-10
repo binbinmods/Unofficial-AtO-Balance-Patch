@@ -208,6 +208,51 @@ New:
 # Card Modules
 
 <details>
+  <summary>Defenses</summary>
+
+## Defenses
+### Modified Cards
+- Scroll of Defense
+- Anthem of Hope
+- Barrier
+- Guardian Angel
+Holy Aegis
+Infuse Courage
+Pain Suppression
+Perseverance
+Prayer of Protection
+Protect from Evil
+Sanctuary
+Save It For Later
+Shield of Warding
+Elemental Ward
+Ice Barrier
+Icy Veins
+Mana Shield
+Prismatic Field
+Deflect
+Disengage
+Feint
+Parry
+Barricade
+Challenging Shout
+Citadel
+Coat of Arms
+Defend
+Do it yourself!
+Entrench
+Guard
+Intercept
+Provoke
+Reinforced Steel
+Repair Armor
+Safeguard
+Sharing Is Caring
+Steelskin
+
+</details>
+
+<details>
   <summary>Healing</summary>
 
 ## Healing Spells
@@ -236,8 +281,10 @@ New:
 - Lay on Paws
 
 ### New Cards
-### New Items
+- None
 
+### New Items
+- None
 
 </details>
 
@@ -585,22 +632,36 @@ Targets mostly: low cost draw cards, undercosted cards, cards that provide too m
 Balance patch to help make thorns more viable. Focuses on improving the card quality of thorns cards.
 
 ### Modified Cards:
-- Amulet of Thorns
+- Barbed Wire
+- Caltrops
+- Quill Rain
 - Garden of Thorns
+- Shield Wall
+- Spiked Ball
+- Spiked Shield
+- Stockade
+- Stoneskin
+- Thousand Needles
+- Torment of Thorns
+- Yggdrasil Root
+
+# Modified Items
+- Amulet of Thorns
 - Heart of Thorns
 - Horned Helmet
 - Screwdriver
 - Shield of Thorns
 - Shoulder Plate
-- Spiked Ball
 - Spiked Bracers
-- Spiked Shield
 - Spiked Shoulderpads
-- Stockade
+- The Porcupine
 - Thorny Ring
-- Thousand Needles
-- Torment of Thorns
-- Yggdrasil Root
+
+# New Items
+- Phalanx
+- The Hedgehog
+- Thorned Fist
+
 </details>
 
 
