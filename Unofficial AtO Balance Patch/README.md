@@ -228,25 +228,24 @@ New:
 - Mana Shield
 - Prismatic Field
 - Scroll of Defense
-Deflect
-Disengage
-Feint
-Parry
-Barricade
-Challenging Shout
-Citadel
-Coat of Arms
-Defend
-Do it yourself!
-Entrench
-Guard
-Intercept
-Provoke
-Reinforced Steel
-Repair Armor
-Safeguard
-Sharing Is Caring
-Steelskin
+- Deflect
+- Feint
+- Parry
+- Barricade
+- Challenging Shout
+- Citadel
+- Coat of Arms
+- Defend
+- Do it yourself!
+- Entrench
+- Guard
+- Intercept
+- Provoke
+- Reinforced Steel
+- Repair Armor
+- Safeguard
+- Sharing Is Caring
+- Steelskin
 
 </details>
 
