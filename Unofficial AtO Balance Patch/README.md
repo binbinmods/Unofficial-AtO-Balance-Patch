@@ -212,24 +212,22 @@ New:
 
 ## Defenses
 ### Modified Cards
-- Scroll of Defense
 - Anthem of Hope
 - Barrier
 - Guardian Angel
-Holy Aegis
-Infuse Courage
-Pain Suppression
-Perseverance
-Prayer of Protection
-Protect from Evil
-Sanctuary
-Save It For Later
-Shield of Warding
-Elemental Ward
+- Holy Aegis
+- Pain Suppression
+- Perseverance
+- Prayer of Protection
+- Protect from Evil
+- Sanctuary
+- Save It For Later
+- Shield of Warding
 Ice Barrier
 Icy Veins
 Mana Shield
 Prismatic Field
+- Scroll of Defense
 Deflect
 Disengage
 Feint
