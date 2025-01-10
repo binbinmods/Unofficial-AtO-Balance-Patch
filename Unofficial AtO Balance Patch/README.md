@@ -206,10 +206,46 @@ New:
 </details>
 
 # Card Modules
+
+<details>
+  <summary>Healing</summary>
+
+## Healing Spells
+### Modified Cards
+- Benediction
+- Binding Heal
+- Bulk Heal
+- Chain Heal
+- Circle of fHealing
+- Desperate Prayer
+- Flash Heal
+- Greater Heal
+- Heal
+- Healing Rain
+- Heavenly Blessing
+- Panacea
+- Prayer of Healing
+- Pulsing Heal
+- Ray of Hope
+- Redemption
+- Renew
+- Sacred Ceremony
+- Shadow Mend
+- Spark of Life
+- Vitalize
+- Lay on Paws
+
+### New Cards
+### New Items
+
+
+</details>
+
+
 <details>
   <summary>Holy</summary>
 
-## Small Weapons
+## Holy Spells
 
 ### Modified Cards
 - Celestial Brilliance
@@ -237,8 +273,6 @@ New:
 - Solar Ray
 - Unholy Punishment
 - Yang Blast
-
-
 
 ### New Items
 - Crucifix
@@ -580,7 +614,7 @@ This module is intended to go along with the release of the Nenukil Update, and 
 
 ### New Cards:
 - Blitz
-- Circle of Healing
+- Healing Circle
 - Thermal Exchange
 
 ### Modified Cards
@@ -603,7 +637,7 @@ This module is intended to go along with the release of the Nenukil Update, and 
 
 
 <details>
-  <summary>Generating Items</summary>
+  <summary>Miscellaneous</summary>
 
 ## Miscellaneous
 
