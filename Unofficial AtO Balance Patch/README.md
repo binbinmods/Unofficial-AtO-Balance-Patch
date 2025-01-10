@@ -223,10 +223,10 @@ New:
 - Sanctuary
 - Save It For Later
 - Shield of Warding
-Ice Barrier
-Icy Veins
-Mana Shield
-Prismatic Field
+- Ice Barrier
+- Icy Veins
+- Mana Shield
+- Prismatic Field
 - Scroll of Defense
 Deflect
 Disengage
