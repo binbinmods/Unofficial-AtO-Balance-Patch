@@ -208,6 +208,62 @@ New:
 # Card Modules
 
 <details>
+  <summary>Melee Attacks</summary>
+
+## Warrior Slashing Attacks
+### Modified Cards
+- Blade Storm
+- Bloodbath
+- Blood Feeding
+- Blood For Blood
+- Butchering
+Carnage
+- Cleave
+- Devastate
+- Divine Strike
+- Exploit Openings
+- Fast Strike
+- Flanking Strike
+- Furious Slash
+- Hamstring
+- Holy Slash
+- Impale
+- Mortal Strike
+- Precise Strike
+- Rampage
+- Reckless Charge
+- Rend
+- Sever Artery
+- Sweeping Strike
+- Whirlwind
+
+### New Items
+- Feasting Totem
+
+## Scout Melee Attacks
+Acrobatic Strike
+Ambush
+Backstab
+Bane
+Blade Dance
+Blade Flurry
+Debilitate
+Double Strike
+Dual Strike
+Eviscerate
+Expose Armor
+Fan of Knives
+Hit and Run
+Puncture
+Rupture
+Slice
+Sneaky Strike
+Toxic Strike
+Viper Strike
+
+</details>
+
+<details>
   <summary>Defenses</summary>
 
 ## Defenses

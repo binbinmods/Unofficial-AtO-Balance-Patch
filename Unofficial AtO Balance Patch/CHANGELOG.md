@@ -1,3 +1,7 @@
+# Version 1.3.6
+
+Added Warrior and Scout Melee Attacks
+
 # Version 1.3.4 and 1.3.5
 
 Updated Thorns. Added Healing. Added Defenses
