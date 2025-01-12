@@ -206,7 +206,34 @@ New:
 </details>
 
 # Card Modules
+<details>
+  <summary>Ranged Attacks</summary>
 
+## Ranged Attacks
+### Modified Cards
+- Aimed Shot
+- Burning Shot
+- Explosive Shot
+- Far Shot
+- Lethal Shot
+- Multishot
+- Plague Shot
+- Poisonous Shot
+- Poison Spray
+- Rain of Arrows
+- Ricochet
+- Shrapnel Shot
+- Sniper Shot
+- Volley
+
+### New Cards
+- Concealed Shot
+- Concussive Shot
+- Guarded Shot
+- Spray and Pray
+
+
+</details>
 <details>
   <summary>Melee Attacks</summary>
 
@@ -217,7 +244,6 @@ New:
 - Blood Feeding
 - Blood For Blood
 - Butchering
-Carnage
 - Cleave
 - Devastate
 - Divine Strike
@@ -241,25 +267,22 @@ Carnage
 - Feasting Totem
 
 ## Scout Melee Attacks
-Acrobatic Strike
-Ambush
-Backstab
-Bane
-Blade Dance
-Blade Flurry
-Debilitate
-Double Strike
-Dual Strike
-Eviscerate
-Expose Armor
-Fan of Knives
-Hit and Run
-Puncture
-Rupture
-Slice
-Sneaky Strike
-Toxic Strike
-Viper Strike
+- Acrobatic Strike
+- Ambush
+- Backstab
+- Bane
+- Blade Dance
+- Blade Flurry
+- Debilitate
+- Double Strike
+- Dual Strike
+- Eviscerate
+- Expose Armor
+- Fan of Knives
+- Slice
+- Sneaky Strike
+- Toxic Strike
+- Viper Strike
 
 </details>
 

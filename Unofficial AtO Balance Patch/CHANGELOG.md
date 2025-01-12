@@ -1,3 +1,7 @@
+# Version 1.3.7
+
+Added Ranged Attacks. 
+
 # Version 1.3.6
 
 Added Warrior and Scout Melee Attacks
