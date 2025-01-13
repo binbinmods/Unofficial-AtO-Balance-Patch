@@ -204,6 +204,30 @@ New:
 - The Hedgehog
 
 </details>
+# Card Modules
+
+<details>
+  <summary>Fire Spells</summary>
+
+## Fire Spells
+### Modified Cards
+- Combustion
+- Fireball
+- Fire Blast
+- Firestorm
+- Flamestrike
+- Flare
+- Geyser
+- Immolate
+- Inner Combustion
+- Meteorite
+- Meteor Shower
+- Pyroblast
+- Searing Nova
+
+### New Cards
+- Fan the Flames
+</details>
 
 # Card Modules
 <details>
