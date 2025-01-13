@@ -212,34 +212,33 @@ New:
 
 ## Skills
 ### Modified Cards
-Absorption
-Baptism
-Curative Therapy
-Dilute
-Fade
-Prescription
-Tabula Rasa
-Bookworm
-Dark Ritual
-Librarian
-Mirror Images
-Ammunition
-Blur
-Detection
-Find Weakness
-Hunter's Mark
-Music Sheet
-Poisonous Blood
-Sneak Peek
-Vanish
-Vigilance
-Arsenal
-Change Weapon
-Demoralizing Shout
-First Aid
-Intimidate
-Last Stand
-Sharpen
+- Absorption
+- Baptism
+- Curative Therapy
+- Dilute
+- Prescription
+- Tabula Rasa
+- Bookworm
+- Dark Ritual
+- Librarian
+- Mirror Images
+- Ammunition
+- Blur
+- Detection
+- Find Weakness
+- Hunter's Mark
+- Music Sheet
+- Poisonous Blood
+- Sneak Peek
+- Vanish
+- Vigilance
+- Arsenal
+- Change Weapon
+- Demoralizing Shout
+- First Aid
+- Intimidate
+- Piercing Howl
+- Sharpen
 </details>
 
 <details>
@@ -248,13 +247,13 @@ Sharpen
 ## Cold Spells
 ### Modified Cards
 - Blizzard
-Flash Freeze
+- Flash Freeze
 - Frostbolt
 - Icicle
-Squall
+- Squall
 - Water Jet
-Winter Is Coming
-Winter's Night Tale
+- Winter Is Coming
+- Winter's Night Tale
 
 </details>
 

@@ -1,4 +1,10 @@
-# Version 1.3.7
+# Version 1.4.0
+Finished all card modules. This includes Skills, Fire, Cold, and Ranged Attacks.
+
+# Version 1.3.8 (Unreleased)
+Added Fire and Cold Spells.
+
+# Version 1.3.7 (Unreleased)
 
 Added Ranged Attacks. 
 
