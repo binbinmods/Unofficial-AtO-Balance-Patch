@@ -442,5 +442,40 @@ namespace UnofficialBalancePatch
                 }
 
         }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(Character), nameof(Character.IndirectDamage))]
+        public static void IndirectDamagePostfix(
+            ref Character __instance,            
+            Enums.DamageType damageType,
+            ref int damage,
+            AudioClip sound = null,
+            string effect = "",
+            string sourceCharacterName = "",
+            string sourceCharacterId = "")
+        {
+            // bbbcloakofthorns: Increases thorns damage by 20% per charge.
+            PLog("IndirectDamagePostfix");
+            if (MatchManager.Instance==null)
+            {
+                return;
+            }
+
+            Character sourceCharacter = MatchManager.Instance.GetCharacterById(sourceCharacterId);
+            
+            if(AtOManager.Instance.TeamHaveItem("bbbcloakofthornsrare")&&IsLivingHero(sourceCharacter)&&sourceCharacter.HasEffect("mitigate")&&effect=="thorns")
+            {
+                int n_bless = sourceCharacter.GetAuraCharges("mitigate");
+                float multiplier = 1+0.25f*n_bless;
+                damage *= Mathf.RoundToInt(damage*multiplier);
+            }
+            else if(AtOManager.Instance.TeamHaveItem("bbbcloakofthorns")&&IsLivingHero(sourceCharacter)&&sourceCharacter.HasEffect("mitigate")&&effect=="thorns")
+            {
+                int n_bless = sourceCharacter.GetAuraCharges("mitigate");
+                float multiplier = 1+0.15f*n_bless;
+                damage *= Mathf.RoundToInt(damage*multiplier);
+            }
+
+        }
     }
 }
