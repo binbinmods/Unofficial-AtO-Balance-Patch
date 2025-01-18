@@ -370,6 +370,10 @@ namespace UnofficialBalancePatch
                     itemID = "venomamulet";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     break; 
+                case "sight":
+                    itemID = "eeriering";
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    break;
                 case "thorns":
                     itemID = "corruptedplateb";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
