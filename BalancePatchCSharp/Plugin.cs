@@ -83,14 +83,14 @@ namespace UnofficialBalancePatch{
             medsTexts[itemStem + "surprisegiftbox"] = "At the start of your third turn, all heroes gain a significant random buff.";
             medsTexts[itemStem + "surprisegiftboxrare"] = "At the start of your third turn, all heroes gain a significant random buff.";
 
-            medsTexts[itemStem + "bbbportablewallofflames"] = "<size=+.1><sprite name=thorns></size> Charges +1 \n Thorns on this character deal <size=+.1><sprite name=fire></size> damage.";
-            medsTexts[itemStem + "bbbportablewallofflamesrare"] = "<size=+.1><sprite name=thorns></size> Charges +2 \n Thorns on this character deal <size=+.1><sprite name=fire></size> damage.";
+            medsTexts[itemStem + "bbbportablewallofflames"] = "<size=+.1><sprite name=thorns></size> charges +1 \n Thorns on this character deal <space=.3><size=+.1><sprite name=fire></size> damage.";
+            medsTexts[itemStem + "bbbportablewallofflamesrare"] = "<size=+.1><sprite name=thorns></size> charges +2 \n Thorns on this character deal <space=.3><size=+.1><sprite name=fire></size> damage.";
             
-            medsTexts[itemStem + "bbbtreefellingaxe"] = "All Damage +1 \n <size=+.1><sprite name=bleed></size> Charges +1 \n Bleed on enemies cannot be prevented by Buffer or Immunities.";
-            medsTexts[itemStem + "bbbtreefellingaxerare"] = "All Damage +2 \n <size=+.1><sprite name=bleed></size> Charges +2 \n Bleed on enemies cannot be prevented by Buffer or Immunities.";
+            medsTexts[itemStem + "bbbtreefellingaxe"] = "All damage +1 \n <size=+.1><sprite name=bleed></size> charges +1 \n Bleed on enemies cannot be prevented by Buffer or Immunities.";
+            medsTexts[itemStem + "bbbtreefellingaxerare"] = "All damage +2 \n <size=+.1><sprite name=bleed></size> charges +2 \n Bleed on enemies cannot be prevented by Buffer or Immunities.";
             
-            medsTexts[itemStem + "bbbcloackofthorns"] = "All Resistances +5% \n  <size=+.1><sprite name=Mitigate></size> on heroes increases Thorns damage by 15% per charge..";
-            medsTexts[itemStem + "bbbcloackofthornsrare"] = "All Resistances +5% \n  <size=+.1><sprite name=Mitigate></size> on heroes increases Thorns damage by 25% per charge..";
+            medsTexts[itemStem + "bbbcloakofthorns"] = "All resistances +5% \n  <size=+.1><sprite name=mitigate></size> on heroes increases Thorns damage by 15% per charge.";
+            medsTexts[itemStem + "bbbcloakofthornsrare"] = "All resistances +5% \n  <size=+.1><sprite name=mitigate></size> on heroes increases Thorns damage by 25% per charge.";
 
             // apply patches
             harmony.PatchAll();

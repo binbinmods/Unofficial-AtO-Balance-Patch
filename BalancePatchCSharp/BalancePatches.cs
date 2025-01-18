@@ -140,7 +140,7 @@ namespace UnofficialBalancePatch
 
         }
 
-        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare"];
+        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare","bbbtreefellingaxe","bbbtreefellingaxerare","bbbcloakofthorns","bbbcloakofthornsrare","bbbportablewallofflames","bbbportablewallofflamesrare"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
@@ -332,9 +332,9 @@ namespace UnofficialBalancePatch
                     itemID = "yoggercleaver";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
 
-                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbb",AppliesTo.ThisHero)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbportablewallofflamesrare",AppliesTo.ThisHero))
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbtreefellingaxe",AppliesTo.ThisHero)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbtreefellingaxerare",AppliesTo.ThisHero))
                     {
-                        __result.DamageReflectedType = Enums.DamageType.Fire;
+                        __result.Preventable = false;
                     }
 
                     break;

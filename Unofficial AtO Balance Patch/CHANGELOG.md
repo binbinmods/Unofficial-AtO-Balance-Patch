@@ -1,6 +1,10 @@
 # Version 1.4.1
 
-Fixed README, fixed a few Stealth damage cards. Added Portable Wall of Flames, Tree Felling Axe, and Clasp of Thorns.
+Fixed README, fixed a few Stealth damage cards. 
+
+Added Portable Wall of Flames, Tree Felling Axe, and Clasp of Thorns.
+
+Added Transforming Damage items for the damage types that don't already have them.
 
 # Version 1.4.0
 Finished all card modules. This includes Skills, Fire, Cold, and Ranged Attacks.
