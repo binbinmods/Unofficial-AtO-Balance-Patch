@@ -204,8 +204,9 @@ New:
 - The Hedgehog
 
 </details>
-# Card Modules
 
+
+# Card Modules
 
 <details>
   <summary>Skills</summary>
@@ -278,7 +279,6 @@ New:
 
 </details>
 
-# Card Modules
 <details>
   <summary>Ranged Attacks</summary>
 

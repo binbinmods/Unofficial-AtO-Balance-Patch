@@ -378,7 +378,14 @@ namespace UnofficialBalancePatch
                     itemID = "bbbphalanx";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "heartofthorns";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);break;
+                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbportablewallofflames",AppliesTo.ThisHero)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbportablewallofflamesrare",AppliesTo.ThisHero))
+                    {
+                        __result.DamageReflectedType = Enums.DamageType.Fire;
+                    }
+                    
+                    break;
                 case "vitality":
                     itemID = "heartamulet";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);

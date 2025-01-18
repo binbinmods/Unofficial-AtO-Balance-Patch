@@ -83,6 +83,8 @@ namespace UnofficialBalancePatch{
             medsTexts[itemStem + "surprisegiftbox"] = "At the start of your third turn, all heroes gain a significant random buff.";
             medsTexts[itemStem + "surprisegiftboxrare"] = "At the start of your third turn, all heroes gain a significant random buff.";
 
+            medsTexts[itemStem + "bbbportablewallofflames"] = "Thorns on this character deal <size=+.1><sprite name=fire></size> damage.";
+
 
             // apply patches
             harmony.PatchAll();
