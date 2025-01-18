@@ -331,6 +331,12 @@ namespace UnofficialBalancePatch
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "yoggercleaver";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbb",AppliesTo.ThisHero)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbportablewallofflamesrare",AppliesTo.ThisHero))
+                    {
+                        __result.DamageReflectedType = Enums.DamageType.Fire;
+                    }
+
                     break;
                 case "bless":
                     itemID = "topazring";
