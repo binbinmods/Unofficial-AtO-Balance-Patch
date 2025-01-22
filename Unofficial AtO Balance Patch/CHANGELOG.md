@@ -1,3 +1,7 @@
+# Version 1.5.0
+
+Update for AtO version 1.5.0. Updated Electricty Manual. Potential that things aren't working properly
+
 # Version 1.4.1
 
 Fixed README, fixed a few Stealth damage cards. 
