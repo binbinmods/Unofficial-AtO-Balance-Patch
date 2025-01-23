@@ -1,6 +1,12 @@
 # Version 1.5.0
 
-Update for AtO version 1.5.0. Updated Electricty Manual. Potential that things aren't working properly
+Update for AtO version 1.5.0. 
+
+Potential that things aren't working properly.
+
+Updated Electricty Manual.  
+
+Added Slime Poison
 
 # Version 1.4.1
 

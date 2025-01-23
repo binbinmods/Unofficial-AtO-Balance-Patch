@@ -369,6 +369,12 @@ namespace UnofficialBalancePatch
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
                     itemID = "venomamulet";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbslimepoison",AppliesTo.ThisHero)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbslimepoisonrare",AppliesTo.ThisHero))
+                    {
+                        __result.Preventable = false;
+                        __result.Removable = false;
+                    }
                     break; 
                 case "sight":
                     itemID = "eeriering";

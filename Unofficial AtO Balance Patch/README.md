@@ -862,6 +862,10 @@ This module is intended to go along with the release of the Nenukil Update, and 
 - Surprise Gift Box
 - Vicious Mockery
 
+### New Items
+- Slime Poison
+- Tree Killing Axe
+
 </details>
 
 

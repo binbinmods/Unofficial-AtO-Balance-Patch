@@ -89,6 +89,9 @@ namespace UnofficialBalancePatch{
             medsTexts[itemStem + "bbbtreefellingaxe"] = "All damage +1 \n <size=+.1><sprite name=bleed></size> charges +1 \n Bleed on enemies cannot be prevented by Buffer or Immunities.";
             medsTexts[itemStem + "bbbtreefellingaxerare"] = "All damage +2 \n <size=+.1><sprite name=bleed></size> charges +2 \n Bleed on enemies cannot be prevented by Buffer or Immunities.";
             
+            medsTexts[itemStem + "bbbslimepoison"] = "All damage +1 \n <size=+.1><sprite name=poison></size> charges +1 \n Poison on enemies cannot be prevented by Buffer or Immunities, nor can it be Dispelled unless specified.";
+            medsTexts[itemStem + "bbbslimepoisonrare"] = "All damage +2 \n <size=+.1><sprite name=poison></size> charges +2 \n Poison on enemies cannot be prevented by Buffer or Immunities, nor can it be Dispelled unless specified.";
+
             medsTexts[itemStem + "bbbcloakofthorns"] = "All resistances +5% \n  <size=+.1><sprite name=mitigate></size> on heroes increases Thorns damage by 15% per charge.";
             medsTexts[itemStem + "bbbcloakofthornsrare"] = "All resistances +5% \n  <size=+.1><sprite name=mitigate></size> on heroes increases Thorns damage by 25% per charge.";
 
