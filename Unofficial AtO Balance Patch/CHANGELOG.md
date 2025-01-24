@@ -1,3 +1,7 @@
+# Version 1.5.1
+
+Added Slime Poison's custom text
+
 # Version 1.5.0
 
 Update for AtO version 1.5.0. 

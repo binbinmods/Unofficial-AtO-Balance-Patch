@@ -140,7 +140,7 @@ namespace UnofficialBalancePatch
 
         }
 
-        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare","bbbtreefellingaxe","bbbtreefellingaxerare","bbbcloakofthorns","bbbcloakofthornsrare","bbbportablewallofflames","bbbportablewallofflamesrare"];
+        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare","bbbtreefellingaxe","bbbtreefellingaxerare","bbbcloakofthorns","bbbcloakofthornsrare","bbbportablewallofflames","bbbportablewallofflamesrare","bbbslimepoison","bbbslimepoisonrare"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
