@@ -1,6 +1,12 @@
 # Version 1.5.1
 
-Added Slime Poison's custom text
+Added Slime Poison's custom text.
+
+Fixed Spiked Shield
+
+Fixed Ambush
+
+Removed Ambush Attack from being Craftable
 
 # Version 1.5.0
 

@@ -16,7 +16,7 @@
     "UpgradesTo1": "bbbambushattacka",
     "UpgradesTo2": "bbbambushattackb",
     "UpgradesToRare": "bbbambushattackrare",
-    "CardClass": "Scout",
+    "CardClass": "Special",
     "CardType": "Melee_Attack",
     "CardTypeAux": [
         "Attack"
@@ -187,7 +187,7 @@
     "PullTarget": 0,
     "PushTarget": 0,
     "SelfKillHiddenSeconds": 0,
-    "ShowInTome": true,
+    "ShowInTome": false,
     "Starter": false,
     "Visible": false,
     "CardNumber": 0,
