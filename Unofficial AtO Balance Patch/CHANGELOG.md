@@ -4,9 +4,15 @@ Added Slime Poison's custom text.
 
 Fixed Spiked Shield
 
-Fixed Ambush
+Fixed Ambush and Electrify Current
 
 Removed Ambush Attack from being Craftable
+
+Added Splash Potion of Healing, Transmutation Potion
+
+Updated Ice Comet, Ray of Hope, and Smoke Bomb
+
+Added Flask tags to some cards
 
 # Version 1.5.0
 
