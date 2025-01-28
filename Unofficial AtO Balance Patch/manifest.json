@@ -2,7 +2,7 @@
     "name": "Unofficial_AtO_Balance_Patch",
     "version_number": "1.5.1",
     "website_url": "https://github.com/binbinmods/Unofficial-AtO-Balance-Patch",
-    "description": "A modular patch for Across the Obelisk.",
+    "description": "A modular balance patch for Across the Obelisk. Primarily includes new and updated cards and items. Updates a few enemies.",
     "dependencies": [
         "meds-Obeliskial_Content-1.5.0",
         "meds-Obeliskial_Essentials-1.4.0"

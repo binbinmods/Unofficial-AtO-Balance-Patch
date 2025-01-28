@@ -17,7 +17,7 @@
     "UpgradesTo2": "bbbsplashpotionofhealingb",
     "UpgradesToRare": "bbbsplashpotionofhealingrare",
     "CardClass": "Healer",
-    "CardType": "Skill",
+    "CardType": "Flask",
     "CardTypeAux": [],
     "CardName": "Splash Potion of Healing",
     "CardRarity": "Common",

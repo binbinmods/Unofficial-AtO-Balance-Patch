@@ -19,7 +19,7 @@
     "CardClass": "Scout",
     "CardType": "Defense",
     "CardTypeAux": [
-        "Skill"
+        "Flask"
     ],
     "CardName": "Transmutation Potion",
     "CardRarity": "Uncommon",

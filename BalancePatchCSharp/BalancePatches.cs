@@ -171,11 +171,15 @@ namespace UnofficialBalancePatch
                 return;
             }
             
+            // Handles things like +10% Slashing Damage
             HandleAllDamagePercentDescriptions(ref __instance);
+
+
 
             string currentDescription = Globals.Instance.CardsDescriptionNormalized[__instance.Id];
             stringBuilder1.Append(currentDescription);
-
+            
+            // Handles things like On Round 2 or On Turn 2
             if(__instance.Item!=null && __instance.Item.Activation==Enums.EventActivation.BeginTurnCardsDealt&&__instance.Item.ExactRound>=2){
                 LogDebug($"Attempting to alter description for {__instance.Id}");
                 // LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
@@ -187,6 +191,16 @@ namespace UnofficialBalancePatch
                 // LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
                 stringBuilder1.Replace("Every round",$"On round {__instance.Item.ExactRound}");
                 // LogDebug($"Description {__instance.Id} after replace: {stringBuilder1}");
+            }
+
+            // Handles "Heal Sides"
+            if(__instance.HealSides!=0)
+            {
+                LogDebug($"Attempting to alter description for {__instance.Id}");
+                string healSprite = GetSpriteText("heal");
+                string healAmount = NumFormatItem(__instance.HealSides,plus:false);
+                stringBuilder1.Append($"Heal sides {healAmount}{healSprite}");
+
             }
 
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
@@ -490,8 +504,12 @@ namespace UnofficialBalancePatch
                 int n_bless = sourceCharacter.GetAuraCharges("mitigate");
                 float multiplier = 1+0.15f*n_bless;
                 damage *= Mathf.RoundToInt(damage*multiplier);
-            }
+            }            
+        }
 
+        public static string GetSpriteText(string sprite)
+        {
+            return $"<size=+.1><sprite name={sprite}></size>";
         }
     }
 }

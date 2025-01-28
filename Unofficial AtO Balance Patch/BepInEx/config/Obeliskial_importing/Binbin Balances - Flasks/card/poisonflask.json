@@ -17,8 +17,10 @@
     "UpgradesTo2": "poisonflaskb",
     "UpgradesToRare": "poisonflaskrare",
     "CardClass": "Scout",
-    "CardType": "Small_Weapon",
-    "CardTypeAux": ["Flask"],
+    "CardType": "Flask",
+    "CardTypeAux": [
+        "Small_Weapon"
+    ],
     "CardName": "Poison Flask",
     "CardRarity": "Uncommon",
     "Curse": "poison",
