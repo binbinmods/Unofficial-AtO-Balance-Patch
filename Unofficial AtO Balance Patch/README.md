@@ -864,6 +864,7 @@ This module is intended to go along with the release of the Nenukil Update, and 
 - Vicious Mockery
 
 ### New Items
+- Scroll of Pet Immortality
 - Slime Poison
 - Tree Killing Axe
 

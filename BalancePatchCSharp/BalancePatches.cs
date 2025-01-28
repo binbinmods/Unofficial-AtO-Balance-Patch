@@ -140,7 +140,7 @@ namespace UnofficialBalancePatch
 
         }
 
-        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare","bbbtreefellingaxe","bbbtreefellingaxerare","bbbcloakofthorns","bbbcloakofthornsrare","bbbportablewallofflames","bbbportablewallofflamesrare","bbbslimepoison","bbbslimepoisonrare", "bbbscrollofpetimmortality","bbbscrollofpetimmortalityrare"];
+        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare", "bbbtreefellingaxe", "bbbtreefellingaxerare", "bbbcloakofthorns", "bbbcloakofthornsrare", "bbbportablewallofflames", "bbbportablewallofflamesrare", "bbbslimepoison", "bbbslimepoisonrare", "bbbscrollofpetimmortality", "bbbscrollofpetimmortalityrare"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
@@ -151,7 +151,7 @@ namespace UnofficialBalancePatch
                 LogDebug("Null Card");
                 return;
             }
-                
+
             StringBuilder stringBuilder1 = new StringBuilder();
 
             if (cardsWithCustomDescriptions.Contains(__instance.Id))
@@ -170,7 +170,7 @@ namespace UnofficialBalancePatch
                 BinbinNormalizeDescription(ref __instance, stringBuilder1);
                 return;
             }
-            
+
             // Handles things like +10% Slashing Damage
             HandleAllDamagePercentDescriptions(ref __instance);
 
@@ -178,28 +178,31 @@ namespace UnofficialBalancePatch
 
             string currentDescription = Globals.Instance.CardsDescriptionNormalized[__instance.Id];
             stringBuilder1.Append(currentDescription);
-            
+
             // Handles things like On Round 2 or On Turn 2
-            if(__instance.Item!=null && __instance.Item.Activation==Enums.EventActivation.BeginTurnCardsDealt&&__instance.Item.ExactRound>=2){
+            if (__instance.Item != null && __instance.Item.Activation == Enums.EventActivation.BeginTurnCardsDealt && __instance.Item.ExactRound >= 2)
+            {
                 LogDebug($"Attempting to alter description for {__instance.Id}");
                 // LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
-                stringBuilder1.Replace("Every turn",$"On turn {__instance.Item.ExactRound}");
+                stringBuilder1.Replace("Every turn", $"On turn {__instance.Item.ExactRound}");
                 // LogDebug($"Description {__instance.Id} after replace: {stringBuilder1}");
             }
-            if(__instance.Item!=null && __instance.Item.Activation==Enums.EventActivation.BeginRound&&__instance.Item.ExactRound>=2){
+            if (__instance.Item != null && __instance.Item.Activation == Enums.EventActivation.BeginRound && __instance.Item.ExactRound >= 2)
+            {
                 LogDebug($"Attempting to alter description for {__instance.Id}");
                 // LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
-                stringBuilder1.Replace("Every round",$"On round {__instance.Item.ExactRound}");
+                stringBuilder1.Replace("Every round", $"On round {__instance.Item.ExactRound}");
                 // LogDebug($"Description {__instance.Id} after replace: {stringBuilder1}");
             }
 
             // Handles "Heal Sides"
-            if(__instance.HealSides!=0)
+            if (__instance.HealSides != 0)
             {
                 LogDebug($"Attempting to alter description for {__instance.Id}");
                 string healSprite = GetSpriteText("heal");
-                string healAmount = NumFormatItem(__instance.HealSides,plus:false);
-                stringBuilder1.Append($"Heal sides {healAmount}{healSprite}");
+                string healAmount = ColorTextArray("heal", NumFormatItem(__instance.HealSides, plus: false));
+
+                stringBuilder1.Append($"Heal sides {healAmount} {healSprite}");
 
             }
 
@@ -251,12 +254,12 @@ namespace UnofficialBalancePatch
 
         public static void HandleDamagePercentDescription(ref StringBuilder stringBuilder, ItemData itemData, Enums.DamageType damageType, float percentIncrease)
         {
-            if (itemData.Id=="battleaxerare")
+            if (itemData.Id == "battleaxerare")
             {
                 LogDebug(" battleaxerare");
             }
 
-            if (damageType == Enums.DamageType.None|| damageType == Enums.DamageType.All || percentIncrease == 0f)
+            if (damageType == Enums.DamageType.None || damageType == Enums.DamageType.All || percentIncrease == 0f)
                 return;
 
             // LogDebug("itemAllDamages text string - " + Texts.Instance.GetText("itemAllDamages"));
@@ -283,7 +286,7 @@ namespace UnofficialBalancePatch
             // {
             //     stringBuilder.Insert(0,toAdd);
             // }
-            stringBuilder.Insert(0,toAdd);
+            stringBuilder.Insert(0, toAdd);
 
             // "<space=.3><size=+.1><sprite name=fire></size> damage  <nobr><color=#263ABC><size=+.1>+3</color></size></nobr>"
             // stringBuilder.Append(string.Format(Texts.Instance.GetText("itemAllDamages"), (object)NumFormatItem(percentDamageIncrease, true, true)));
@@ -298,10 +301,10 @@ namespace UnofficialBalancePatch
 
             ItemData itemData = __instance.Item;
 
-            if (itemData.DamagePercentBonus==Enums.DamageType.None &&itemData.DamagePercentBonus2==Enums.DamageType.None &&itemData.DamagePercentBonus3==Enums.DamageType.None )
+            if (itemData.DamagePercentBonus == Enums.DamageType.None && itemData.DamagePercentBonus2 == Enums.DamageType.None && itemData.DamagePercentBonus3 == Enums.DamageType.None)
                 return;
 
-            if (__instance.Id=="burningorbrare"||__instance.Id=="frozenorbrare")
+            if (__instance.Id == "burningorbrare" || __instance.Id == "frozenorbrare")
             {
                 LogDebug("Setting Description for " + __instance.Id);
                 // LogDebug("Original CardDescription - " + Globals.Instance.CardsDescriptionNormalized[__instance.Id]);
@@ -342,11 +345,11 @@ namespace UnofficialBalancePatch
             {
                 case "bleed":
                     itemID = "bloodstone";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "yoggercleaver";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
 
-                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbtreefellingaxe",AppliesTo.Monsters)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbtreefellingaxerare",AppliesTo.Monsters))
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, "bbbtreefellingaxe", AppliesTo.Monsters) || IfCharacterHas(characterOfInterest, CharacterHas.Item, "bbbtreefellingaxerare", AppliesTo.Monsters))
                     {
                         __result.Preventable = false;
                     }
@@ -354,76 +357,76 @@ namespace UnofficialBalancePatch
                     break;
                 case "bless":
                     itemID = "topazring";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
-                    break;        
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    break;
                 case "block":
                     itemID = "crusaderhelmet";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     break;
                 case "burn":
                     itemID = "solring";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "ringoffire";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
-                    break;       
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    break;
                 case "chill":
                     itemID = "lunaring";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "neverfrost";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
-                    break;       
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    break;
                 case "crack":
                     itemID = "bronzegear";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "ironkanabo";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
-                    break;       
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    break;
                 case "poison":
                     itemID = "thepolluter";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "venomamulet";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
 
-                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbslimepoison",AppliesTo.Monsters)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbslimepoisonrare",AppliesTo.Monsters))
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, "bbbslimepoison", AppliesTo.Monsters) || IfCharacterHas(characterOfInterest, CharacterHas.Item, "bbbslimepoisonrare", AppliesTo.Monsters))
                     {
                         __result.Preventable = false;
                         // __result.Removable = false;
                     }
-                    break; 
+                    break;
                 case "sight":
                     itemID = "eeriering";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     break;
                 case "thorns":
                     itemID = "corruptedplateb";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "shieldofthorns";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "thornyring";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "yggdrasilroot";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "bbbthehedgehog";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "bbbphalanx";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "heartofthorns";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
-                    
-                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbportablewallofflames",AppliesTo.ThisHero)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbportablewallofflamesrare",AppliesTo.ThisHero))
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, "bbbportablewallofflames", AppliesTo.ThisHero) || IfCharacterHas(characterOfInterest, CharacterHas.Item, "bbbportablewallofflamesrare", AppliesTo.ThisHero))
                     {
                         __result.DamageReflectedType = Enums.DamageType.Fire;
                     }
-                    
+
                     break;
                 case "vitality":
                     itemID = "heartamulet";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
-                    break;     
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    break;
                 case "wet":
                     itemID = "bucket";
-                    UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
-                    break;       
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    break;
             }
 
         }
@@ -431,52 +434,52 @@ namespace UnofficialBalancePatch
         public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, ItemData itemData)
         {
             // Updates Max Madness Charges
-            if (itemData==null)
+            if (itemData == null)
                 return;
-         
-            
+
+
             string itemID = itemData.Id;
-            LogDebug("UpdateChargesByItem: " + itemID);    
-            if(IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID,AppliesTo.Heroes)||IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID+"rare",AppliesTo.Heroes))
+            LogDebug("UpdateChargesByItem: " + itemID);
+            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes) || IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.Heroes))
+            {
+                if (__result.MaxCharges != -1)
                 {
-                    if (__result.MaxCharges!=-1)
-                    {
-                        __result.MaxCharges+=itemData.AuracurseCustomModValue1;
-                    }
-                    if(__result.MaxMadnessCharges!=-1)
-                    {
-                        __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
-                    }
+                    __result.MaxCharges += itemData.AuracurseCustomModValue1;
                 }
+                if (__result.MaxMadnessCharges != -1)
+                {
+                    __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
+                }
+            }
 
         }
 
         public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
         {
-            LogDebug("UpdateChargesByItem: " + itemID);    
-            
-            if(IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID,AppliesTo.Heroes)||IfCharacterHas(characterOfInterest,CharacterHas.Item,itemID+"rare",AppliesTo.Heroes))
-                {
-                    ItemData itemData = Globals.Instance.GetItemData(itemID);
-                    if (itemData==null)
-                        return;
+            LogDebug("UpdateChargesByItem: " + itemID);
 
-                    if (__result.MaxCharges!=-1)
-                    {
-                        __result.MaxCharges+=itemData.AuracurseCustomModValue1;
-                    }                        
-                    if(__result.MaxMadnessCharges!=-1)
-                    {
-                        __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
-                    }
+            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes) || IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.Heroes))
+            {
+                ItemData itemData = Globals.Instance.GetItemData(itemID);
+                if (itemData == null)
+                    return;
+
+                if (__result.MaxCharges != -1)
+                {
+                    __result.MaxCharges += itemData.AuracurseCustomModValue1;
                 }
+                if (__result.MaxMadnessCharges != -1)
+                {
+                    __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
+                }
+            }
 
         }
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(Character), nameof(Character.IndirectDamage))]
         public static void IndirectDamagePostfix(
-            ref Character __instance,            
+            ref Character __instance,
             Enums.DamageType damageType,
             ref int damage,
             AudioClip sound = null,
@@ -486,25 +489,25 @@ namespace UnofficialBalancePatch
         {
             // bbbcloakofthorns: Increases thorns damage by 20% per charge.
             PLog("IndirectDamagePostfix");
-            if (MatchManager.Instance==null)
+            if (MatchManager.Instance == null)
             {
                 return;
             }
 
             Character sourceCharacter = MatchManager.Instance.GetCharacterById(sourceCharacterId);
-            
-            if(AtOManager.Instance.TeamHaveItem("bbbcloakofthornsrare")&&IsLivingHero(sourceCharacter)&&sourceCharacter.HasEffect("mitigate")&&effect=="thorns")
+
+            if (AtOManager.Instance.TeamHaveItem("bbbcloakofthornsrare") && IsLivingHero(sourceCharacter) && sourceCharacter.HasEffect("mitigate") && effect == "thorns")
             {
                 int n_bless = sourceCharacter.GetAuraCharges("mitigate");
-                float multiplier = 1+0.25f*n_bless;
-                damage *= Mathf.RoundToInt(damage*multiplier);
+                float multiplier = 1 + 0.25f * n_bless;
+                damage *= Mathf.RoundToInt(damage * multiplier);
             }
-            else if(AtOManager.Instance.TeamHaveItem("bbbcloakofthorns")&&IsLivingHero(sourceCharacter)&&sourceCharacter.HasEffect("mitigate")&&effect=="thorns")
+            else if (AtOManager.Instance.TeamHaveItem("bbbcloakofthorns") && IsLivingHero(sourceCharacter) && sourceCharacter.HasEffect("mitigate") && effect == "thorns")
             {
                 int n_bless = sourceCharacter.GetAuraCharges("mitigate");
-                float multiplier = 1+0.15f*n_bless;
-                damage *= Mathf.RoundToInt(damage*multiplier);
-            }            
+                float multiplier = 1 + 0.15f * n_bless;
+                damage *= Mathf.RoundToInt(damage * multiplier);
+            }
         }
 
         public static string GetSpriteText(string sprite)
@@ -519,8 +522,8 @@ namespace UnofficialBalancePatch
         {
             LogDebug("DestroyedItemInThisTurnPrefix");
             Hero targetHero = MatchManager.Instance.GetHero(_charIndex);
-            if (targetHero == null) {return true;}
-            if(targetHero.HaveItem("bbbscrollofpetimmortality"))
+            if (targetHero == null) { return true; }
+            if (targetHero.HaveItem("bbbscrollofpetimmortality"))
             {
                 LogDebug("Protecting Pet!");
                 return false;
@@ -531,7 +534,7 @@ namespace UnofficialBalancePatch
         [HarmonyPrefix]
         [HarmonyPatch(typeof(MatchManager), nameof(MatchManager.CreatePet))]
 
-        public static bool CreatePet(MatchManager __instance,     
+        public static bool CreatePet(MatchManager __instance,
             CardData cardPet,
             GameObject charGO,
             Hero _hero,
@@ -542,14 +545,55 @@ namespace UnofficialBalancePatch
         {
             LogDebug("CreatePet");
 
-            if (cardPet == null) {return true;}
+            if (cardPet == null) { return true; }
             // CardData tombstone = Globals.Instance.GetCardData("tombstone", false);
-            if(cardPet.Id=="tombstone" && _hero.HaveItem("bbbscrollofpetimmortality"))
+            if (cardPet.Id == "tombstone" && _hero.HaveItem("bbbscrollofpetimmortality"))
             {
                 LogDebug("Protecting Pet!");
                 return false;
             }
             return true;
+        }
+
+        public static string ColorTextArray(string type, params string[] text)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("<nobr>");
+            switch (type)
+            {
+                case "":
+                    int num = 0;
+                    foreach (string str in text)
+                    {
+                        if (num > 0)
+                            stringBuilder.Append(" ");
+                        stringBuilder.Append(str);
+                        ++num;
+                    }
+                    if (type != "")
+                        stringBuilder.Append("</color>");
+                    stringBuilder.Append("</nobr> ");
+                    return stringBuilder.ToString();
+                case "damage":
+                    stringBuilder.Append("<color=#B00A00>");
+                    goto case "";
+                case "heal":
+                    stringBuilder.Append("<color=#1E650F>");
+                    goto case "";
+                case "aura":
+                    stringBuilder.Append("<color=#263ABC>");
+                    goto case "";
+                case "curse":
+                    stringBuilder.Append("<color=#720070>");
+                    goto case "";
+                case "system":
+                    stringBuilder.Append("<color=#5E3016>");
+                    goto case "";
+                default:
+                    stringBuilder.Append("<color=#5E3016");
+                    stringBuilder.Append(">");
+                    goto case "";
+            }
         }
 
     }

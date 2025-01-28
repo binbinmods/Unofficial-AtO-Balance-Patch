@@ -40,7 +40,7 @@
     "CardNumber": 0,
     "CardRarity": "Epic",
     "CardType": "Skill",
-    "CardTypeAux": [],
+    "CardTypeAux": ["Flask"],
     "CardTypeList": [],
     "CardUpgraded": "A",
     "Corrupted": false,

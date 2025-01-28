@@ -1,3 +1,9 @@
+# Version 1.5.3
+
+Restored Dark Concoction's Rust scaling
+
+Fixed Poison Catalyst, Smoke Bomb, and 
+
 # Version 1.5.2
 
 Fixed some Flask Tags

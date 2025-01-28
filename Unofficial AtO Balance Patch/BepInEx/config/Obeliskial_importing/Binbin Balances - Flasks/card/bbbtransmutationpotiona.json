@@ -23,7 +23,7 @@
     ],
     "CardName": "Transmutation Potion",
     "CardRarity": "Rare",
-    "Curse": "disarm",
+    "Curse": "rust",
     "Curse2": "",
     "Curse3": "",
     "CurseCharges": 0,
