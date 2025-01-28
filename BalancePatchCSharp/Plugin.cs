@@ -97,6 +97,9 @@ namespace UnofficialBalancePatch{
             medsTexts[itemStem + "bbbcloakofthorns"] = "All resistances +5% \n  <size=+.1><sprite name=mitigate></size> on heroes increases Thorns damage by 15% per charge.";
             medsTexts[itemStem + "bbbcloakofthornsrare"] = "All resistances +5% \n  <size=+.1><sprite name=mitigate></size> on heroes increases Thorns damage by 25% per charge.";
 
+            medsTexts[itemStem + "bbbscrollofpetimmortality"] = "Your pet is Immortal!";
+            medsTexts[itemStem + "bbbscrollofpetimmortalityrare"] = "All resistances +5% \n  <size=+.1><sprite name=mitigate></size> on heroes increases Thorns damage by 15% per charge.";
+
             // apply patches
             harmony.PatchAll();
         }

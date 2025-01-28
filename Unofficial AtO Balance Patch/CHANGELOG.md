@@ -1,3 +1,11 @@
+# Version 1.5.2
+
+Fixed some Flask Tags
+
+Fixed Heal Sides text
+
+Added Scroll of Pet Resurrection (Untested)
+
 # Version 1.5.1
 
 Fixed Slime Poison and Tree Felling Axe so they now work properly

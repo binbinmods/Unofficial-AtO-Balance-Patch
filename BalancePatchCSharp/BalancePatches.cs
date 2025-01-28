@@ -140,7 +140,7 @@ namespace UnofficialBalancePatch
 
         }
 
-        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare","bbbtreefellingaxe","bbbtreefellingaxerare","bbbcloakofthorns","bbbcloakofthornsrare","bbbportablewallofflames","bbbportablewallofflamesrare","bbbslimepoison","bbbslimepoisonrare"];
+        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare","bbbtreefellingaxe","bbbtreefellingaxerare","bbbcloakofthorns","bbbcloakofthornsrare","bbbportablewallofflames","bbbportablewallofflamesrare","bbbslimepoison","bbbslimepoisonrare", "bbbscrollofpetimmortality","bbbscrollofpetimmortalityrare"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
@@ -511,5 +511,46 @@ namespace UnofficialBalancePatch
         {
             return $"<size=+.1><sprite name={sprite}></size>";
         }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(MatchManager), nameof(MatchManager.DestroyedItemInThisTurn))]
+
+        public static bool DestroyedItemInThisTurnPrefix(MatchManager __instance, int _charIndex, string _cardId)
+        {
+            LogDebug("DestroyedItemInThisTurnPrefix");
+            Hero targetHero = MatchManager.Instance.GetHero(_charIndex);
+            if (targetHero == null) {return true;}
+            if(targetHero.HaveItem("bbbscrollofpetimmortality"))
+            {
+                LogDebug("Protecting Pet!");
+                return false;
+            }
+            return true;
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(MatchManager), nameof(MatchManager.CreatePet))]
+
+        public static bool CreatePet(MatchManager __instance,     
+            CardData cardPet,
+            GameObject charGO,
+            Hero _hero,
+            NPC _npc,
+            bool _fromEnchant = false,
+            int _enchantIndex = -1)
+
+        {
+            LogDebug("CreatePet");
+
+            if (cardPet == null) {return true;}
+            // CardData tombstone = Globals.Instance.GetCardData("tombstone", false);
+            if(cardPet.Id=="tombstone" && _hero.HaveItem("bbbscrollofpetimmortality"))
+            {
+                LogDebug("Protecting Pet!");
+                return false;
+            }
+            return true;
+        }
+
     }
 }
