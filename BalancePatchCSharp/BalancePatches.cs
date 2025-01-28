@@ -332,7 +332,7 @@ namespace UnofficialBalancePatch
                     itemID = "yoggercleaver";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
 
-                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbtreefellingaxe",AppliesTo.ThisHero)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbtreefellingaxerare",AppliesTo.ThisHero))
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbtreefellingaxe",AppliesTo.Monsters)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbtreefellingaxerare",AppliesTo.Monsters))
                     {
                         __result.Preventable = false;
                     }
@@ -370,7 +370,7 @@ namespace UnofficialBalancePatch
                     itemID = "venomamulet";
                     UpdateMaxMadnessChargesByItem(ref __result,characterOfInterest,itemID);
 
-                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbslimepoison",AppliesTo.ThisHero)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbslimepoisonrare",AppliesTo.ThisHero))
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbslimepoison",AppliesTo.Monsters)||IfCharacterHas(characterOfInterest,CharacterHas.Item,"bbbslimepoisonrare",AppliesTo.Monsters))
                     {
                         __result.Preventable = false;
                         // __result.Removable = false;

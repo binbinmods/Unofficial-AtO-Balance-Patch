@@ -808,6 +808,7 @@ Balance patch to help make thorns more viable. Focuses on improving the card qua
 
 # New Items
 - Phalanx
+- Portable Wall of Flames
 - The Hedgehog
 - Thorned Fist
 

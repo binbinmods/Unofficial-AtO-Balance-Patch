@@ -1,5 +1,7 @@
 # Version 1.5.1
 
+Fixed Slime Poison and Tree Felling Axe so they now work properly
+
 Added Slime Poison's custom text.
 
 Fixed Spiked Shield
