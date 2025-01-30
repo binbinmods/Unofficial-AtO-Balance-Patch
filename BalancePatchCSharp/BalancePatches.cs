@@ -608,6 +608,23 @@ namespace UnofficialBalancePatch
             }
         }
 
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Character), nameof(Character.SetEvent))]
+        public static void SetEventPostfix(ref Character __instance, ref Enums.EventActivation theEvent, Character target = null,int  auxInt = 0, string auxString = "")
+        {
+            LogDebug("SetEventPrefix");
+            if (theEvent==Enums.EventActivation.CastCard)
+            {
+                CardData _castedCard = Traverse.Create(__instance).Field("castedCard").GetValue<CardData>();
+                if (_castedCard!=null && _castedCard.EnergyRecharge != 0 && IsLivingHero(__instance))
+                {
+                    LogDebug("Energy Recharge - giving energy");   
+                    int energyToGain = _castedCard.EffectRepeat != 0 ? _castedCard.EnergyRecharge * _castedCard.EffectRepeat : _castedCard.EnergyRecharge;
+                    __instance.ModifyEnergy(energyToGain, false);
+                }
+            }
+        }
+
 
         
     }
