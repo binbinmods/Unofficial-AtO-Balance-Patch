@@ -218,6 +218,18 @@ namespace UnofficialBalancePatch
 
             }
 
+            if (__instance.Id == "dwarvenhelmet")
+            {
+                LogDebug($"Attempting to alter description for {__instance.Id}");
+                LogDebug($"Current Description {stringBuilder1}");
+                // string energySprite = GetSpriteText("energy");
+                // // stringBuilder1.Replace($"Grant {energySprite}", $"Gain {energySprite}");
+                // stringBuilder1.Replace($"Grant", $"Gain");
+                
+                
+
+            }
+
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
 
         }
