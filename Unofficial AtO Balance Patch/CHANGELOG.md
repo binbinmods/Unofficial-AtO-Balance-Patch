@@ -1,8 +1,16 @@
+# Version 1.5.4
+
+Fixed text descriptions and function for for Energy Recharge.
+
+Fixed Water Jet and Ambush stealth scaling.
+
+Fixed Bunny and Phalanx to work appropriately.
+
 # Version 1.5.3
 
 Restored Dark Concoction's Rust scaling
 
-Fixed Poison Catalyst, Smoke Bomb, and 
+Fixed Poison Catalyst, Smoke Bomb, and other flasks (note you may have to delete the mod's Obeliskial Importing folder then reinstall)
 
 # Version 1.5.2
 

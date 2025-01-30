@@ -138,7 +138,7 @@
     "SelfHealthLossSpecialValue2": false,
     "DrawCardSpecialValueGlobal": false,
     "EnergyRechargeSpecialValueGlobal": false,
-    "SpecialAuraCurseName1": "stealth",
+    "SpecialAuraCurseName1": "stealthbonus",
     "SpecialAuraCurseName2": "",
     "SpecialAuraCurseNameGlobal": "",
     "SpecialValue1": "AuraCurseYours",
