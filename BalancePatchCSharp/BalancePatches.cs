@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using static UnofficialBalancePatch.DescriptionFunctions;
 
 // Make sure your namespace is the same everywhere
 namespace UnofficialBalancePatch
@@ -213,16 +214,20 @@ namespace UnofficialBalancePatch
                 string energySprite = GetSpriteText("energy");
                 // stringBuilder1.Replace($"Grant {energySprite}", $"Gain {energySprite}");
                 stringBuilder1.Replace($"Grant", $"Gain");
-                
-                
-
             }
 
-            if (__instance.Item != null && __instance.DiscardCard > 1 && __instance.Item.CardToGainList.Count == 1)
+            if (__instance.Item != null && __instance.Item.CardNum > 1 && __instance.Item.CardToGainList.Count < 1)
             {
                 LogDebug($"Attempting to alter description for {__instance.Id}");
                 LogDebug($"Current Description {stringBuilder1}");
-                stringBuilder1.Replace($"Cast card", $"Cast card {__instance.DiscardCard}");
+                stringBuilder1.Replace($"cast card", $"cast card {__instance.DiscardCard}");
+            }
+
+            if ((__instance.SpecialAuraCurseName1 != null &&__instance.SpecialAuraCurseName1.Id == "stealthbonus") || (__instance.SpecialAuraCurseNameGlobal != null &&__instance.SpecialAuraCurseNameGlobal.Id == "stealthbonus"))
+            {
+                LogDebug($"Attempting to alter description for {__instance.Id}");
+                LogDebug($"Current Description {stringBuilder1}");
+                stringBuilder1.Replace($"<sprite name=>", $"<sprite name=stealth>");
             }
 
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
@@ -619,7 +624,7 @@ namespace UnofficialBalancePatch
         [HarmonyPatch(typeof(Character), nameof(Character.SetEvent))]
         public static void SetEventPostfix(ref Character __instance, ref Enums.EventActivation theEvent, Character target = null,int  auxInt = 0, string auxString = "")
         {
-            LogDebug("SetEventPrefix");
+            LogDebug("SetEventPosfix");
             if (theEvent==Enums.EventActivation.CastCard)
             {
                 CardData _castedCard = Traverse.Create(__instance).Field("castedCard").GetValue<CardData>();
@@ -631,6 +636,33 @@ namespace UnofficialBalancePatch
                 }
             }
         }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(Item), "DoItemData")]
+
+        public static void DoItemDataPrefix(
+            ref Item __instance,
+            Character target,
+            string itemName,
+            int auxInt,
+            CardData cardItem,
+            ref string itemType,
+            ItemData itemData,
+            Character character,
+            int order,
+            string castedCardId = "",
+            Enums.EventActivation theEvent = Enums.EventActivation.None
+        )
+        {
+            LogDebug("DoItemDataPrefix");
+            if(itemData!=null && (itemData.Id == "bbbfirestarter"||itemData.Id =="bbbfirestarterrare"))
+            {
+                LogDebug("Changing Firestarter");
+                itemData.CardToGainType = Enums.CardType.Fire_Spell;
+            }
+        }
+
+
 
 
         
