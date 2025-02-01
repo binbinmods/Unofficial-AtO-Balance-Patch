@@ -218,16 +218,11 @@ namespace UnofficialBalancePatch
 
             }
 
-            if (__instance.Id == "dwarvenhelmet")
+            if (__instance.Item != null && __instance.DiscardCard > 1 && __instance.Item.CardToGainList.Count == 1)
             {
                 LogDebug($"Attempting to alter description for {__instance.Id}");
                 LogDebug($"Current Description {stringBuilder1}");
-                // string energySprite = GetSpriteText("energy");
-                // // stringBuilder1.Replace($"Grant {energySprite}", $"Gain {energySprite}");
-                // stringBuilder1.Replace($"Grant", $"Gain");
-                
-                
-
+                stringBuilder1.Replace($"Cast card", $"Cast card {__instance.DiscardCard}");
             }
 
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
@@ -628,11 +623,11 @@ namespace UnofficialBalancePatch
             if (theEvent==Enums.EventActivation.CastCard)
             {
                 CardData _castedCard = Traverse.Create(__instance).Field("castedCard").GetValue<CardData>();
-                if (_castedCard!=null && _castedCard.EnergyRecharge != 0 && IsLivingHero(__instance))
+                if (_castedCard!=null && _castedCard.EnergyRecharge > 0 && IsLivingHero(__instance))
                 {
-                    LogDebug("Energy Recharge - giving energy");   
+                    LogDebug($"Energy Recharge - giving energy - {_castedCard.EnergyRecharge}");   
                     int energyToGain = _castedCard.EffectRepeat != 0 ? _castedCard.EnergyRecharge * _castedCard.EffectRepeat : _castedCard.EnergyRecharge;
-                    __instance.ModifyEnergy(energyToGain, false);
+                    __instance.ModifyEnergy(energyToGain, true);
                 }
             }
         }

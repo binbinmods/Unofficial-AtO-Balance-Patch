@@ -1,3 +1,9 @@
+# Version 1.5.5
+
+Updates to Blizzard (Corrupted), Enervate (Corrupted), and Ethereal Flute
+
+Updated Text for Ethereal Flute and Crescent Moon.
+
 # Version 1.5.4
 
 Fixed text descriptions and function for for Energy Recharge.
