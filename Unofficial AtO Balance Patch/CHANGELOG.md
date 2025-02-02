@@ -1,6 +1,10 @@
 # Version 1.5.6
 
-Fixed text for Redemption
+Fixed text for Redemption, 
+
+Fixed Rupture's scaling, and Transmutation Potion not purging Block.
+
+Fixed improper sprite appearing when hovering over courage in perk selection menu.
 
 # Version 1.5.5
 
