@@ -15,7 +15,7 @@ using UnityEngine;
 namespace UnofficialBalancePatch
 {
 
-    [HarmonyPatch] //DO NOT REMOVE/CHANGE
+    // [HarmonyPatch] //DO NOT REMOVE/CHANGE
 
     public class DescriptionFunctions
     {
@@ -23,7 +23,7 @@ namespace UnofficialBalancePatch
         // Prefixes are executed before the original code, postfixes are executed after
         // Then you need to tell Harmony which method to patch.
 
-        private static string NumFormatItem(int num, bool plus = false, bool percent = false)
+        public static string NumFormatItem(int num, bool plus = false, bool percent = false)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append(" <nobr>");
