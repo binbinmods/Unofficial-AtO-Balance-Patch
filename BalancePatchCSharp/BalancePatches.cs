@@ -210,7 +210,7 @@ namespace UnofficialBalancePatch
             if (__instance.Item != null && __instance.Item.CardNum > 1 && __instance.Item.CardToGainList.Count < 1)
             {
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
-                stringBuilder1.Replace($"cast card", $"cast card {__instance.DiscardCard}");
+                stringBuilder1.Replace($"cast card", $"Cast card {__instance.Item.CardNum}");
             }
 
             if ((__instance.SpecialAuraCurseName1 != null &&__instance.SpecialAuraCurseName1.Id == "stealthbonus") || (__instance.SpecialAuraCurseNameGlobal != null &&__instance.SpecialAuraCurseNameGlobal.Id == "stealthbonus"))
@@ -414,22 +414,27 @@ namespace UnofficialBalancePatch
 
         
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(Character), nameof(Character.SetEvent))]
-        public static void SetEventPostfix(ref Character __instance, ref Enums.EventActivation theEvent, Character target = null,int  auxInt = 0, string auxString = "")
-        {
-            LogDebug("SetEventPosfix");
-            if (theEvent==Enums.EventActivation.CastCard)
-            {
-                CardData _castedCard = Traverse.Create(__instance).Field("castedCard").GetValue<CardData>();
-                if (_castedCard!=null && _castedCard.EnergyRecharge > 0 && IsLivingHero(__instance))
-                {
-                    LogDebug($"Energy Recharge - giving energy - {_castedCard.EnergyRecharge}");   
-                    int energyToGain = _castedCard.EffectRepeat != 0 ? _castedCard.EnergyRecharge * _castedCard.EffectRepeat : _castedCard.EnergyRecharge;
-                    __instance.ModifyEnergy(energyToGain, true);
-                }
-            }
-        }
+        // [HarmonyPostfix]
+        // [HarmonyPatch(typeof(Character), nameof(Character.SetEvent))]
+        // public static void SetEventPostfix(ref Character __instance, ref Enums.EventActivation theEvent, Character target = null,int  auxInt = 0, string auxString = "")
+        // {
+        //     // LogDebug("SetEventPostfix");
+        //     if (theEvent==Enums.EventActivation.CastCard)
+        //     {
+        //         LogDebug("SetEventPostfix - CastCard");
+        //         CardData _castedCard = Traverse.Create(__instance).Field("castedCard").GetValue<CardData>();
+        //         if(_castedCard!=null)
+        //         {
+        //             LogDebug($"Casted Card - {_castedCard.Id}");
+        //         }
+        //         if (_castedCard!=null && _castedCard.EnergyRecharge > 0 && IsLivingHero(__instance))
+        //         {
+        //             LogDebug($"Energy Recharge - giving energy - {_castedCard.EnergyRecharge}");   
+        //             int energyToGain = _castedCard.EffectRepeat != 0 ? _castedCard.EnergyRecharge * _castedCard.EffectRepeat : _castedCard.EnergyRecharge;
+        //             __instance.ModifyEnergy(energyToGain, true);
+        //         }
+        //     }
+        // }
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(Item), "DoItemData")]
@@ -455,6 +460,35 @@ namespace UnofficialBalancePatch
                 itemData.CardToGainType = Enums.CardType.Fire_Spell;
             }
         }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(MatchManager), nameof(MatchManager.CastCardAction))]
+
+        public static void CastCardActionPostfix(
+            MatchManager __instance,
+            CardData _cardActive,
+            Transform targetTransformCast,
+            CardItem theCardItem,
+            string _uniqueCastId,
+            bool _automatic = false,
+            CardData _card = null,
+            int _cardIterationTotal = 1)
+        {
+            LogDebug("CastCardActionPostfix");
+            if(_cardActive!=null)
+            {
+                
+                LogDebug($"Casted Card - {_cardActive.Id}");
+                Hero heroActive = __instance.GetHeroHeroActive();
+                if (_cardActive!=null && _cardActive.EnergyRecharge > 0 && IsLivingHero(heroActive))
+                {
+                    LogDebug($"Energy Recharge - giving energy - {_cardActive.EnergyRecharge}");   
+                    int energyToGain = _cardActive.EffectRepeat != 0 ? _cardActive.EnergyRecharge * _cardActive.EffectRepeat : _cardActive.EnergyRecharge;
+                    heroActive.ModifyEnergy(energyToGain, true);
+                }
+            }
+        }
+
       
     }
 }

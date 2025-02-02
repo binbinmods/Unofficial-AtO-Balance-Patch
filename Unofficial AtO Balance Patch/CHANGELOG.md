@@ -1,8 +1,8 @@
 # Version 1.5.5
 
-Updates to Blizzard (Corrupted), Enervate (Corrupted), Sniper Shot, Ambush (Blue), and Ethereal Flute
+Updates to Blizzard (Corrupted), Enervate (Corrupted), Sniper Shot, Ambush (Blue), Dark Pact (Blue), and Ethereal Flute
 
-Updated Text for Ethereal Flute and Crescent Moon.
+Updated Text for Ethereal Flute, The Porcupine, Slingshot, and Crescent Moon.
 
 Fixed text display for Ambush.
 
