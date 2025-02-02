@@ -1,3 +1,7 @@
+# Version 1.5.6
+
+Fixed text for Redemption
+
 # Version 1.5.5
 
 Updates to Blizzard (Corrupted), Enervate (Corrupted), Sniper Shot, Ambush (Blue), Dark Pact (Blue), and Ethereal Flute

@@ -68,7 +68,7 @@
     "EnergyCost": 1,
     "EnergyRecharge": 0,
     "Heal": 0,
-    "HealAuraCurseName": "",
+    "HealAuraCurseName": "block",
     "HealAuraCurseName2": "",
     "HealAuraCurseName3": "",
     "HealAuraCurseName4": "",
