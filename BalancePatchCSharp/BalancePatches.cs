@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
-using static UnofficialBalancePatch.DescriptionFunctions;
+using static UnofficialBalancePatch.BalanceFunctions;
 
 // Make sure your namespace is the same everywhere
 namespace UnofficialBalancePatch
@@ -170,7 +170,11 @@ namespace UnofficialBalancePatch
             HandleAllDamagePercentDescriptions(ref __instance);
 
 
-
+            if(!Globals.Instance.CardsDescriptionNormalized.ContainsKey(__instance.Id))
+            {
+                LogError($"missing card Id {__instance.Id}");
+                return;
+            }
             string currentDescription = Globals.Instance.CardsDescriptionNormalized[__instance.Id];
             stringBuilder1.Append(currentDescription);
 

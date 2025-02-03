@@ -17,7 +17,7 @@ namespace UnofficialBalancePatch
 
     // [HarmonyPatch] //DO NOT REMOVE/CHANGE
 
-    public class DescriptionFunctions
+    public class BalanceFunctions
     {
         // To create a patch, you need to declare either a prefix or a postfix. 
         // Prefixes are executed before the original code, postfixes are executed after
@@ -132,19 +132,18 @@ namespace UnofficialBalancePatch
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
         }
 
-        
+                
 
-        public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, ItemData itemData)
+        public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
         {
-            // Updates Max Madness Charges
-            if (itemData == null)
-                return;
-
-
-            string itemID = itemData.Id;
             LogDebug("UpdateChargesByItem: " + itemID);
-            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes) || IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.Heroes))
+
+            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID+"rare", AppliesTo.Heroes) )
             {
+                ItemData itemData = Globals.Instance.GetItemData(itemID+"rare");
+                if (itemData == null)
+                    return;
+
                 if (__result.MaxCharges != -1)
                 {
                     __result.MaxCharges += itemData.AuracurseCustomModValue1;
@@ -153,15 +152,7 @@ namespace UnofficialBalancePatch
                 {
                     __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
                 }
-            }
-
-        }
-
-        public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
-        {
-            LogDebug("UpdateChargesByItem: " + itemID);
-
-            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes) || IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.Heroes))
+            } else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes) )
             {
                 ItemData itemData = Globals.Instance.GetItemData(itemID);
                 if (itemData == null)

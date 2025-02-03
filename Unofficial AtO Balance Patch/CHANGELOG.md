@@ -6,6 +6,8 @@ Fixed Rupture's scaling, and Transmutation Potion not purging Block.
 
 Fixed improper sprite appearing when hovering over courage in perk selection menu.
 
+Fixed corrupted versions of Restricted Power items. They now do what they say.
+
 # Version 1.5.5
 
 Updates to Blizzard (Corrupted), Enervate (Corrupted), Sniper Shot, Ambush (Blue), Dark Pact (Blue), and Ethereal Flute
