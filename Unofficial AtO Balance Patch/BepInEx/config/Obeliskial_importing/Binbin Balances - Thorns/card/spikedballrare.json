@@ -38,7 +38,7 @@
     "DamageType": "Blunt",
     "Damage2": 1,
     "DamageSelf2": 0,
-    "DamageSides2": 40,
+    "DamageSides2": 1,
     "DamageType2": "Piercing",
     "DamageEnergyBonus": 0,
     "DiscardCard": 0,

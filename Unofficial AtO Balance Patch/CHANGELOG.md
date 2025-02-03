@@ -4,9 +4,11 @@ Vile Gas is now a Flask again.
 
 Fixed Text descriptions for Target Sides = X Damage.
 
-Reworked Spiked Ball.
+Reworked Spiked Ball back to what it was supposed to be.
 
 Added Catalytic Armor, Alembic, Retort, Calcinator, and Steroid Kit.
+
+Reduced rarity of Curse of Madness
 
 # Version 1.5.6
 

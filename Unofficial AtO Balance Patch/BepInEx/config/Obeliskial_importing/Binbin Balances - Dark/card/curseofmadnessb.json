@@ -38,7 +38,7 @@
     "CardClass": "Mage",
     "CardName": "Curse of Madness",
     "CardNumber": 0,
-    "CardRarity": "Rare",
+    "CardRarity": "Uncommon",
     "CardType": "Curse_Spell",
     "CardTypeAux": [
         "Shadow_Spell",
