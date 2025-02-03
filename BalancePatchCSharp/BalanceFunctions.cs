@@ -132,15 +132,15 @@ namespace UnofficialBalancePatch
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
         }
 
-                
+
 
         public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
         {
             LogDebug("UpdateChargesByItem: " + itemID);
 
-            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID+"rare", AppliesTo.Heroes) )
+            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.Heroes))
             {
-                ItemData itemData = Globals.Instance.GetItemData(itemID+"rare");
+                ItemData itemData = Globals.Instance.GetItemData(itemID + "rare");
                 if (itemData == null)
                     return;
 
@@ -152,7 +152,8 @@ namespace UnofficialBalancePatch
                 {
                     __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
                 }
-            } else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes) )
+            }
+            else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes))
             {
                 ItemData itemData = Globals.Instance.GetItemData(itemID);
                 if (itemData == null)
@@ -170,14 +171,59 @@ namespace UnofficialBalancePatch
 
         }
 
-        
 
-        public static string GetSpriteText(string sprite)
+
+        public static string SpriteText(string sprite)
         {
-            return $"<size=+.1><sprite name={sprite}></size>";
+            StringBuilder stringBuilder = new StringBuilder();
+            string text = sprite.ToLower().Replace(" ", "");
+            switch (text)
+            {
+                case "block":
+                case "card":
+                    stringBuilder.Append("<space=.2>");
+                    break;
+                case "piercing":
+                    stringBuilder.Append("<space=.4>");
+                    break;
+                case "bleed":
+                    stringBuilder.Append("<space=.1>");
+                    break;
+                case "bless":
+                    stringBuilder.Append("<space=.1>");
+                    break;
+                default:
+                    stringBuilder.Append("<space=.3>");
+                    break;
+            }
+            stringBuilder.Append(" <space=-.2>");
+            stringBuilder.Append("<size=+.1><sprite name=");
+            stringBuilder.Append(text);
+            stringBuilder.Append("></size>");
+            switch (text)
+            {
+                case "bleed":
+                    stringBuilder.Append("<space=-.4>");
+                    break;
+                case "card":
+                    stringBuilder.Append("<space=-.2>");
+                    break;
+                case "powerful":
+                case "fury":
+                    stringBuilder.Append("<space=-.1>");
+                    break;
+                default:
+                    stringBuilder.Append("<space=-.2>");
+                    break;
+                case "reinforce":
+                case "fire":
+                    break;
+            }
+            return stringBuilder.ToString();
         }
 
-        
+
+
         public static string ColorTextArray(string type, params string[] text)
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -231,6 +277,6 @@ namespace UnofficialBalancePatch
             }
         }
 
-        
+
     }
 }

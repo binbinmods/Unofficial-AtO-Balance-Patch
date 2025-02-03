@@ -197,7 +197,7 @@ namespace UnofficialBalancePatch
             if (__instance.HealSides != 0)
             {
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
-                string healSprite = GetSpriteText("heal");
+                string healSprite = SpriteText("heal");
                 string healAmount = ColorTextArray("heal", NumFormatItem(__instance.HealSides, plus: false));
 
                 stringBuilder1.Append($"Heal sides {healAmount} {healSprite}");
@@ -207,7 +207,7 @@ namespace UnofficialBalancePatch
             if (__instance.EnergyRecharge != 0 && __instance.TargetSide == Enums.CardTargetSide.Enemy)
             {
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
-                string energySprite = GetSpriteText("energy");
+                string energySprite = SpriteText("energy");
                 // stringBuilder1.Replace($"Grant {energySprite}", $"Gain {energySprite}");
                 stringBuilder1.Replace($"Grant", $"Gain");
             }
@@ -225,6 +225,27 @@ namespace UnofficialBalancePatch
             }
 
 
+            
+            
+            if (__instance.DamageSides > 0 && __instance.DamageSpecialValueGlobal)
+            {
+                LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
+
+                Enums.DamageType damageType = __instance.DamageType;
+                string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size> <space=.3><size=+.1>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+                string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size> <space=.3><size=+.1>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+                stringBuilder1.Replace(oldText,newText);
+            }
+
+            if (__instance.DamageSides2 > 0 && __instance.Damage2SpecialValueGlobal)
+            {
+                LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
+
+                Enums.DamageType damageType = __instance.DamageType2;
+                string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size> <space=.3><size=+.1>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+                string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size> <space=.3><size=+.1>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+                stringBuilder1.Replace(oldText,newText);
+            }
 
 
             AppendDescriptionsToCards(__instance, ref stringBuilder1);
@@ -422,29 +443,7 @@ namespace UnofficialBalancePatch
             return true;
         }
 
-        
-
-        // [HarmonyPostfix]
-        // [HarmonyPatch(typeof(Character), nameof(Character.SetEvent))]
-        // public static void SetEventPostfix(ref Character __instance, ref Enums.EventActivation theEvent, Character target = null,int  auxInt = 0, string auxString = "")
-        // {
-        //     // LogDebug("SetEventPostfix");
-        //     if (theEvent==Enums.EventActivation.CastCard)
-        //     {
-        //         LogDebug("SetEventPostfix - CastCard");
-        //         CardData _castedCard = Traverse.Create(__instance).Field("castedCard").GetValue<CardData>();
-        //         if(_castedCard!=null)
-        //         {
-        //             LogDebug($"Casted Card - {_castedCard.Id}");
-        //         }
-        //         if (_castedCard!=null && _castedCard.EnergyRecharge > 0 && IsLivingHero(__instance))
-        //         {
-        //             LogDebug($"Energy Recharge - giving energy - {_castedCard.EnergyRecharge}");   
-        //             int energyToGain = _castedCard.EffectRepeat != 0 ? _castedCard.EnergyRecharge * _castedCard.EffectRepeat : _castedCard.EnergyRecharge;
-        //             __instance.ModifyEnergy(energyToGain, true);
-        //         }
-        //     }
-        // }
+    
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(Item), "DoItemData")]

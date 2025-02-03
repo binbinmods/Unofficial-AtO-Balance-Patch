@@ -19,7 +19,8 @@
     "CardClass": "Healer",
     "CardType": "Shadow_Spell",
     "CardTypeAux": [
-        "Spell"
+        "Spell",
+        "Flask"
     ],
     "CardName": "Vile Gas",
     "CardRarity": "Uncommon",

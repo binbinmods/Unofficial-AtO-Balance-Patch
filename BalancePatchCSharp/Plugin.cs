@@ -79,10 +79,10 @@ namespace UnofficialBalancePatch{
 
             
             // Custom Text for Items
-            medsTexts[itemStem + "surprisebox"] = "At the start of your third turn, gain a significant random buff.";
-            medsTexts[itemStem + "surpriseboxrare"] = "At the start of your third turn, gain a significant random buff.";
-            medsTexts[itemStem + "surprisegiftbox"] = "At the start of your third turn, all heroes gain a significant random buff.";
-            medsTexts[itemStem + "surprisegiftboxrare"] = "At the start of your third turn, all heroes gain a significant random buff.";
+            medsTexts[itemStem + "surprisebox"] = "At the start of the third round, gain a significant random buff.";
+            medsTexts[itemStem + "surpriseboxrare"] = "At the start of the third round, gain a more significant random buff.";
+            medsTexts[itemStem + "surprisegiftbox"] = "At the start of the third round, all heroes gain a significant random buff.";
+            medsTexts[itemStem + "surprisegiftboxrare"] = "At the start of the third round, all heroes gain a more significant random buff.";
 
             medsTexts[itemStem + "bbbportablewallofflames"] = "<size=+.1><sprite name=thorns></size> charges +1 \n Thorns on this character deal <space=.3><size=+.1><sprite name=fire></size> damage.";
             medsTexts[itemStem + "bbbportablewallofflamesrare"] = "<size=+.1><sprite name=thorns></size> charges +2 \n Thorns on this character deal <space=.3><size=+.1><sprite name=fire></size> damage.";
@@ -101,9 +101,8 @@ namespace UnofficialBalancePatch{
             medsTexts[itemStem + "bbbscrollofpetimmortality"] = "Your pet is Immortal!";
             medsTexts[itemStem + "bbbscrollofpetimmortalityrare"] = "Your pet is Immortal!!";
 
-
-            medsTexts[itemStem + "bbbrustedshield"] = $"If this hero has {GetSpriteText("rust")}, {GetSpriteText("thorns")} applies 50% of its charges as {GetSpriteText("poison")} in addition to its normal effects.";
-            medsTexts[itemStem + "bbbrustedshieldrare"] = $"{GetSpriteText("thorns")} applies 75% of its charges as {GetSpriteText("poison")} in addition to its normal effects.";
+            medsTexts[itemStem + "bbbrustedshield"] = $"If this hero has {SpriteText("rust")}, {SpriteText("thorns")} applies 50% of its charges as {SpriteText("poison")} in addition to its normal effects.";
+            medsTexts[itemStem + "bbbrustedshieldrare"] = $"{SpriteText("thorns")} applies 75% of its charges as {SpriteText("poison")} in addition to its normal effects.";
 
             // apply patches
             harmony.PatchAll();

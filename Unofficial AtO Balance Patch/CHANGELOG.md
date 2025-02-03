@@ -1,3 +1,13 @@
+# Version 1.5.7
+
+Vile Gas is now a Flask again.
+
+Fixed Text descriptions for Target Sides = X Damage.
+
+Reworked Spiked Ball.
+
+Added Catalytic Armor, Alembic, Retort, Calcinator, and Steroid Kit.
+
 # Version 1.5.6
 
 Fixed text for Redemption, 
