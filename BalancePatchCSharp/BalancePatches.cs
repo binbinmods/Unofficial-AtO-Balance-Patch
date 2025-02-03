@@ -142,6 +142,7 @@ namespace UnofficialBalancePatch
         }
 
         public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare", "bbbtreefellingaxe", "bbbtreefellingaxerare", "bbbcloakofthorns", "bbbcloakofthornsrare", "bbbportablewallofflames", "bbbportablewallofflamesrare", "bbbslimepoison", "bbbslimepoisonrare", "bbbscrollofpetimmortality", "bbbscrollofpetimmortalityrare"];
+        public static List<string> cardsToAppendDescription = ["bbbrustedshield","bbbrustedshieldrare"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
@@ -223,6 +224,11 @@ namespace UnofficialBalancePatch
                 stringBuilder1.Replace($"<sprite name=>", $"<sprite name=stealth>");
             }
 
+
+
+
+            AppendDescriptionsToCards(__instance, ref stringBuilder1);
+            
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
 
         }
@@ -484,7 +490,7 @@ namespace UnofficialBalancePatch
                 
                 LogDebug($"Casted Card - {_cardActive.Id}");
                 Hero heroActive = __instance.GetHeroHeroActive();
-                if (_cardActive!=null && _cardActive.EnergyRecharge > 0 && IsLivingHero(heroActive))
+                if (_cardActive!=null && _cardActive.EnergyRecharge > 0 && IsLivingHero(heroActive) && _cardActive.TargetSide == Enums.CardTargetSide.Enemy)
                 {
                     LogDebug($"Energy Recharge - giving energy - {_cardActive.EnergyRecharge}");   
                     int energyToGain = _cardActive.EffectRepeat != 0 ? _cardActive.EnergyRecharge * _cardActive.EffectRepeat : _cardActive.EnergyRecharge;
@@ -493,6 +499,33 @@ namespace UnofficialBalancePatch
             }
         }
 
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Character), nameof(Character.DamageReflected))]
+
+        public static void DamageReflectedPostfix(ref Character __instance, Hero theCasterHero, NPC theCasterNPC)
+        {
+            if (IsLivingHero(__instance) || theCasterHero == null)
+                return;
+            
+            LogDebug("DamageReflectedPostfix");
+            AuraCurseData acData = GetAuraCurseData("thorns");
+            if(acData == null || acData.DamageReflectedPerStack <= 0 || theCasterNPC == null)
+            {
+                LogDebug("DamageReflectedPostfix - Null thorns data");
+                return;
+            }
+            if(IfCharacterHas(__instance,CharacterHas.Item, "bbbrustedshieldrare",AppliesTo.ThisHero))
+            {
+                LogDebug("DamageReflectedPostfix - Applying bbbrustedshieldrare Poison");
+   
+                theCasterNPC.SetAura(__instance, GetAuraCurseData("poison"), Functions.FuncRoundToInt((float) __instance.GetAuraCharges("thorns") * 0.75f));
+            }
+            else if (IfCharacterHas(__instance,CharacterHas.Item, "bbbrustedshield",AppliesTo.ThisHero) && __instance.HasEffect("rust"))
+            {
+                LogDebug("DamageReflectedPostfix - Applying bbbrustedshield Poison");
+                theCasterNPC.SetAura(__instance, GetAuraCurseData("poison"), Functions.FuncRoundToInt((float) __instance.GetAuraCharges("thorns") * 0.5f));
+            }
+        }
       
     }
 }

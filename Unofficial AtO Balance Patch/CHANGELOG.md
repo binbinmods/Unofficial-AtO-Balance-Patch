@@ -8,6 +8,10 @@ Fixed improper sprite appearing when hovering over courage in perk selection men
 
 Fixed corrupted versions of Restricted Power items. They now do what they say.
 
+Fixed energy recharge sometimes giving double energy
+
+Changed Rusted Hook. Added Rusted Shield and Rusted Potion.
+
 # Version 1.5.5
 
 Updates to Blizzard (Corrupted), Enervate (Corrupted), Sniper Shot, Ambush (Blue), Dark Pact (Blue), and Ethereal Flute

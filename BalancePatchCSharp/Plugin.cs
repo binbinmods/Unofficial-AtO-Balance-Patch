@@ -6,6 +6,7 @@ using BepInEx.Configuration;
 using HarmonyLib;
 using static Obeliskial_Essentials.Essentials;
 using System;
+using static UnofficialBalancePatch.BalanceFunctions;
 
 
 // The Plugin csharp file is used to 
@@ -99,6 +100,10 @@ namespace UnofficialBalancePatch{
 
             medsTexts[itemStem + "bbbscrollofpetimmortality"] = "Your pet is Immortal!";
             medsTexts[itemStem + "bbbscrollofpetimmortalityrare"] = "Your pet is Immortal!!";
+
+
+            medsTexts[itemStem + "bbbrustedshield"] = $"If this hero has {GetSpriteText("rust")}, {GetSpriteText("thorns")} applies 50% of its charges as {GetSpriteText("poison")} in addition to its normal effects.";
+            medsTexts[itemStem + "bbbrustedshieldrare"] = $"{GetSpriteText("thorns")} applies 75% of its charges as {GetSpriteText("poison")} in addition to its normal effects.";
 
             // apply patches
             harmony.PatchAll();
