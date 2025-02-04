@@ -232,8 +232,8 @@ namespace UnofficialBalancePatch
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
 
                 Enums.DamageType damageType = __instance.DamageType;
-                string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size> <space=.3><size=+.1>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
-                string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size> <space=.3><size=+.1>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+                string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+                string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
                 stringBuilder1.Replace(oldText, newText);
             }
 
@@ -242,8 +242,8 @@ namespace UnofficialBalancePatch
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
 
                 Enums.DamageType damageType = __instance.DamageType2;
-                string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size> <space=.3><size=+.1>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
-                string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size> <space=.3><size=+.1>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+                string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+                string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
                 stringBuilder1.Replace(oldText, newText);
             }
 

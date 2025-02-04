@@ -6,6 +6,14 @@ Changed Catalytic Armor, Alembic, Retort, Calcinator, and Steroid Kit to work wi
 
 Surprise Boxes should only proc on round 3 now.
 
+Fixed text on Spiked Ball
+
+Added Tetanic Wires and Rust Volley.
+
+Reworked Ruin Bolt for more Rust Synergy.
+
+Nerfed King's Presence (Yellow).
+
 # Version 1.5.7
 
 Vile Gas is now a Flask again.
