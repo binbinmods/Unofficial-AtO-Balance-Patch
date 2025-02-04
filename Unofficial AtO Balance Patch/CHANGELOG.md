@@ -1,3 +1,11 @@
+# Version 1.5.8
+
+Electrocute now paralyzes
+
+Changed Catalytic Armor, Alembic, Retort, Calcinator, and Steroid Kit to work with flasks not books.
+
+Surprise Boxes should only proc on round 3 now.
+
 # Version 1.5.7
 
 Vile Gas is now a Flask again.

@@ -25,7 +25,7 @@
     "CardRarity": "Mythic",
     "Curse": "spark",
     "Curse2": "slow",
-    "Curse3": "freeze",
+    "Curse3": "paralyze",
     "CurseCharges": 11,
     "CurseCharges2": 4,
     "CurseCharges3": 0,

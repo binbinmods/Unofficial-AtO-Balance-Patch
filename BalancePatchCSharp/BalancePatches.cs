@@ -142,7 +142,7 @@ namespace UnofficialBalancePatch
         }
 
         public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare", "bbbtreefellingaxe", "bbbtreefellingaxerare", "bbbcloakofthorns", "bbbcloakofthornsrare", "bbbportablewallofflames", "bbbportablewallofflamesrare", "bbbslimepoison", "bbbslimepoisonrare", "bbbscrollofpetimmortality", "bbbscrollofpetimmortalityrare"];
-        public static List<string> cardsToAppendDescription = ["bbbrustedshield","bbbrustedshieldrare"];
+        public static List<string> cardsToAppendDescription = ["bbbrustedshield", "bbbrustedshieldrare"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
@@ -171,7 +171,7 @@ namespace UnofficialBalancePatch
             HandleAllDamagePercentDescriptions(ref __instance);
 
 
-            if(!Globals.Instance.CardsDescriptionNormalized.ContainsKey(__instance.Id))
+            if (!Globals.Instance.CardsDescriptionNormalized.ContainsKey(__instance.Id))
             {
                 LogError($"missing card Id {__instance.Id}");
                 return;
@@ -218,15 +218,15 @@ namespace UnofficialBalancePatch
                 stringBuilder1.Replace($"cast card", $"Cast card {__instance.Item.CardNum}");
             }
 
-            if ((__instance.SpecialAuraCurseName1 != null &&__instance.SpecialAuraCurseName1.Id == "stealthbonus") || (__instance.SpecialAuraCurseNameGlobal != null &&__instance.SpecialAuraCurseNameGlobal.Id == "stealthbonus"))
+            if ((__instance.SpecialAuraCurseName1 != null && __instance.SpecialAuraCurseName1.Id == "stealthbonus") || (__instance.SpecialAuraCurseNameGlobal != null && __instance.SpecialAuraCurseNameGlobal.Id == "stealthbonus"))
             {
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
                 stringBuilder1.Replace($"<sprite name=>", $"<sprite name=stealth>");
             }
 
 
-            
-            
+
+
             if (__instance.DamageSides > 0 && __instance.DamageSpecialValueGlobal)
             {
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
@@ -234,7 +234,7 @@ namespace UnofficialBalancePatch
                 Enums.DamageType damageType = __instance.DamageType;
                 string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size> <space=.3><size=+.1>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
                 string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size> <space=.3><size=+.1>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
-                stringBuilder1.Replace(oldText,newText);
+                stringBuilder1.Replace(oldText, newText);
             }
 
             if (__instance.DamageSides2 > 0 && __instance.Damage2SpecialValueGlobal)
@@ -244,17 +244,17 @@ namespace UnofficialBalancePatch
                 Enums.DamageType damageType = __instance.DamageType2;
                 string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size> <space=.3><size=+.1>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
                 string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size> <space=.3><size=+.1>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
-                stringBuilder1.Replace(oldText,newText);
+                stringBuilder1.Replace(oldText, newText);
             }
 
 
             AppendDescriptionsToCards(__instance, ref stringBuilder1);
-            
+
             BinbinNormalizeDescription(ref __instance, stringBuilder1);
 
         }
 
-        
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(AtOManager), nameof(AtOManager.GlobalAuraCurseModificationByTraitsAndItems))]
         public static void GlobalAuraCurseModificationByTraitsAndItemsPostfixGeneral(ref AtOManager __instance, ref AuraCurseData __result, string _type, string _acId, Character _characterCaster, Character _characterTarget)
@@ -401,7 +401,7 @@ namespace UnofficialBalancePatch
             }
         }
 
-        
+
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(MatchManager), nameof(MatchManager.DestroyedItemInThisTurn))]
@@ -443,88 +443,122 @@ namespace UnofficialBalancePatch
             return true;
         }
 
-    
-
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(Item), "DoItemData")]
+        [HarmonyPatch(typeof(Item), nameof(Item.DoItem))]
 
-        public static void DoItemDataPrefix(
-            ref Item __instance,
-            Character target,
-            string itemName,
-            int auxInt,
-            CardData cardItem,
-            ref string itemType,
-            ItemData itemData,
-            Character character,
+        public static void DoItemPrefix(
+            Enums.EventActivation _theEvent,
+            CardData _cardData,
+            string _item,
+            Character _character,
+            Character _target,
+            int _auxInt,
+            string _auxString,
             int order,
-            string castedCardId = "",
-            Enums.EventActivation theEvent = Enums.EventActivation.None
-        )
+            CardData castedCard,
+            ref bool onlyCheckItemActivation)
         {
-            LogDebug("DoItemDataPrefix");
-            if(itemData!=null && (itemData.Id == "bbbfirestarter"||itemData.Id =="bbbfirestarterrare"))
             {
-                LogDebug("Changing Firestarter");
-                itemData.CardToGainType = Enums.CardType.Fire_Spell;
+                LogDebug("DoItemPrefix");
+                if(MatchManager.Instance==null) {return;}
+                List<string> turn3Items = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare"];
+                if (turn3Items.Contains(_item))
+                {
+                    LogDebug("DoItemPrefix - found surpriseboxes");
+                }
+                if(MatchManager.Instance.GetCurrentRound()!=3 && turn3Items.Contains(_item))
+                {
+                    LogDebug("DoItemPrefix - disabling surpriseboxes");
+                    onlyCheckItemActivation = true;
+                }
+                else
+                {
+                    onlyCheckItemActivation = false;
+                }                
             }
         }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(MatchManager), nameof(MatchManager.CastCardAction))]
 
-        public static void CastCardActionPostfix(
-            MatchManager __instance,
-            CardData _cardActive,
-            Transform targetTransformCast,
-            CardItem theCardItem,
-            string _uniqueCastId,
-            bool _automatic = false,
-            CardData _card = null,
-            int _cardIterationTotal = 1)
-        {
-            LogDebug("CastCardActionPostfix");
-            if(_cardActive!=null)
+            [HarmonyPrefix]
+            [HarmonyPatch(typeof(Item), "DoItemData")]
+
+            public static void DoItemDataPrefix(
+                ref Item __instance,
+                Character target,
+                string itemName,
+                int auxInt,
+                CardData cardItem,
+                ref string itemType,
+                ItemData itemData,
+                Character character,
+                int order,
+                string castedCardId = "",
+                Enums.EventActivation theEvent = Enums.EventActivation.None
+            )
             {
-                
-                LogDebug($"Casted Card - {_cardActive.Id}");
-                Hero heroActive = __instance.GetHeroHeroActive();
-                if (_cardActive!=null && _cardActive.EnergyRecharge > 0 && IsLivingHero(heroActive) && _cardActive.TargetSide == Enums.CardTargetSide.Enemy)
+                LogDebug("DoItemDataPrefix");
+                if (itemData != null && (itemData.Id == "bbbfirestarter" || itemData.Id == "bbbfirestarterrare"))
                 {
-                    LogDebug($"Energy Recharge - giving energy - {_cardActive.EnergyRecharge}");   
-                    int energyToGain = _cardActive.EffectRepeat != 0 ? _cardActive.EnergyRecharge * _cardActive.EffectRepeat : _cardActive.EnergyRecharge;
-                    heroActive.ModifyEnergy(energyToGain, true);
+                    LogDebug("Changing Firestarter");
+                    itemData.CardToGainType = Enums.CardType.Fire_Spell;
                 }
             }
-        }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(Character), nameof(Character.DamageReflected))]
+            [HarmonyPostfix]
+            [HarmonyPatch(typeof(MatchManager), nameof(MatchManager.CastCardAction))]
 
-        public static void DamageReflectedPostfix(ref Character __instance, Hero theCasterHero, NPC theCasterNPC)
-        {
-            if (IsLivingHero(__instance) || theCasterHero == null)
-                return;
-            
-            LogDebug("DamageReflectedPostfix");
-            AuraCurseData acData = GetAuraCurseData("thorns");
-            if(acData == null || acData.DamageReflectedPerStack <= 0 || theCasterNPC == null)
+            public static void CastCardActionPostfix(
+                MatchManager __instance,
+                CardData _cardActive,
+                Transform targetTransformCast,
+                CardItem theCardItem,
+                string _uniqueCastId,
+                bool _automatic = false,
+                CardData _card = null,
+                int _cardIterationTotal = 1)
             {
-                LogDebug("DamageReflectedPostfix - Null thorns data");
-                return;
+                LogDebug("CastCardActionPostfix");
+                if (_cardActive != null)
+                {
+
+                    LogDebug($"Casted Card - {_cardActive.Id}");
+                    Hero heroActive = __instance.GetHeroHeroActive();
+                    if (_cardActive != null && _cardActive.EnergyRecharge > 0 && IsLivingHero(heroActive) && _cardActive.TargetSide == Enums.CardTargetSide.Enemy)
+                    {
+                        LogDebug($"Energy Recharge - giving energy - {_cardActive.EnergyRecharge}");
+                        int energyToGain = _cardActive.EffectRepeat != 0 ? _cardActive.EnergyRecharge * _cardActive.EffectRepeat : _cardActive.EnergyRecharge;
+                        heroActive.ModifyEnergy(energyToGain, true);
+                    }
+                }
             }
-            if(IfCharacterHas(__instance,CharacterHas.Item, "bbbrustedshieldrare",AppliesTo.ThisHero))
+
+            [HarmonyPostfix]
+            [HarmonyPatch(typeof(Character), nameof(Character.DamageReflected))]
+
+            public static void DamageReflectedPostfix(ref Character __instance, Hero theCasterHero, NPC theCasterNPC)
             {
-                LogDebug("DamageReflectedPostfix - Applying bbbrustedshieldrare Poison");
-   
-                theCasterNPC.SetAura(__instance, GetAuraCurseData("poison"), Functions.FuncRoundToInt((float) __instance.GetAuraCharges("thorns") * 0.75f));
+                if (IsLivingHero(__instance) || theCasterHero == null)
+                    return;
+
+                LogDebug("DamageReflectedPostfix");
+                AuraCurseData acData = GetAuraCurseData("thorns");
+                if (acData == null || acData.DamageReflectedPerStack <= 0 || theCasterNPC == null)
+                {
+                    LogDebug("DamageReflectedPostfix - Null thorns data");
+                    return;
+                }
+                if (IfCharacterHas(__instance, CharacterHas.Item, "bbbrustedshieldrare", AppliesTo.ThisHero))
+                {
+                    LogDebug("DamageReflectedPostfix - Applying bbbrustedshieldrare Poison");
+
+                    theCasterNPC.SetAura(__instance, GetAuraCurseData("poison"), Functions.FuncRoundToInt((float)__instance.GetAuraCharges("thorns") * 0.75f));
+                }
+                else if (IfCharacterHas(__instance, CharacterHas.Item, "bbbrustedshield", AppliesTo.ThisHero) && __instance.HasEffect("rust"))
+                {
+                    LogDebug("DamageReflectedPostfix - Applying bbbrustedshield Poison");
+                    theCasterNPC.SetAura(__instance, GetAuraCurseData("poison"), Functions.FuncRoundToInt((float)__instance.GetAuraCharges("thorns") * 0.5f));
+                }
             }
-            else if (IfCharacterHas(__instance,CharacterHas.Item, "bbbrustedshield",AppliesTo.ThisHero) && __instance.HasEffect("rust"))
-            {
-                LogDebug("DamageReflectedPostfix - Applying bbbrustedshield Poison");
-                theCasterNPC.SetAura(__instance, GetAuraCurseData("poison"), Functions.FuncRoundToInt((float) __instance.GetAuraCharges("thorns") * 0.5f));
-            }
+
         }
-      
     }
-}
