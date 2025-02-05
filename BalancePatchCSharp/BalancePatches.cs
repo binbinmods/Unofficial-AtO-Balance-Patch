@@ -560,5 +560,16 @@ namespace UnofficialBalancePatch
                 }
             }
 
+            [HarmonyPrefix]
+            [HarmonyPatch(typeof(Functions), nameof(Functions.GetRandomCardIdByTypeAndRandomRarity))]
+
+            public static bool GetRandomCardIdByTypeAndRandomRarityPrefix(ref string __result, Enums.CardType _cardType)
+            {
+                LogDebug("GetRandomCardIdByTypeAndRandomRarityPrefix");
+                CardData cardData = Globals.Instance.GetCardData(Globals.Instance.CardListByType[_cardType][MatchManager.Instance.GetRandomIntRange(0, Globals.Instance.CardListByType[_cardType].Count)], false);
+                __result = Functions.GetCardByRarity(MatchManager.Instance.GetRandomIntRange(0, 100), cardData);
+                return false;
+            }
+
         }
     }

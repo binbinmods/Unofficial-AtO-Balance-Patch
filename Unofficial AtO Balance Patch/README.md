@@ -21,6 +21,7 @@ Just a couple of Nerfs/Buffs to some enemies
 ### Nerfs
 - Colin
 - Monty
+- Rust King
 
 ### Buffs
 - Rabbit (kind of)

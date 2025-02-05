@@ -1,6 +1,6 @@
 # Version 1.5.8
 
-Electrocute now paralyzes
+Electrocute now paralyzes, Fixed Shield Bash scaling, fixed Foretelling (yellow)
 
 Changed Catalytic Armor, Alembic, Retort, Calcinator, and Steroid Kit to work with flasks not books.
 
@@ -13,6 +13,9 @@ Added Tetanic Wires and Rust Volley.
 Reworked Ruin Bolt for more Rust Synergy.
 
 Nerfed King's Presence (Yellow).
+
+Items can now discover non-Small Weapons properly
+
 
 # Version 1.5.7
 
