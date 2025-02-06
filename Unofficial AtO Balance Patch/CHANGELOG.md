@@ -1,6 +1,10 @@
+# Version 1.5.9
+
+Fixed bug with double procs on turns, items, and enchantments.
+
 # Version 1.5.8
 
-Electrocute now paralyzes, Fixed Shield Bash scaling, fixed Foretelling (yellow)
+Electrocute now paralyzes, fixed Shield Bash scaling, fixed Foretelling (yellow)
 
 Changed Catalytic Armor, Alembic, Retort, Calcinator, and Steroid Kit to work with flasks not books.
 

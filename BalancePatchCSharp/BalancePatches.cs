@@ -466,6 +466,7 @@ namespace UnofficialBalancePatch
                 {
                     LogDebug("DoItemPrefix - found surpriseboxes");
                 }
+
                 if(MatchManager.Instance.GetCurrentRound()!=3 && turn3Items.Contains(_item))
                 {
                     LogDebug("DoItemPrefix - disabling surpriseboxes");
@@ -473,7 +474,7 @@ namespace UnofficialBalancePatch
                 }
                 else
                 {
-                    onlyCheckItemActivation = false;
+                    // onlyCheckItemActivation = false;
                 }                
             }
         }
