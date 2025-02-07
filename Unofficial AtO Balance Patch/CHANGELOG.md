@@ -2,6 +2,8 @@
 
 Fixed bug with double procs on turns, items, and enchantments.
 
+Fixed Immolate (Corrupted).
+
 # Version 1.5.8
 
 Electrocute now paralyzes, fixed Shield Bash scaling, fixed Foretelling (yellow)
