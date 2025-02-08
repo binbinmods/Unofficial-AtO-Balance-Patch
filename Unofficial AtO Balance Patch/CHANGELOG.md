@@ -1,3 +1,7 @@
+# Version 1.6.0
+
+Hawkeye is now Innate
+
 # Version 1.5.9
 
 Fixed bug with double procs on turns, items, and enchantments.
