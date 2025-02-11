@@ -2,6 +2,16 @@
 
 Hawkeye is now Innate
 
+Hopefully fixed Burning Shot (Blue and Rare) damage scaling.
+
+Divine Insight upgrades are now Epic
+
+Retaliator now triggers on skill casts.
+
+Fixed Distillation Flask having the wrong trigger. 
+
+Last Requiem upgrades should now add Prelude. Now scales with proper values.
+
 # Version 1.5.9
 
 Fixed bug with double procs on turns, items, and enchantments.
