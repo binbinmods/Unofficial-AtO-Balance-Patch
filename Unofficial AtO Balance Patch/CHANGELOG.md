@@ -1,3 +1,9 @@
+# Version 1.6.1
+
+Fixed the Clasp of Thorns accidentally squaring the thorns damage.
+
+Fixed excessive logging of UpdateChargesByItem
+
 # Version 1.6.0
 
 Hawkeye is now Innate

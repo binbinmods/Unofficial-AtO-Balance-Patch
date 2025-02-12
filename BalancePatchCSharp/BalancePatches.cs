@@ -224,9 +224,6 @@ namespace UnofficialBalancePatch
                 stringBuilder1.Replace($"<sprite name=>", $"<sprite name=stealth>");
             }
 
-
-
-
             if (__instance.DamageSides > 0 && __instance.DamageSpecialValueGlobal)
             {
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
@@ -389,15 +386,15 @@ namespace UnofficialBalancePatch
 
             if (AtOManager.Instance.TeamHaveItem("bbbcloakofthornsrare") && IsLivingHero(sourceCharacter) && sourceCharacter.HasEffect("mitigate") && effect == "thorns")
             {
-                int n_bless = sourceCharacter.GetAuraCharges("mitigate");
-                float multiplier = 1 + 0.25f * n_bless;
-                damage *= Mathf.RoundToInt(damage * multiplier);
+                int nMitigate = sourceCharacter.GetAuraCharges("mitigate");
+                float multiplier = 1 + 0.25f * nMitigate;
+                damage = Mathf.RoundToInt(damage * multiplier);
             }
             else if (AtOManager.Instance.TeamHaveItem("bbbcloakofthorns") && IsLivingHero(sourceCharacter) && sourceCharacter.HasEffect("mitigate") && effect == "thorns")
             {
-                int n_bless = sourceCharacter.GetAuraCharges("mitigate");
-                float multiplier = 1 + 0.15f * n_bless;
-                damage *= Mathf.RoundToInt(damage * multiplier);
+                int nMitigate = sourceCharacter.GetAuraCharges("mitigate");
+                float multiplier = 1 + 0.15f * nMitigate;
+                damage = Mathf.RoundToInt(damage * multiplier);
             }
         }
 

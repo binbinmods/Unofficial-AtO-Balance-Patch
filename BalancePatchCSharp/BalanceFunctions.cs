@@ -117,12 +117,12 @@ namespace UnofficialBalancePatch
             if (itemData.DamagePercentBonus == Enums.DamageType.None && itemData.DamagePercentBonus2 == Enums.DamageType.None && itemData.DamagePercentBonus3 == Enums.DamageType.None)
                 return;
 
-            if (__instance.Id == "burningorbrare" || __instance.Id == "frozenorbrare")
-            {
-                LogDebug("Setting Description for " + __instance.Id);
+            // if (__instance.Id == "burningorbrare" || __instance.Id == "frozenorbrare")
+            // {
+            //     LogDebug("Setting Description for " + __instance.Id);
                 // LogDebug("Original CardDescription - " + Globals.Instance.CardsDescriptionNormalized[__instance.Id]);
                 // LogDebug("");
-            }
+            // }
 
             stringBuilder1.Append(Globals.Instance.CardsDescriptionNormalized[__instance.Id]);
             HandleDamagePercentDescription(ref stringBuilder1, itemData, __instance.Item.DamagePercentBonus, __instance.Item.DamagePercentBonusValue);
@@ -136,10 +136,11 @@ namespace UnofficialBalancePatch
 
         public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
         {
-            LogDebug("UpdateChargesByItem: " + itemID);
+            
 
             if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.Heroes))
             {
+                LogDebug("UpdateChargesByItem: " + itemID);
                 ItemData itemData = Globals.Instance.GetItemData(itemID + "rare");
                 if (itemData == null)
                     return;
@@ -155,6 +156,7 @@ namespace UnofficialBalancePatch
             }
             else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes))
             {
+                LogDebug("UpdateChargesByItem: " + itemID);
                 ItemData itemData = Globals.Instance.GetItemData(itemID);
                 if (itemData == null)
                     return;
