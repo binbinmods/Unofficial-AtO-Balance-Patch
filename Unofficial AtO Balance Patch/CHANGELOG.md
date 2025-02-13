@@ -1,3 +1,9 @@
+# Version 1.6.2
+
+Added additional Rust cards, courtesy of Jonahds29
+
+Added the Food module
+
 # Version 1.6.1
 
 Fixed the Clasp of Thorns accidentally squaring the thorns damage.
