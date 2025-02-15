@@ -19,6 +19,7 @@
     "CardClass": "Healer",
     "CardType": "Healing_Spell",
     "CardTypeAux": [
+        "Shadow_Spell",
         "Spell"
     ],
     "CardName": "Shadow Mend",

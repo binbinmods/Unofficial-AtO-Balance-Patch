@@ -1,3 +1,11 @@
+# Version 1.6.3
+
+Shadow Mend is now a Shadow Spell
+
+Reckless charge - proper scaling
+
+Amulet of Thorns - no longer displays as having 3 activations per turn
+
 # Version 1.6.2
 
 Added additional Rust cards, courtesy of Jonahds29
@@ -5,6 +13,7 @@ Added additional Rust cards, courtesy of Jonahds29
 Added the Food module
 
 Updated Holy Water
+
 
 # Version 1.6.1
 
