@@ -6,6 +6,10 @@ Reckless charge - proper scaling
 
 Amulet of Thorns - no longer displays as having 3 activations per turn
 
+Unholy Punishment now deals damage as its supposed to
+
+Added Corrupted Chef Apron
+
 # Version 1.6.2
 
 Added additional Rust cards, courtesy of Jonahds29
