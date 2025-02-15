@@ -1,0 +1,19 @@
+{
+  "Name": "Binbin Balances - Restricted Power",
+  "Author": "Binbin",
+  "Description": "Restriced Power Reworks.",
+  "Version": "1.0",
+  "Date": 20241220,
+  "Link": "https://thunderstore.io/c/across-the-obelisk/p/Binbin/Unofficial_AtO_Balance_Patch/",
+  "Dependencies": [
+  "stiffmeds-Obeliskial_Content-1.1.0"
+  ],
+  "ContentFolder": "Binbin Balances - Restricted Power",
+  "Priority": 90,
+  "Type": [
+      "card",
+      "sprite"
+  ],
+  "Comment": "Any additional comments.",
+  "Enabled": true
+}

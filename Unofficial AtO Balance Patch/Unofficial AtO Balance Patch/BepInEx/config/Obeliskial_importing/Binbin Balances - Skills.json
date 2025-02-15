@@ -1,0 +1,19 @@
+{
+  "Name": "Binbin Balances - Skills",
+  "Author": "Binbin",
+  "Description": "QoL improvements for Skills cards.",
+  "Version": "1.0",
+  "Date": 20250108,
+  "Link": "https://thunderstore.io/c/across-the-obelisk/p/Binbin/Unofficial_AtO_Balance_Patch/",
+  "Dependencies": [
+  "stiffmeds-Obeliskial_Content-1.3.0"
+  ],
+  "ContentFolder": "Binbin Balances - Skills",
+  "Priority": 100,
+  "Type": [
+      "card",
+      "sprite"
+  ],
+  "Comment": "Any additional comments.",
+  "Enabled": true
+}

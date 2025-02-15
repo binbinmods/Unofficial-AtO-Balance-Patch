@@ -1,0 +1,20 @@
+{
+    "Name": "Binbin Balances - Nerfs",
+    "Author": "Binbin",
+    "Description": "Nerfs for overused or overtuned cards.",
+    "Version": "1.0",
+    "Date": 20241116,
+    "Link": "https://thunderstore.io/c/across-the-obelisk/p/Binbin/Unofficial_AtO_Balance_Patch/",
+    "Dependencies": [
+		"stiffmeds-Obeliskial_Content-1.1.0"
+    ],
+    "ContentFolder": "Binbin Balances - Nerfs",
+    "Priority": 100,
+    "Type": [
+        "card",
+        "sprite",
+        "npc"
+    ],
+    "Comment": "Any additional comments.",
+    "Enabled": true
+}
