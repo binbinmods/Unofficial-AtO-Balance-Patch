@@ -355,6 +355,8 @@ namespace UnofficialBalancePatch
                 case "vitality":
                     itemID = "heartamulet";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    itemID = "bbbsausagelinknecklace";
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     break;
                 case "wet":
                     itemID = "bucket";

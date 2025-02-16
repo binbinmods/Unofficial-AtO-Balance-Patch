@@ -1,3 +1,8 @@
+# Version 1.6.4
+
+Made a number of items DropOnly that were mistakenly made not.
+
+
 # Version 1.6.3
 
 Shadow Mend is now a Shadow Spell
