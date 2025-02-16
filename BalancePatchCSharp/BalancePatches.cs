@@ -273,9 +273,14 @@ namespace UnofficialBalancePatch
             //     }
             //     LogDebug($"End GACM");
             // }
+            if (!IsLivingHero(characterOfInterest))
+            {
+                return;
+            }
 
             switch (_acId)
             {
+                
                 case "bleed":
                     itemID = "bloodstone";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
@@ -314,6 +319,22 @@ namespace UnofficialBalancePatch
                     itemID = "ironkanabo";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     break;
+                case "dark":
+                    itemID = "blackpyramidrare";
+                    if(characterOfInterest.HaveItem(itemID))
+                    {
+                        __result.ExplodeAtStacks = 34;
+                    }
+                    itemID = "blackpyramid";
+                    if(characterOfInterest.HaveItem(itemID))
+                    {
+                        __result.ExplodeAtStacks = 30;
+                    }
+                    break;    
+                case "mark":
+                    itemID = "hellblade";
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);                    
+                    break;
                 case "poison":
                     itemID = "thepolluter";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
@@ -325,6 +346,10 @@ namespace UnofficialBalancePatch
                         __result.Preventable = false;
                         // __result.Removable = false;
                     }
+                    break;
+                case "powerful":
+                    itemID = "mysticstaff";
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);                    
                     break;
                 case "sight":
                     itemID = "eeriering";
@@ -360,6 +385,8 @@ namespace UnofficialBalancePatch
                     break;
                 case "wet":
                     itemID = "bucket";
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    itemID = "waterskin";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     break;
             }

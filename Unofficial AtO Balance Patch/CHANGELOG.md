@@ -2,6 +2,8 @@
 
 Made a number of items DropOnly that were mistakenly made not.
 
+Added reworks for: Black Pyramid, Brass Lantern, Compass, Cheese, Corsair Hat, Edge of Fury, Elven Cuirass, Hellblade, Matriarch's Claw, Mystic Staff, Pearl Belt, Pirate Grog, Purple Tentacle, Ruby Cuirass, Sahti Pendant, Sea Shell, Tiny Cannon, Waterskin, Wine Bottle
+
 
 # Version 1.6.3
 
