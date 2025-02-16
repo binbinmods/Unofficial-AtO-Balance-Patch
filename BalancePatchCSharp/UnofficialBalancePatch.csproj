@@ -34,11 +34,11 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>../../!libs/Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="com.stiffmeds.obeliskialessentials">
-      <HintPath>../../!libs/Obeliskial_Essentials.dll</HintPath>
+    <Reference Include="Obeliskial_Essentials">
+      <HintPath>../../!libs/com.stiffmeds.obeliskialessentials.dll</HintPath>
     </Reference>
     <Reference Include="com.stiffmeds.obeliskialcontent">
-      <HintPath>../../!libs/Obeliskial_Content.dll</HintPath>
+      <HintPath>../../!libs/com.stiffmeds.obeliskialcontent.dll</HintPath>
     </Reference>
   </ItemGroup>
 

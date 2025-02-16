@@ -10,6 +10,10 @@ Unholy Punishment now deals damage as its supposed to
 
 Added Corrupted Chef Apron
 
+Well Fed from Fork now Vanishes.
+
+Added Sausage Link Necklace
+
 # Version 1.6.2
 
 Added additional Rust cards, courtesy of Jonahds29
@@ -17,7 +21,6 @@ Added additional Rust cards, courtesy of Jonahds29
 Added the Food module
 
 Updated Holy Water
-
 
 # Version 1.6.1
 
