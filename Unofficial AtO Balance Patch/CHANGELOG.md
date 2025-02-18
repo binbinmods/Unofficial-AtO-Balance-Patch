@@ -2,6 +2,12 @@
 
 Harvesting Sickle now activates at the start of turn due to a bug when interacting with pets
 
+Fixed Sneaky Strike and Backstab not scaling off of Stealth correctly
+
+Retaliator no longer procs on itself, not it procs on skill cast.
+
+Attempted fix of corrupted Sniper Shot's OC damage.
+
 # Version 1.6.4
 
 Made a number of items DropOnly that were mistakenly made not.
