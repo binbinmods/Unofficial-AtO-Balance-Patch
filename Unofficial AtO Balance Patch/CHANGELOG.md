@@ -1,3 +1,15 @@
+# Version 1.6.6
+
+Chef Apron no longer procs when damaged due to bugs. Now procs when you play a Food.
+
+Endless Abyss Blue and Purple are now Cold Spells. Yellow now scales with enemies Dark.
+
+Reworked Deep Darkness.
+
+Removed extra copy of Debilitate. Debilitate now properly deals damage based on poison.
+
+Nerfed Blue Poisoned Daggers
+
 # Version 1.6.5
 
 Harvesting Sickle now activates at the start of turn due to a bug when interacting with pets
