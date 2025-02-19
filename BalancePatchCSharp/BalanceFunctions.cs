@@ -136,9 +136,15 @@ namespace UnofficialBalancePatch
 
         public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
         {
+            if (__result==null)
+            {
+                LogDebug("null AuraCurse");
+                return;
+            }
             
+            AppliesTo appliesTo = __result.IsAura ? AppliesTo.Heroes : AppliesTo.Monsters;
 
-            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.Heroes))
+            if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", appliesTo))
             {
                 LogDebug("UpdateChargesByItem: " + itemID);
                 ItemData itemData = Globals.Instance.GetItemData(itemID + "rare");
@@ -154,7 +160,7 @@ namespace UnofficialBalancePatch
                     __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
                 }
             }
-            else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Heroes))
+            else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, appliesTo))
             {
                 LogDebug("UpdateChargesByItem: " + itemID);
                 ItemData itemData = Globals.Instance.GetItemData(itemID);

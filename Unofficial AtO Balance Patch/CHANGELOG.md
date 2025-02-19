@@ -10,6 +10,8 @@ Removed extra copy of Debilitate. Debilitate now properly deals damage based on 
 
 Nerfed Blue Poisoned Daggers
 
+Fixed Bonus Max Charges
+
 # Version 1.6.5
 
 Harvesting Sickle now activates at the start of turn due to a bug when interacting with pets

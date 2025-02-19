@@ -28,7 +28,7 @@ def zip_mods():
     shutil.make_archive(output_name, 'zip', zip_dir)
 
     print("zipping to local")
-    output_name = f"{script_dir}/{mod_dir}"
+    output_name = f"{script_dir}/{mod_dir} Beta"
     shutil.make_archive(output_name, 'zip', zip_dir)
 
 

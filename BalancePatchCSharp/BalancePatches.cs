@@ -159,7 +159,7 @@ namespace UnofficialBalancePatch
             if (cardsWithCustomDescriptions.Contains(__instance.Id))
             {
                 LogDebug("Creating description for " + __instance.Id);
-                LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
+                // LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
 
                 string descriptionId = itemStem + __instance.Id;
                 stringBuilder1.Append(Functions.FormatStringCard(Texts.Instance.GetText(descriptionId)));
