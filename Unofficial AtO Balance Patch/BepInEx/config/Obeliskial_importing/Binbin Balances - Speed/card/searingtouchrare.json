@@ -95,7 +95,7 @@
     "Sprite": "searingtouch",
     "StealAuras": 0,
     "TransferCurses": 0,
-    "TargetPosition": "Slowest",
+    "TargetPosition": "Anywhere",
     "TargetSide": "Enemy",
     "TargetType": "Single",
     "Vanish": true,

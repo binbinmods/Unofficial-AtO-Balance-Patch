@@ -257,6 +257,7 @@ namespace UnofficialBalancePatch
         public static void GlobalAuraCurseModificationByTraitsAndItemsPostfixGeneral(ref AtOManager __instance, ref AuraCurseData __result, string _type, string _acId, Character _characterCaster, Character _characterTarget)
         {
             Character characterOfInterest = _type == "set" ? _characterTarget : _characterCaster;
+            // Character notCharacterOfInterest = _type == "set" ? _characterCaster : _characterTarget;
             string itemID;
             LogDebug("GACM for Balance Patch");
 
@@ -273,7 +274,7 @@ namespace UnofficialBalancePatch
             //     }
             //     LogDebug($"End GACM");
             // }
-            if (!IsLivingHero(characterOfInterest))
+            if (characterOfInterest==null || !characterOfInterest.Alive)
             {
                 return;
             }
@@ -305,7 +306,7 @@ namespace UnofficialBalancePatch
                     itemID = "solring";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "ringoffire";
-                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);                    
                     break;
                 case "chill":
                     itemID = "lunaring";
@@ -320,13 +321,12 @@ namespace UnofficialBalancePatch
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     break;
                 case "dark":
-                    itemID = "blackpyramidrare";
-                    if(characterOfInterest.HaveItem(itemID))
+                    itemID = "blackpyramid";
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item, itemID+"rare",AppliesTo.Monsters))
                     {
                         __result.ExplodeAtStacks = 34;
-                    }
-                    itemID = "blackpyramid";
-                    if(characterOfInterest.HaveItem(itemID))
+                    }                    
+                    else if(IfCharacterHas(characterOfInterest,CharacterHas.Item, itemID,AppliesTo.Monsters))
                     {
                         __result.ExplodeAtStacks = 30;
                     }

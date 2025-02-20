@@ -141,12 +141,19 @@ namespace UnofficialBalancePatch
                 LogDebug("null AuraCurse");
                 return;
             }
+            // if(itemID == "ringoffire")
+            // {
+            //     LogDebug("UpdateChargesByItem: " + itemID );
+            //     LogDebug($"Team have: {itemID} {AtOManager.Instance.TeamHaveItem(itemID)} ");
+            //     LogDebug($"Character have: {itemID} {IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Global)} ");
+            // }
+                 
             
             AppliesTo appliesTo = __result.IsAura ? AppliesTo.Heroes : AppliesTo.Monsters;
 
             if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", appliesTo))
             {
-                LogDebug("UpdateChargesByItem: " + itemID);
+                LogDebug("UpdateChargesByItem: " + itemID + "rare");
                 ItemData itemData = Globals.Instance.GetItemData(itemID + "rare");
                 if (itemData == null)
                     return;
@@ -175,6 +182,9 @@ namespace UnofficialBalancePatch
                 {
                     __result.MaxMadnessCharges += itemData.AuracurseCustomModValue1;
                 }
+
+                LogDebug($"UpdateChargesByItem: {itemID} - post update max charges {__result.MaxMadnessCharges}");
+
             }
 
         }

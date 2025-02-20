@@ -60,7 +60,7 @@
     "AcEnergyBonus2": "",
     "AcEnergyBonus2Quantity": 0,
     "EffectRepeat": 3,
-    "EffectRepeatTarget": null,
+    "EffectRepeatTarget": "Random",
     "EffectRepeatMaxBonus": 0,
     "EffectRepeatModificator": 0,
     "EffectRepeatEnergyBonus": 0,

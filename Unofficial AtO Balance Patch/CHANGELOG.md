@@ -1,3 +1,15 @@
+# Version 1.6.7
+
+Searing Touch (blue and purple) changed to be targetable.
+
+Bonus Max Madness charges now work on Monsters
+
+Harvesting Sickle now procs when you play a Small Weapon rather than every turn
+
+Questionable Aim now randomly targets.
+
+Hopefully fixed Black Pyramid dark explosion charges.
+
 # Version 1.6.6
 
 Chef Apron no longer procs when damaged due to bugs. Now procs when you play a Food.
