@@ -93,7 +93,7 @@
     "Sprite": "shiv",
     "StealAuras": 0,
     "TransferCurses": 0,
-    "TargetPosition": "Anywhere",
+    "TargetPosition": "Random",
     "TargetSide": "Enemy",
     "TargetType": "Single",
     "Vanish": false,

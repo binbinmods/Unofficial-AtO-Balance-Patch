@@ -1,3 +1,25 @@
+# Version 1.6.8
+
+Solar Ray now targets monsters instead of heroes.
+
+Aimed Shot upgrades are now Uncommon
+
+Necromancer Robe no longer shows -0% resistances
+
+Ricochet (white) now jumps
+
+Budgeoning Words now has art (even if it is just Punch)
+
+Increased scaling on Rupture (blue and purple)
+
+Fixed other stealth scaling cards.
+
+Shiv (yellow) now targets random.
+
+Buffed Ice shot (yellow)
+
+Buffed Blitz and made upgrades targetable.
+
 # Version 1.6.7
 
 Searing Touch (blue and purple) changed to be targetable.

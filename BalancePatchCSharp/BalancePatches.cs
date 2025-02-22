@@ -318,7 +318,8 @@ namespace UnofficialBalancePatch
                     itemID = "bronzegear";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "ironkanabo";
-                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);                    
+
                     break;
                 case "dark":
                     itemID = "blackpyramid";

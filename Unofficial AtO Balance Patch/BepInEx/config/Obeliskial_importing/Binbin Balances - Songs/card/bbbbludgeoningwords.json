@@ -94,7 +94,7 @@
     "Sound": "blow",
     "SoundPreAction": "",
     "SoundPreActionFemale": "",
-    "Sprite": "bludgeoningwords",
+    "Sprite": "punch",
     "StealAuras": 0,
     "TransferCurses": 0,
     "TargetPosition": "Anywhere",
