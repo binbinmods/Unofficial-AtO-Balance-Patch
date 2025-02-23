@@ -1,3 +1,19 @@
+# Version 1.6.9
+
+Corrosive Stab (blue and rare) now applies Rust. Fixed weird upgrades.
+
+Hit and Run (white) is now common.
+
+Corrupted Needles now scales on rust.
+
+Updated Charged Lunge, Charge Battery, and Rift Shield
+
+Oxidant (White) is now common
+
+Tourist Map is now uncommon
+
+Updated Vitalizing Serenade
+
 # Version 1.6.8
 
 Solar Ray now targets monsters instead of heroes.

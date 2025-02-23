@@ -20,7 +20,7 @@
     "CardType": "Small_Weapon",
     "CardTypeAux": ["Flask"],
     "CardName": "Dark Concoction",
-    "CardRarity": "Epic",
+    "CardRarity": "Rare",
     "Curse": "poison",
     "Curse2": "dark",
     "Curse3": "",

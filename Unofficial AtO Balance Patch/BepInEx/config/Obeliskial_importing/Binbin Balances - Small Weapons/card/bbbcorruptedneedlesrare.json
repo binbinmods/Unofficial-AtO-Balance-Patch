@@ -138,7 +138,7 @@
     "EnergyRechargeSpecialValueGlobal": false,
     "SpecialAuraCurseName1": "",
     "SpecialAuraCurseName2": "",
-    "SpecialAuraCurseNameGlobal": "decay",
+    "SpecialAuraCurseNameGlobal": "rust",
     "SpecialValue1": "None",
     "SpecialValue2": "None",
     "SpecialValueGlobal": "AuraCurseTarget",
