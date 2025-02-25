@@ -114,7 +114,7 @@
     "AuraCharges3SpecialValueGlobal": false,
     "CurseChargesSpecialValue1": false,
     "CurseChargesSpecialValue2": false,
-    "CurseChargesSpecialValueGlobal": false,
+    "CurseChargesSpecialValueGlobal": true,
     "CurseCharges2SpecialValue1": false,
     "CurseCharges2SpecialValue2": false,
     "CurseCharges2SpecialValueGlobal": false,

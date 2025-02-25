@@ -1,3 +1,11 @@
+# Version 1.7.0
+
+Ground Slam (Rare) now scales properly with crack.
+
+Updated Stats on some thorns items
+
+Exploit openings now scales appropriately
+
 # Version 1.6.9
 
 Corrosive Stab (blue and rare) now applies Rust. Fixed weird upgrades.
@@ -13,6 +21,8 @@ Oxidant (White) is now common
 Tourist Map is now uncommon
 
 Updated Vitalizing Serenade
+
+Exploit Openings (yellow) now scales properly
 
 # Version 1.6.8
 
