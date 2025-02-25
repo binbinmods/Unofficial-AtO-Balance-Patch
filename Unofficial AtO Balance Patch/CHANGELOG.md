@@ -1,3 +1,9 @@
+# Version 1.7.1
+
+Added Time Warp
+
+Updated all corrupted starter equipment
+
 # Version 1.7.0
 
 Ground Slam (Rare) now scales properly with crack.

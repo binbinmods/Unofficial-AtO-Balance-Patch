@@ -104,6 +104,9 @@ namespace UnofficialBalancePatch{
             medsTexts[itemStem + "bbbrustedshield"] = $"If this hero has {SpriteText("rust")}, {SpriteText("thorns")} applies 50% of its charges as {SpriteText("poison")} in addition to its normal effects.";
             medsTexts[itemStem + "bbbrustedshieldrare"] = $"{SpriteText("thorns")} applies 75% of its charges as {SpriteText("poison")} in addition to its normal effects.";
 
+            medsTexts[itemStem + "soullanternrare"] = $"{SpriteText("Dark")} does not explode on this hero.";
+            medsTexts[itemStem + "rocketbootsrare"] = $"All resistances {ColorTextArray("aura","+10%")} \n {SpriteText("Fast")} on this hero can stack.";
+
             // apply patches
             harmony.PatchAll();
         }

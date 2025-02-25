@@ -37,39 +37,39 @@ namespace UnofficialBalancePatch
             switch (randomIntRange)
             {
                 case 0:
-                    charges = isRare ? 6 : 3;
+                    charges = isRare ? 8 : 4;
                     auracurse = "fast";
                     break;
                 case 1:
-                    charges = isRare ? 10 : 5;
+                    charges = isRare ? 20 : 6;
                     auracurse = "powerful";
                     break;
                 case 2:
-                    charges = isRare ? 8 : 4;
+                    charges = isRare ? 14 : 7;
                     auracurse = "bless";
                     break;
                 case 3:
-                    charges = isRare ? 8 : 4;
+                    charges = isRare ? 20 : 10;
                     auracurse = "sharp";
                     break;
                 case 4:
-                    charges = isRare ? 6 : 3;
+                    charges = isRare ? 12 : 5;
                     auracurse = "fortify";
                     break;
                 case 5:
-                    charges = isRare ? 4 : 2;
+                    charges = isRare ? 5 : 3;
                     auracurse = "evasion";
                     break;
                 case 6:
-                    charges = isRare ? 10 : 5;
+                    charges = isRare ? 20 : 10;
                     auracurse = "regeneration";
                     break;
                 case 7:
-                    charges = isRare ? 4 : 2;
+                    charges = isRare ? 6 : 3;
                     auracurse = "mitigate";
                     break;
                 default:
-                    charges = isRare ? 8 : 4;
+                    charges = isRare ? 24 : 12;
                     auracurse = "vitality";
                     break;
             }
@@ -94,23 +94,23 @@ namespace UnofficialBalancePatch
             switch (randomIntRange)
             {
                 case 0:
-                    charges = isRare ? 6 : 3;
+                    charges = isRare ? 8 : 4;
                     auracurse = "fast";
                     break;
                 case 1:
-                    charges = isRare ? 10 : 5;
+                    charges = isRare ? 20 : 6;
                     auracurse = "powerful";
                     break;
                 case 2:
-                    charges = isRare ? 8 : 4;
+                    charges = isRare ? 10 : 5;
                     auracurse = "bless";
                     break;
                 case 3:
-                    charges = isRare ? 8 : 4;
+                    charges = isRare ? 15 : 6;
                     auracurse = "sharp";
                     break;
                 case 4:
-                    charges = isRare ? 6 : 3;
+                    charges = isRare ? 12 : 6;
                     auracurse = "fortify";
                     break;
                 case 5:
@@ -118,15 +118,15 @@ namespace UnofficialBalancePatch
                     auracurse = "evasion";
                     break;
                 case 6:
-                    charges = isRare ? 10 : 5;
+                    charges = isRare ? 20 : 10;
                     auracurse = "regeneration";
                     break;
                 case 7:
-                    charges = isRare ? 4 : 2;
+                    charges = isRare ? 6 : 3;
                     auracurse = "mitigate";
                     break;
                 default:
-                    charges = isRare ? 8 : 4;
+                    charges = isRare ? 24 : 12;
                     auracurse = "vitality";
                     break;
             }
@@ -141,8 +141,8 @@ namespace UnofficialBalancePatch
 
         }
 
-        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare", "bbbtreefellingaxe", "bbbtreefellingaxerare", "bbbcloakofthorns", "bbbcloakofthornsrare", "bbbportablewallofflames", "bbbportablewallofflamesrare", "bbbslimepoison", "bbbslimepoisonrare", "bbbscrollofpetimmortality", "bbbscrollofpetimmortalityrare"];
-        public static List<string> cardsToAppendDescription = ["bbbrustedshield", "bbbrustedshieldrare"];
+        public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare", "bbbtreefellingaxe", "bbbtreefellingaxerare", "bbbcloakofthorns", "bbbcloakofthornsrare", "bbbportablewallofflames", "bbbportablewallofflamesrare", "bbbslimepoison", "bbbslimepoisonrare", "bbbscrollofpetimmortality", "bbbscrollofpetimmortalityrare", "rocketbootsrare"];
+        public static List<string> cardsToAppendDescription = ["bbbrustedshield", "bbbrustedshieldrare", "soullanternrare"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
@@ -331,8 +331,24 @@ namespace UnofficialBalancePatch
                     {
                         __result.ExplodeAtStacks = 30;
                     }
+                    itemID = "soullanternrare";
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item, itemID,AppliesTo.ThisHero))
+                    {
+                        __result.ExplodeAtStacks = 0;    
+                        __result.DamageTypeWhenConsumed = Enums.DamageType.None;
+                        __result.DamageWhenConsumedPerCharge = 0;
+                    }                    
+
                     break;    
-                case "mark":
+                case "fast":
+                    itemID = "rocketbootsrare";
+                    if(IfCharacterHas(characterOfInterest,CharacterHas.Item, itemID,AppliesTo.ThisHero))
+                    {
+                        __result.GainCharges = true;
+                        __result.ConsumeAll = false;
+                    }    
+                    break;
+                 case "mark":
                     itemID = "hellblade";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);                    
                     break;
