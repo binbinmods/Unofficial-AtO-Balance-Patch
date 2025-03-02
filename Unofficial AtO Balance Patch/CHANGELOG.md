@@ -1,3 +1,13 @@
+# Version 1.7.2
+
+Runic Dice and Pandora's Box now proc before your turn.
+
+Zealots robe now gives all resists like it should
+
+Updated Mimy, Inky, Mozzy, Both Cubies, Matey, Floaty
+
+Changed rare versions of: Rocket boots, Soul lantern, Bone Claws, High Chancellor Staff, Power Glove, Timepiece
+
 # Version 1.7.1
 
 Added Time Warp

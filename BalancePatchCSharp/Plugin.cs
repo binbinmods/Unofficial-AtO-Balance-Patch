@@ -106,6 +106,12 @@ namespace UnofficialBalancePatch{
 
             medsTexts[itemStem + "soullanternrare"] = $"{SpriteText("Dark")} does not explode on this hero.";
             medsTexts[itemStem + "rocketbootsrare"] = $"All resistances {ColorTextArray("aura","+10%")} \n {SpriteText("Fast")} on this hero can stack.";
+            medsTexts[itemStem + "boneclawsrare"] = $"{SpriteText("bleed")} does not damage this hero.";
+            medsTexts[itemStem + "mimy"] = $"When you choose not to take an item, gain an extra 15 {SpriteText("currency")}";
+            medsTexts[itemStem + "mimyrare"] = $"When you choose not to take an item, gain an extra 30 {SpriteText("currency")}";
+            medsTexts[itemStem + "mozzy"] = $"{SpriteText("bleed")} on this hero deals damage at the end of turn";
+            medsTexts[itemStem + "mozzyrare"] = $"{SpriteText("bleed")} on this hero deals damage at the end of turn";
+
 
             // apply patches
             harmony.PatchAll();

@@ -295,6 +295,18 @@ namespace UnofficialBalancePatch
             }
         }
 
+        public static void PrependDescriptionsToCards(CardData __instance, ref StringBuilder stringBuilder1)
+        {
+            if (BalancePatches.cardsToPrependDescription.Contains(__instance.Id))
+            {
+                LogDebug("Creating description for " + __instance.Id);
+                LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
+
+                string descriptionId = itemStem + __instance.Id;
+                stringBuilder1.Insert(0,Functions.FormatStringCard(Texts.Instance.GetText(descriptionId)));
+            }
+        }
+
 
     }
 }
