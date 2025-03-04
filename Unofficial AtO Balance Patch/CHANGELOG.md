@@ -1,3 +1,7 @@
+# Version 1.7.3
+
+Added Melancholic Armor (WIP)
+
 # Version 1.7.2
 
 Runic Dice and Pandora's Box now proc before your turn.

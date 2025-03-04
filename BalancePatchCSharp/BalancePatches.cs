@@ -142,7 +142,7 @@ namespace UnofficialBalancePatch
         }
 
         public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare", "bbbtreefellingaxe", "bbbtreefellingaxerare", "bbbcloakofthorns", "bbbcloakofthornsrare", "bbbportablewallofflames", "bbbportablewallofflamesrare", "bbbslimepoison", "bbbslimepoisonrare", "bbbscrollofpetimmortality", "bbbscrollofpetimmortalityrare", "rocketbootsrare"];
-        public static List<string> cardsToAppendDescription = ["bbbrustedshield", "bbbrustedshieldrare", "soullanternrare", "boneclawsrare", "mozzy","mozzyrare"];
+        public static List<string> cardsToAppendDescription = ["bbbrustedshield", "bbbrustedshieldrare", "soullanternrare", "boneclawsrare", "mozzy","mozzyrare", "bbbmelancholicarmor", "bbbmelancholicarmorare"];
         public static List<string> cardsToPrependDescription = ["mimy", "mimyrare"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
@@ -656,5 +656,55 @@ namespace UnofficialBalancePatch
 
         }
 
+
+
+
+                
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(MatchManager), "GenerateDecksNPCs")]
+
+        public static void GenerateDecksNPCsPostfix(MatchManager __instance, NPC[] ___TeamNPC, int _npcIndex = -1)
+        {
+            LogDebug("GenerateDecksNPCsPostfix");
+            // Dictionary<string, int> cardsToAdd = new(){{ "whack", 1 }};
+            string cardToAdd = "bbbsadm";
+            int nToAdd = AtOManager.Instance.TeamHaveItem("bbbmelancholicarmorare") ? 2 : 1;
+            bool condition = AtOManager.Instance.TeamHaveItem("bbbmelancholicarmor") || AtOManager.Instance.TeamHaveItem("bbbmelancholicarmorare");
+            if (condition)
+            {
+                List<string>[] NPCDeck = Traverse.Create(__instance).Field("NPCDeck").GetValue<List<string>[]>();
+                for (int index1 = 0; index1 < ___TeamNPC.Length; ++index1)
+                {
+                    if ((_npcIndex <= -1 || index1 == _npcIndex) && ___TeamNPC[index1] != null && !((UnityEngine.Object)___TeamNPC[index1].NpcData == (UnityEngine.Object)null))
+                    { 
+                        for (int i = 0; i < nToAdd; i++)
+                        {
+                            // int randomIndex = Functions.Random(0,__instance.CountNPCDeck(index1),AtOManager.Instance.GetGameId()+AtOManager.Instance.currentMapNode + ___TeamNPC[index1].InternalId);
+                            int randomIndex = __instance.GetRandomIntRange(0,__instance.CountNPCDeck(index1));
+                            LogDebug($"Adding card {cardToAdd} to NPC {___TeamNPC[index1].InternalId} in index {index1} with NPCindex {_npcIndex} at position {randomIndex}");
+                            NPCDeck[index1].Insert(randomIndex,cardToAdd);
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(NPC), "BeginRound")]
+
+        public static void BeginRoundPostfix(NPC __instance)//, NPC[] ___TeamNPC, int _npcIndex = -1)
+        {
+            // int specifiedRound = -1;
+            // string cardToAdd = "whack";
+            // if (AtOManager.Instance.TeamHaveItem("gildedplateb") && MatchManager.Instance.GetCurrentRound() == specifiedRound)
+            // {
+            //     MatchManager.Instance.AddCardToNPCDeck(__instance.NPCIndex, cardToAdd, __instance.InternalId);
+            // }
+
+        }
+
+        
     }
 }

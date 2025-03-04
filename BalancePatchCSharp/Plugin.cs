@@ -112,6 +112,8 @@ namespace UnofficialBalancePatch{
             medsTexts[itemStem + "mozzy"] = $"{SpriteText("bleed")} on this hero deals damage at the end of turn";
             medsTexts[itemStem + "mozzyrare"] = $"{SpriteText("bleed")} on this hero deals damage at the end of turn";
 
+            medsTexts[itemStem + "bbbmelancholicarmor"] = $"At the start of combat, shuffle {ColorTextArray("", NumFormatItem(1), SpriteText("card"))}<color=#5E3016>Sad</color> into each monster's Draw Pile";
+            medsTexts[itemStem + "bbbmelancholicarmorare"] = $"At the start of combat, shuffle {ColorTextArray("", NumFormatItem(2), SpriteText("card"))}<color=#5E3016>Sad</color> into each monster's Draw Pile";
 
             // apply patches
             harmony.PatchAll();
