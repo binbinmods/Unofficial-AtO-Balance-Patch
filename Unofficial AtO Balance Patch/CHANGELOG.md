@@ -1,6 +1,10 @@
+# Version 1.7.4
+
+Corrupted Needles now scales properly on rust
+
 # Version 1.7.3
 
-Added Melancholic Armor (WIP)
+Added Melancholic Armor 
 
 # Version 1.7.2
 
