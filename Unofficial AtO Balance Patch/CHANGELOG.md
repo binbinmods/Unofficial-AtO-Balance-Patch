@@ -2,6 +2,14 @@
 
 Corrupted Needles now scales properly on rust
 
+Fixed rusted shield bug 
+
+Hopefully fixed backstab (yellow) scaling
+
+Inky now properly applies rust rather than disamr
+
+Updated Undeath Ichor
+
 # Version 1.7.3
 
 Added Melancholic Armor 

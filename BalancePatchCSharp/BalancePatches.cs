@@ -599,12 +599,12 @@ namespace UnofficialBalancePatch
 
         public static void DamageReflectedPostfix(ref Character __instance, Hero theCasterHero, NPC theCasterNPC)
         {
-            if (IsLivingHero(__instance) || theCasterHero == null)
+            if (!IsLivingHero(__instance) || theCasterHero == null || theCasterNPC == null)
                 return;
 
             LogDebug("DamageReflectedPostfix");
             AuraCurseData acData = GetAuraCurseData("thorns");
-            if (acData == null || acData.DamageReflectedPerStack <= 0 || theCasterNPC == null)
+            if (acData == null || acData.DamageReflectedPerStack <= 0)
             {
                 LogDebug("DamageReflectedPostfix - Null thorns data");
                 return;
