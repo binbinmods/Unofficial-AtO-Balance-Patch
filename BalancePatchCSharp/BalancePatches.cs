@@ -668,7 +668,12 @@ namespace UnofficialBalancePatch
             LogDebug("GenerateDecksNPCsPostfix");
             // Dictionary<string, int> cardsToAdd = new(){{ "whack", 1 }};
             string cardToAdd = "bbbsadm";
-            int nToAdd = AtOManager.Instance.TeamHaveItem("bbbmelancholicarmorare") ? 2 : 1;
+            int nToAdd = 1;
+            if (AtOManager.Instance.TeamHaveItem("bbbmelancholicarmorare"))
+            {
+                cardToAdd = "bbbsadma";
+                nToAdd = 2;
+            }
             bool condition = AtOManager.Instance.TeamHaveItem("bbbmelancholicarmor") || AtOManager.Instance.TeamHaveItem("bbbmelancholicarmorare");
             if (condition)
             {

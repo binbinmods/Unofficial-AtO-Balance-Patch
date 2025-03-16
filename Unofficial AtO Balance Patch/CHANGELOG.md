@@ -1,3 +1,7 @@
+# Version 1.7.5
+
+Updated Melancholic Armor (white) to shuffle vanishing Sads
+
 # Version 1.7.4
 
 Corrupted Needles now scales properly on rust
