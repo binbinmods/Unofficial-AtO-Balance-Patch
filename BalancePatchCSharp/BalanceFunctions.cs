@@ -61,8 +61,6 @@ namespace UnofficialBalancePatch
             Globals.Instance.CardsDescriptionNormalized[__instance.Id] = stringBuilder.ToString();
             __instance.DescriptionNormalized = descriptionNormalized;
             Traverse.Create(__instance).Field("descriptionNormalized").SetValue(descriptionNormalized);
-
-
         }
 
         public static void HandleDamagePercentDescription(ref StringBuilder stringBuilder, ItemData itemData, Enums.DamageType damageType, float percentIncrease)

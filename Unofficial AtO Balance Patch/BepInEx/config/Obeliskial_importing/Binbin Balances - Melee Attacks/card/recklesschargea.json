@@ -39,7 +39,7 @@
     "Damage2": 0,
     "DamageSelf2": 0,
     "DamageSides2": 0,
-    "DamageType2": "Blunt",
+    "DamageType2": "None",
     "DamageEnergyBonus": 0,
     "DiscardCard": 0,
     "DiscardCardAutomatic": false,

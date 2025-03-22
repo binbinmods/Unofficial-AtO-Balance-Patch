@@ -2,6 +2,20 @@
 
 Updated Melancholic Armor (white) to shuffle vanishing Sads
 
+Updated Brace of Knives text
+
+Updated Reckless Charge text
+
+Changed Tesseract
+
+Nerfed Aimed shot (blue and purple) 
+
+Nerfed Far Shot (yellow and purple)
+
+Changed Compass (purple) and Warbanner (purple) to proc every round rather than every turn.
+
+
+
 # Version 1.7.4
 
 Corrupted Needles now scales properly on rust
