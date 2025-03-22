@@ -1,3 +1,15 @@
+# Version 1.7.8
+
+Potentially fixed an issue with Chefs Apron desyncing
+
+Fixed Charge (white) scaling
+
+Fixed Mana Shield (yellow) to give base block (and removed insulate). Improved scaling.
+
+Added Kite/Large Shield changes
+
+Updated Common Armors
+
 # Version 1.7.5
 
 Updated Melancholic Armor (white) to shuffle vanishing Sads

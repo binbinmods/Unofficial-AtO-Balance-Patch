@@ -367,6 +367,9 @@ namespace UnofficialBalancePatch
                 case "mark":
                     itemID = "hellblade";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    itemID = "redsteelcloack";
+                    UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+
                     break;
                 case "poison":
                     itemID = "thepolluter";
@@ -535,11 +538,10 @@ namespace UnofficialBalancePatch
                 }
                 else
                 {
-                    if(_item == "bbbchefsapron" || _item == "bbbchefsapronrare" || _item == "bbbchefsknife" || _item == "bbbchefknifesrare" )
+                    if(_item == "bbbchefsapron" || _item == "bbbchefsapronrare" || _item == "bbbchefsknife" || _item == "bbbchefskniferare" )
                     {
-                        LogDebug("Attempting to generate food");
+                        // LogDebug("Attempting to generate food");
                         _cardData.Item.CardToGainType = Enums.CardType.Food;
-                        // _cardData.CardToGainType = Enums.CardType.Fire_Spell;
                     }
                     // onlyCheckItemActivation = false;
                 }
