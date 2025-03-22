@@ -535,6 +535,12 @@ namespace UnofficialBalancePatch
                 }
                 else
                 {
+                    if(_item == "bbbchefsapron" || _item == "bbbchefsapronrare" || _item == "bbbchefsknife" || _item == "bbbchefknifesrare" )
+                    {
+                        LogDebug("Attempting to generate food");
+                        _cardData.Item.CardToGainType = Enums.CardType.Food;
+                        // _cardData.CardToGainType = Enums.CardType.Fire_Spell;
+                    }
                     // onlyCheckItemActivation = false;
                 }
             }
@@ -628,7 +634,45 @@ namespace UnofficialBalancePatch
         public static bool GetRandomCardIdByTypeAndRandomRarityPrefix(ref string __result, Enums.CardType _cardType)
         {
             LogDebug("GetRandomCardIdByTypeAndRandomRarityPrefix");
-            CardData cardData = Globals.Instance.GetCardData(Globals.Instance.CardListByType[_cardType][MatchManager.Instance.GetRandomIntRange(0, Globals.Instance.CardListByType[_cardType].Count)], false);
+            int randInt = MatchManager.Instance.GetRandomIntRange(0, Globals.Instance.CardListByType[_cardType].Count);
+            if (Globals.Instance.CardListByType[_cardType].Count == 0)
+            {
+                LogDebug("No cards found");
+                return false;
+            }
+            if (_cardType == Enums.CardType.Food)
+            {
+                LogDebug("trying to generate food");                
+            }
+            string cardId = Globals.Instance.CardListByType[_cardType][randInt];
+            if (_cardType == Enums.CardType.Food)
+            {
+                LogDebug($"Food we are trying to generate: {cardId}");                
+            }
+            CardData cardData;
+            if (_cardType == Enums.CardType.Food)
+            {
+                randInt = MatchManager.Instance.GetRandomIntRange(0, 100);
+                if (randInt > 75)
+                {
+                    cardData = Globals.Instance.GetCardData(cardId, false);
+                    if(cardData.UpgradesToRare != null)
+                    {
+                        __result = cardData.UpgradesToRare.Id;
+                    }
+                    else
+                    {
+                        __result = cardId;
+                    }
+                }
+                else
+                {
+                    __result = cardId;
+                }
+                return false;
+            }
+            cardData = Globals.Instance.GetCardData(cardId, false);
+            // CardData cardData = Globals.Instance.GetCardData(Globals.Instance.CardListByType[_cardType][MatchManager.Instance.GetRandomIntRange(0, Globals.Instance.CardListByType[_cardType].Count)], false);
             __result = Functions.GetCardByRarity(MatchManager.Instance.GetRandomIntRange(0, 100), cardData);
             return false;
         }

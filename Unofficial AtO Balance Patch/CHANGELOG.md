@@ -14,7 +14,9 @@ Nerfed Far Shot (yellow and purple)
 
 Changed Compass (purple) and Warbanner (purple) to proc every round rather than every turn.
 
+Added artwork to Tetanic Wires and Feasting Totem
 
+Hopefully fixed an issue with generated foods crashing the game
 
 # Version 1.7.4
 

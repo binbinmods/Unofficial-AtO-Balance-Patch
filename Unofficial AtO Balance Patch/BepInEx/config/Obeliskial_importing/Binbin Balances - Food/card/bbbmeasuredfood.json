@@ -17,7 +17,7 @@
     "UpgradesTo2": "",
     "UpgradesToRare": "bbbmeasuredfoodrare",
     "CardClass": "Special",
-    "CardType": "Food",
+    "CardType": "Skill",
     "CardTypeAux": [],
     "CardName": "Measured Food",
     "CardRarity": "Uncommon",
