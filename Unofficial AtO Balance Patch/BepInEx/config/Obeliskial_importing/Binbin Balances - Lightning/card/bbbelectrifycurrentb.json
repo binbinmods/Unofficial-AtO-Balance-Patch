@@ -36,7 +36,7 @@
     "Damage": 0,
     "DamageSelf": 0,
     "DamageSides": 0,
-    "DamageType": "Lightning",
+    "DamageType": "None",
     "Damage2": 0,
     "DamageSelf2": 0,
     "DamageSides2": 0,

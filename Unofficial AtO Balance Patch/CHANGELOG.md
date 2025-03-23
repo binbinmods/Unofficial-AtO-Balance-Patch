@@ -1,4 +1,4 @@
-# Version 1.7.8
+# Version 1.7.6
 
 Potentially fixed an issue with Chefs Apron desyncing
 
@@ -9,6 +9,12 @@ Fixed Mana Shield (yellow) to give base block (and removed insulate). Improved s
 Added Kite/Large Shield changes
 
 Updated Common Armors
+
+Added change to Redsteel Cloak
+
+Electrify Current no longer displays lightning damage when it doesn't do any
+
+Updated Undeath Ichor to no longer proc on death
 
 # Version 1.7.5
 
