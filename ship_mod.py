@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     source = f"{script_dir}/{dir_to_ship}/BepInEx/config/Obeliskial_importing"
-    destination = f"../../config/Obeliskial_importing"
+    destination = f"{script_dir}/../../config/Obeliskial_importing"
     
     copy_directory(source, destination)
 

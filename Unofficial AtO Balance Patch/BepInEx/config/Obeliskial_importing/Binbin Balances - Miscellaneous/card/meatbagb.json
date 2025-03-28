@@ -15,7 +15,7 @@
     "UpgradedFrom": "meatbag",
     "UpgradesTo1": "",
     "UpgradesTo2": "",
-    "UpgradesToRare": "",
+    "UpgradesToRare": "meatbagrare",
     "CardClass": "Item",
     "CardType": "Accesory",
     "CardTypeAux": [],

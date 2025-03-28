@@ -1,3 +1,7 @@
+# Version 1.7.7
+
+Meat Bag now properly gets corrupted
+
 # Version 1.7.6
 
 Potentially fixed an issue with Chefs Apron desyncing
