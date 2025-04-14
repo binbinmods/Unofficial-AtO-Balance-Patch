@@ -19,6 +19,7 @@
     "CardClass": "Healer",
     "CardType": "Shadow_Spell",
     "CardTypeAux": [
+        "Curse_Spell",
         "Spell"
     ],
     "CardName": "Condemnation",
@@ -49,7 +50,7 @@
     "DispelAuras": 0,
     "DrawCard": 0,
     "EffectCastCenter": false,
-    "EffectCaster": null,
+    "EffectCaster": "",
     "EffectCasterRepeat": false,
     "EffectPreAction": "",
     "EffectTarget": "shadowcondem",

@@ -2,6 +2,12 @@
 
 Meat Bag now properly gets corrupted
 
+Added updates for Clarity
+
+Condemnation is now a curse
+
+Decreased rarit on Entomb
+
 # Version 1.7.6
 
 Potentially fixed an issue with Chefs Apron desyncing

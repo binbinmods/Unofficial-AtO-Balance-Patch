@@ -19,6 +19,7 @@
     "CardClass": "Healer",
     "CardType": "Shadow_Spell",
     "CardTypeAux": [
+        "Curse_Spell",
         "Spell"
     ],
     "CardName": "Condemnation",
