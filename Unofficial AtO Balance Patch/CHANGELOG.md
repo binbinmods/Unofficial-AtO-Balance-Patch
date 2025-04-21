@@ -6,7 +6,21 @@ Added updates for Clarity
 
 Condemnation is now a curse
 
-Decreased rarit on Entomb
+Decreased rarity on Entomb
+
+Added Dielectric Breakdown.
+
+Spectral Explosion (white) is now Rare
+
+Binding Heal (Yellow) now heals for the same amount as White
+
+Added Circle of Healing and Thorneater
+
+Nerfed Spectral Assault a bit, made its upgrades Epic
+
+Winter Orb (White only) nerfed to have -1 repeat
+
+Prayer of Healing now can dispel Slow when upgraded
 
 # Version 1.7.6
 
