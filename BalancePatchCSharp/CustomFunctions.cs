@@ -30,7 +30,7 @@ namespace UnofficialBalancePatch
         public static void PLog(string s)
         {
             Plugin.Log.LogDebug(debugBase + s);
-        }        
+        }
 
         /// <summary>
         /// Indirect healing for Traits (Ottis's Shielder, Malukah's Voodoo etc)
@@ -593,7 +593,8 @@ namespace UnofficialBalancePatch
         {
             Perk,
             Item,
-            Trait
+            Trait,
+            Enchantment
         }
 
         /// <summary>
@@ -671,6 +672,9 @@ namespace UnofficialBalancePatch
                     case CharacterHas.Trait:
                         hasX = AtOManager.Instance.CharacterHaveTrait(characterOfInterest.SubclassName, perkBase + id) || AtOManager.Instance.CharacterHaveTrait(characterOfInterest.SubclassName, id);
                         break;
+                    case CharacterHas.Enchantment:
+                        hasX = CharacterHaveEnchantment(characterOfInterest, id);
+                        break;
                 }
             }
             else
@@ -685,6 +689,14 @@ namespace UnofficialBalancePatch
                         break;
                     case CharacterHas.Trait:
                         hasX = AtOManager.Instance.TeamHaveTrait(perkBase + id) || AtOManager.Instance.TeamHaveTrait(id);
+                        break;
+                    case CharacterHas.Enchantment:
+                        hasX = AtOManager.Instance.TeamHaveItem(itemStem + id) ||
+                               AtOManager.Instance.TeamHaveItem(itemStem + id + "a") ||
+                               AtOManager.Instance.TeamHaveItem(itemStem + id + "b") ||
+                               AtOManager.Instance.TeamHaveItem(id) ||
+                               AtOManager.Instance.TeamHaveItem(id + "a") ||
+                               AtOManager.Instance.TeamHaveItem(id + "b");
                         break;
                 }
             }
@@ -1015,5 +1027,66 @@ namespace UnofficialBalancePatch
                 }
             }
         }
+
+        /// <summary>
+        /// Checks to see if a character has an enchantment
+        /// </summary>
+        /// <param name="character">character you are checking</param>
+        /// <param name="id">id of the enchantment</param>
+        /// <returns></returns>
+        public static bool CharacterHaveEnchantment(Character character, string id)
+        {
+            if (AtOManager.Instance == null)
+            {
+                return false;
+            }
+
+            string characterId = character.SubclassName;
+            return CharacterHaveEnchantment(characterId, id);
+        }
+
+        /// <summary>
+        /// Checks to see if a character has an enchantment
+        /// </summary>
+        /// <param name="characterId">character you are checking</param>
+        /// <param name="id">id of the enchantment</param>
+        /// <returns></returns>
+        public static bool CharacterHaveEnchantment(string characterId, string id)
+        {
+            if (AtOManager.Instance == null)
+            {
+                return false;
+            }
+
+            return AtOManager.Instance.CharacterHaveItem(characterId, itemStem + id) ||
+                    AtOManager.Instance.CharacterHaveItem(characterId, itemStem + id + "a") ||
+                    AtOManager.Instance.CharacterHaveItem(characterId, itemStem + id + "b") ||
+                    AtOManager.Instance.CharacterHaveItem(characterId, id) ||
+                    AtOManager.Instance.CharacterHaveItem(characterId, id + "a") ||
+                    AtOManager.Instance.CharacterHaveItem(characterId, id + "b");
+        }
+
+
+        /// <summary>
+        /// Checks to see if the team has a particular enchantment
+        /// </summary>
+        /// <param name="id">Enchantment to check</param>
+        /// <returns></returns>
+        public static bool TeamHaveEnchantment(string id)
+        {
+            if (AtOManager.Instance == null)
+            {
+                return false;
+            }
+
+            return AtOManager.Instance.TeamHaveItem(itemStem + id) ||
+                   AtOManager.Instance.TeamHaveItem(itemStem + id + "a") ||
+                   AtOManager.Instance.TeamHaveItem(itemStem + id + "b") ||
+                   AtOManager.Instance.TeamHaveItem(id) ||
+                   AtOManager.Instance.TeamHaveItem(id + "a") ||
+                   AtOManager.Instance.TeamHaveItem(id + "b");
+        }
+
+
     }
 }

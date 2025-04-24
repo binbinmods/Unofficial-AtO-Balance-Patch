@@ -142,8 +142,8 @@ namespace UnofficialBalancePatch
         }
 
         public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare", "bbbtreefellingaxe", "bbbtreefellingaxerare", "bbbcloakofthorns", "bbbcloakofthornsrare", "bbbportablewallofflames", "bbbportablewallofflamesrare", "bbbslimepoison", "bbbslimepoisonrare", "bbbscrollofpetimmortality", "bbbscrollofpetimmortalityrare", "rocketbootsrare"];
-        public static List<string> cardsToAppendDescription = ["bbbrustedshield", "bbbrustedshieldrare", "soullanternrare", "boneclawsrare", "mozzy","mozzyrare", "bbbmelancholicarmor", "bbbmelancholicarmorare"];
-        public static List<string> cardsToPrependDescription = ["mimy", "mimyrare"];
+        public static List<string> cardsToAppendDescription = ["bbbrustedshield", "bbbrustedshieldrare", "soullanternrare", "boneclawsrare", "mozzy", "mozzyrare", "bbbmelancholicarmor", "bbbmelancholicarmorare"];
+        public static List<string> cardsToPrependDescription = ["mimy", "mimyrare", "captainspresencered", "captainspresencereda", "captainspresenceredb", "captainspresenceblack", "captainspresenceblacka", "captainspresenceblackb"];
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
@@ -303,7 +303,7 @@ namespace UnofficialBalancePatch
                     }
 
                     itemID = "mozzy";
-                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.ThisHero) || IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.ThisHero) )
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.ThisHero) || IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", AppliesTo.ThisHero))
                     {
                         __result.ConsumedAtTurn = true;
                         __result.ConsumedAtTurnBegin = false;
@@ -323,6 +323,12 @@ namespace UnofficialBalancePatch
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
                     itemID = "ringoffire";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    itemID = "captainspresencered";
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Enchantment, itemID, AppliesTo.ThisHero))
+                    {
+                        __result.Preventable = false;
+                        __result.Removable = false;
+                    }
                     break;
                 case "chill":
                     itemID = "lunaring";
@@ -392,6 +398,13 @@ namespace UnofficialBalancePatch
                 case "sight":
                     itemID = "eeriering";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
+                    break;
+                case "scourge":
+                    itemID = "captainspresenceblack";
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Enchantment, itemID, AppliesTo.ThisHero))
+                    {
+                        __result.GainCharges = true;
+                    }
                     break;
                 case "thorns":
                     itemID = "corruptedplateb";
@@ -538,7 +551,7 @@ namespace UnofficialBalancePatch
                 }
                 else
                 {
-                    if(_item == "bbbchefsapron" || _item == "bbbchefsapronrare" || _item == "bbbchefsknife" || _item == "bbbchefskniferare" )
+                    if (_item == "bbbchefsapron" || _item == "bbbchefsapronrare" || _item == "bbbchefsknife" || _item == "bbbchefskniferare")
                     {
                         // LogDebug("Attempting to generate food");
                         _cardData.Item.CardToGainType = Enums.CardType.Food;
@@ -644,12 +657,12 @@ namespace UnofficialBalancePatch
             }
             if (_cardType == Enums.CardType.Food)
             {
-                LogDebug("trying to generate food");                
+                LogDebug("trying to generate food");
             }
             string cardId = Globals.Instance.CardListByType[_cardType][randInt];
             if (_cardType == Enums.CardType.Food)
             {
-                LogDebug($"Food we are trying to generate: {cardId}");                
+                LogDebug($"Food we are trying to generate: {cardId}");
             }
             CardData cardData;
             if (_cardType == Enums.CardType.Food)
@@ -658,7 +671,7 @@ namespace UnofficialBalancePatch
                 if (randInt > 75)
                 {
                     cardData = Globals.Instance.GetCardData(cardId, false);
-                    if(cardData.UpgradesToRare != null)
+                    if (cardData.UpgradesToRare != null)
                     {
                         __result = cardData.UpgradesToRare.Id;
                     }
@@ -681,7 +694,7 @@ namespace UnofficialBalancePatch
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(LootManager), nameof(LootManager.LootGold))]
-        public static void LootGoldPrefix(LootManager __instance,  bool ___isMyLoot, bool[] ___looted, int ___activeCharacter, List<int> ___characterOrder, bool comingFromNet = false)
+        public static void LootGoldPrefix(LootManager __instance, bool ___isMyLoot, bool[] ___looted, int ___activeCharacter, List<int> ___characterOrder, bool comingFromNet = false)
         {
 
             if (!comingFromNet && !___isMyLoot || ___looted == null || ___activeCharacter > ___looted.Length || ___activeCharacter >= 4)
@@ -689,12 +702,12 @@ namespace UnofficialBalancePatch
             // ___looted[___activeCharacter] = true;
             Hero hero = AtOManager.Instance.GetHero(___characterOrder[___activeCharacter]);
             int goldQuantity;
-            if(IfCharacterHas(hero,CharacterHas.Item,"mimyrare",AppliesTo.Heroes))
+            if (IfCharacterHas(hero, CharacterHas.Item, "mimyrare", AppliesTo.Heroes))
             {
                 goldQuantity = 30;
                 AtOManager.Instance.GivePlayer(0, goldQuantity, hero.Owner);
             }
-            else if (IfCharacterHas(hero,CharacterHas.Item,"mimy",AppliesTo.Heroes))
+            else if (IfCharacterHas(hero, CharacterHas.Item, "mimy", AppliesTo.Heroes))
             {
                 goldQuantity = 15;
                 AtOManager.Instance.GivePlayer(0, goldQuantity, hero.Owner);
@@ -705,7 +718,7 @@ namespace UnofficialBalancePatch
 
 
 
-                
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(MatchManager), "GenerateDecksNPCs")]
 
@@ -727,13 +740,13 @@ namespace UnofficialBalancePatch
                 for (int index1 = 0; index1 < ___TeamNPC.Length; ++index1)
                 {
                     if ((_npcIndex <= -1 || index1 == _npcIndex) && ___TeamNPC[index1] != null && !((UnityEngine.Object)___TeamNPC[index1].NpcData == (UnityEngine.Object)null))
-                    { 
+                    {
                         for (int i = 0; i < nToAdd; i++)
                         {
                             // int randomIndex = Functions.Random(0,__instance.CountNPCDeck(index1),AtOManager.Instance.GetGameId()+AtOManager.Instance.currentMapNode + ___TeamNPC[index1].InternalId);
-                            int randomIndex = __instance.GetRandomIntRange(0,__instance.CountNPCDeck(index1));
+                            int randomIndex = __instance.GetRandomIntRange(0, __instance.CountNPCDeck(index1));
                             LogDebug($"Adding card {cardToAdd} to NPC {___TeamNPC[index1].InternalId} in index {index1} with NPCindex {_npcIndex} at position {randomIndex}");
-                            NPCDeck[index1].Insert(randomIndex,cardToAdd);
+                            NPCDeck[index1].Insert(randomIndex, cardToAdd);
 
                         }
                     }
@@ -756,6 +769,6 @@ namespace UnofficialBalancePatch
 
         }
 
-        
+
     }
 }

@@ -1,3 +1,9 @@
+# Verion 1.7.8
+
+Changed all Captain's and King's Presences.
+
+Decreased base speed of all Captains by 1-2.
+
 # Version 1.7.7
 
 Meat Bag now properly gets corrupted
@@ -50,7 +56,7 @@ Updated Reckless Charge text
 
 Changed Tesseract
 
-Nerfed Aimed shot (blue and purple) 
+Nerfed Aimed shot (blue and purple)
 
 Nerfed Far Shot (yellow and purple)
 
@@ -64,7 +70,7 @@ Hopefully fixed an issue with generated foods crashing the game
 
 Corrupted Needles now scales properly on rust
 
-Fixed rusted shield bug 
+Fixed rusted shield bug
 
 Hopefully fixed backstab (yellow) scaling
 
@@ -74,7 +80,7 @@ Updated Undeath Ichor
 
 # Version 1.7.3
 
-Added Melancholic Armor 
+Added Melancholic Armor
 
 # Version 1.7.2
 
@@ -186,7 +192,6 @@ Added reworks for: Black Pyramid, Brass Lantern, Cheese, Edge of Fury, Elven Cui
 
 Added reworks for the Sahti Items module: Compass, Corsair Hat, Pearl Belt, Pirate Grog, Purple Tentacle, Sahti Pendant, Sea Shell, Tiny Cannon, Waterskin, and Wine Bottle
 
-
 # Version 1.6.3
 
 Shadow Mend is now a Shadow Spell
@@ -227,7 +232,7 @@ Divine Insight upgrades are now Epic
 
 Retaliator now triggers on skill casts.
 
-Fixed Distillation Flask having the wrong trigger. 
+Fixed Distillation Flask having the wrong trigger.
 
 Last Requiem upgrades should now add Prelude. Now scales with proper values.
 
@@ -255,7 +260,6 @@ Nerfed King's Presence (Yellow).
 
 Items can now discover non-Small Weapons properly
 
-
 # Version 1.5.7
 
 Vile Gas is now a Flask again.
@@ -270,7 +274,7 @@ Reduced rarity of Curse of Madness
 
 # Version 1.5.6
 
-Fixed text for Redemption, 
+Fixed text for Redemption,
 
 Fixed Rupture's scaling, and Transmutation Potion not purging Block.
 
@@ -332,31 +336,33 @@ Added Flask tags to some cards
 
 # Version 1.5.0
 
-Update for AtO version 1.5.0. 
+Update for AtO version 1.5.0.
 
 Potential that things aren't working properly.
 
-Updated Electricty Manual.  
+Updated Electricty Manual.
 
 Added Slime Poison
 
 # Version 1.4.1
 
-Fixed README, fixed a few Stealth damage cards. 
+Fixed README, fixed a few Stealth damage cards.
 
 Added Portable Wall of Flames, Tree Felling Axe, and Clasp of Thorns.
 
 Added Transforming Damage items for the damage types that don't already have them.
 
 # Version 1.4.0
+
 Finished all card modules. This includes Skills, Fire, Cold, and Ranged Attacks.
 
 # Version 1.3.8 (Unreleased)
+
 Added Fire and Cold Spells.
 
 # Version 1.3.7 (Unreleased)
 
-Added Ranged Attacks. 
+Added Ranged Attacks.
 
 # Version 1.3.6
 
@@ -368,7 +374,7 @@ Updated Thorns. Added Healing. Added Defenses
 
 # Version 1.3.3
 
-Added Holy Module. Updated README. 
+Added Holy Module. Updated README.
 
 # Version 1.3.2
 

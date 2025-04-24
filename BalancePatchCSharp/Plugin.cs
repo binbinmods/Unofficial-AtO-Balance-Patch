@@ -13,7 +13,8 @@ using static UnofficialBalancePatch.BalanceFunctions;
 
 
 // Make sure all your files have the same namespace and this namespace matches the RootNamespace in the .csproj file
-namespace UnofficialBalancePatch{
+namespace UnofficialBalancePatch
+{
     // These are used to create the actual plugin. If you don't need Obeliskial Essentials for your mod, 
     // delete the BepInDependency and the associated code "RegisterMod()" below.
 
@@ -31,11 +32,11 @@ namespace UnofficialBalancePatch{
 
     public class Plugin : BaseUnityPlugin
     {
-        
+
         // If desired, you can create configs for users by creating a ConfigEntry object here, 
         // and then use config = Config.Bind() to set the title, default value, and description of the config.
         // It automatically creates the appropriate configs.
-        
+
         // public static ConfigEntry<bool> SampleBooleanConfig { get; set; }
         // public static ConfigEntry<int> SampleIntegerConfig { get; set; }
 
@@ -52,11 +53,11 @@ namespace UnofficialBalancePatch{
             // The Logger will allow you to print things to the LogOutput (found in the BepInEx directory)
             Log = Logger;
             Log.LogInfo($"{PluginInfo.PLUGIN_GUID} {PluginInfo.PLUGIN_VERSION} has loaded!");
-            
+
             // Sets the title, default values, and descriptions
             // SampleBooleanConfig = Config.Bind(new ConfigDefinition("Debug", "Name of Config"), true, new ConfigDescription("Description of Config"));
             // SampleIntegerConfig = Config.Bind(new ConfigDefinition("Debug", "Name of Config"), 3, new ConfigDescription("Description of Config)"));
-            
+
 
             // Register with Obeliskial Essentials, delete this if you don't need it.
             RegisterMod(
@@ -67,17 +68,17 @@ namespace UnofficialBalancePatch{
                 _date: ModDate,
                 _link: @"https://github.com/binbinmods/Unofficial-AtO-Balance-Patch"
             );
-            
+
             // Custom Text for % Damage increase
             var damageTypeArray = Enum.GetValues(typeof(Enums.DamageType));
             foreach (Enums.DamageType damageType in damageTypeArray)
             {
                 string dt = damageType.ToString().ToLower();
-                medsTexts[$"item{dt}Damages"] = "<space=.3><size=+.1><sprite name="+dt+"></size> damage  {0}";
+                medsTexts[$"item{dt}Damages"] = "<space=.3><size=+.1><sprite name=" + dt + "></size> damage  {0}";
                 LogDebug("Setting medsText for itemDamageType: " + dt);
-            }            
+            }
 
-            
+
             // Custom Text for Items
             medsTexts[itemStem + "surprisebox"] = "At the start of the third round, gain a significant random buff.";
             medsTexts[itemStem + "surpriseboxrare"] = "At the start of the third round, gain a more significant random buff.";
@@ -86,10 +87,10 @@ namespace UnofficialBalancePatch{
 
             medsTexts[itemStem + "bbbportablewallofflames"] = "<size=+.1><sprite name=thorns></size> charges +1 \n Thorns on this character deal <space=.3><size=+.1><sprite name=fire></size> damage.";
             medsTexts[itemStem + "bbbportablewallofflamesrare"] = "<size=+.1><sprite name=thorns></size> charges +2 \n Thorns on this character deal <space=.3><size=+.1><sprite name=fire></size> damage.";
-            
+
             medsTexts[itemStem + "bbbtreefellingaxe"] = "All damage +1 \n <size=+.1><sprite name=bleed></size> charges +1 \n Bleed on enemies cannot be prevented by Buffer or Immunities.";
             medsTexts[itemStem + "bbbtreefellingaxerare"] = "All damage +2 \n <size=+.1><sprite name=bleed></size> charges +2 \n Bleed on enemies cannot be prevented by Buffer or Immunities.";
-            
+
             medsTexts[itemStem + "bbbslimepoison"] = "All damage +1 \n <size=+.1><sprite name=poison></size> charges +1 \n Poison on enemies cannot be prevented by Buffer or Immunities.";
             medsTexts[itemStem + "bbbslimepoisonrare"] = "All damage +2 \n <size=+.1><sprite name=poison></size> charges +2 \n Poison on enemies cannot be prevented by Buffer or Immunities.";
             // medsTexts[itemStem + "bbbslimepoison"] = "All damage +1 \n <size=+.1><sprite name=poison></size> charges +1 \n Poison on enemies cannot be prevented by Buffer or Immunities, nor can it be Dispelled unless specified.";
@@ -105,7 +106,7 @@ namespace UnofficialBalancePatch{
             medsTexts[itemStem + "bbbrustedshieldrare"] = $"{SpriteText("thorns")} applies 75% of its charges as {SpriteText("poison")} in addition to its normal effects.";
 
             medsTexts[itemStem + "soullanternrare"] = $"{SpriteText("Dark")} does not explode on this hero.";
-            medsTexts[itemStem + "rocketbootsrare"] = $"All resistances {ColorTextArray("aura","+10%")} \n {SpriteText("Fast")} on this hero can stack.";
+            medsTexts[itemStem + "rocketbootsrare"] = $"All resistances {ColorTextArray("aura", "+10%")} \n {SpriteText("Fast")} on this hero can stack.";
             medsTexts[itemStem + "boneclawsrare"] = $"{SpriteText("bleed")} does not damage this hero.";
             medsTexts[itemStem + "mimy"] = $"When you choose not to take an item, gain an extra 15 {SpriteText("currency")}";
             medsTexts[itemStem + "mimyrare"] = $"When you choose not to take an item, gain an extra 30 {SpriteText("currency")}";
@@ -114,6 +115,14 @@ namespace UnofficialBalancePatch{
 
             medsTexts[itemStem + "bbbmelancholicarmor"] = $"At the start of combat, shuffle {ColorTextArray("", NumFormatItem(1), SpriteText("card"))}<color=#5E3016>Sad</color> into each monster's Draw Pile";
             medsTexts[itemStem + "bbbmelancholicarmorare"] = $"At the start of combat, shuffle {ColorTextArray("", NumFormatItem(2), SpriteText("card"))}<color=#5E3016>Sad</color> into each monster's Draw Pile";
+
+            medsTexts[itemStem + "captainspresenceblack"] = $"{SpriteText("scourge")} on this hero can stack.";
+            medsTexts[itemStem + "captainspresenceblacka"] = $"{SpriteText("scourge")} on this hero can stack.";
+            medsTexts[itemStem + "captainspresenceblackb"] = $"{SpriteText("scourge")} on this hero can stack.";
+
+            medsTexts[itemStem + "captainspresencered"] = $"{SpriteText("burn")} on this hero cannot be dispelled or prevented.";
+            medsTexts[itemStem + "captainspresencereda"] = $"{SpriteText("burn")} on this hero cannot be dispelled or prevented.";
+            medsTexts[itemStem + "captainspresenceredb"] = $"{SpriteText("burn")} on this hero cannot be dispelled or prevented.";
 
             // apply patches
             harmony.PatchAll();
