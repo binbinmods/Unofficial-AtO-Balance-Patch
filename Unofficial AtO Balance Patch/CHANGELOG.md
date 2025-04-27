@@ -1,4 +1,8 @@
-# Verion 1.7.8
+# Version 1.8.0
+
+Compatibility with new version of Obeliskial Essential's text system changes (Obeliskial Essentials v1.4.5)
+
+# Version 1.7.8
 
 Changed all Captain's and King's Presences.
 

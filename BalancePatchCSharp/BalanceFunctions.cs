@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using Obeliskial_Essentials;
 
 // Make sure your namespace is the same everywhere
 namespace UnofficialBalancePatch
@@ -77,10 +78,10 @@ namespace UnofficialBalancePatch
             string dt = damageType.ToString().ToLower();
             // string dt = "All";
             int percentDamageIncrease = Functions.FuncRoundToInt(itemData.DamagePercentBonusValue);
-            LogDebug("damage type - " + dt);
+            // LogDebug("damage type - " + dt);
             string damageTypeText = "item" + dt + "Damages";
-            LogDebug("medsText - " + medsTexts[damageTypeText]);
-            LogDebug("GetText - " + Texts.Instance.GetText(damageTypeText));
+            // LogDebug("medsText - " + medsTexts[damageTypeText]);
+            // LogDebug("GetText - " + Texts.Instance.GetText(damageTypeText));
             // stringBuilder.Append(string.Format(medsTexts[damageTypeText], (object)NumFormatItem(percentDamageIncrease, true, true)));
 
             // this should use Texts.Instance.GetText(damageTypeText)) for translation. Don't know how to get it working. Need to add MedsTexts to Texts
@@ -118,8 +119,8 @@ namespace UnofficialBalancePatch
             // if (__instance.Id == "burningorbrare" || __instance.Id == "frozenorbrare")
             // {
             //     LogDebug("Setting Description for " + __instance.Id);
-                // LogDebug("Original CardDescription - " + Globals.Instance.CardsDescriptionNormalized[__instance.Id]);
-                // LogDebug("");
+            // LogDebug("Original CardDescription - " + Globals.Instance.CardsDescriptionNormalized[__instance.Id]);
+            // LogDebug("");
             // }
 
             stringBuilder1.Append(Globals.Instance.CardsDescriptionNormalized[__instance.Id]);
@@ -134,7 +135,7 @@ namespace UnofficialBalancePatch
 
         public static void UpdateMaxMadnessChargesByItem(ref AuraCurseData __result, Character characterOfInterest, string itemID)
         {
-            if (__result==null)
+            if (__result == null)
             {
                 LogDebug("null AuraCurse");
                 return;
@@ -145,8 +146,8 @@ namespace UnofficialBalancePatch
             //     LogDebug($"Team have: {itemID} {AtOManager.Instance.TeamHaveItem(itemID)} ");
             //     LogDebug($"Character have: {itemID} {IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID, AppliesTo.Global)} ");
             // }
-                 
-            
+
+
             AppliesTo appliesTo = __result.IsAura ? AppliesTo.Heroes : AppliesTo.Monsters;
 
             if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemID + "rare", appliesTo))
@@ -301,7 +302,9 @@ namespace UnofficialBalancePatch
                 LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
 
                 string descriptionId = itemStem + __instance.Id;
-                stringBuilder1.Insert(0,Functions.FormatStringCard(Texts.Instance.GetText(descriptionId)));
+                string textToAdd = Functions.FormatStringCard(Texts.Instance.GetText(descriptionId));
+                // Obeliskial_Essentials.AddTextToCardDescription(textToAdd, __instance);
+                stringBuilder1.Insert(0, textToAdd);
             }
         }
 

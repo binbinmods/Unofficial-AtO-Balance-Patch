@@ -144,6 +144,8 @@ namespace UnofficialBalancePatch
         public static List<string> cardsWithCustomDescriptions = ["surprisebox", "surpriseboxrare", "surprisegiftbox", "surprisegiftboxrare", "bbbtreefellingaxe", "bbbtreefellingaxerare", "bbbcloakofthorns", "bbbcloakofthornsrare", "bbbportablewallofflames", "bbbportablewallofflamesrare", "bbbslimepoison", "bbbslimepoisonrare", "bbbscrollofpetimmortality", "bbbscrollofpetimmortalityrare", "rocketbootsrare"];
         public static List<string> cardsToAppendDescription = ["bbbrustedshield", "bbbrustedshieldrare", "soullanternrare", "boneclawsrare", "mozzy", "mozzyrare", "bbbmelancholicarmor", "bbbmelancholicarmorare"];
         public static List<string> cardsToPrependDescription = ["mimy", "mimyrare", "captainspresencered", "captainspresencereda", "captainspresenceredb", "captainspresenceblack", "captainspresenceblacka", "captainspresenceblackb"];
+
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardData), nameof(CardData.SetDescriptionNew))]
         public static void SetDescriptionNewPostfix(ref CardData __instance, bool forceDescription = false, Character character = null, bool includeInSearch = true)
@@ -169,7 +171,7 @@ namespace UnofficialBalancePatch
             }
 
             // Handles things like +10% Slashing Damage
-            HandleAllDamagePercentDescriptions(ref __instance);
+            // HandleAllDamagePercentDescriptions(ref __instance);
 
 
             if (!Globals.Instance.CardsDescriptionNormalized.ContainsKey(__instance.Id))
@@ -180,70 +182,70 @@ namespace UnofficialBalancePatch
             string currentDescription = Globals.Instance.CardsDescriptionNormalized[__instance.Id];
             stringBuilder1.Append(currentDescription);
 
-            // Handles things like On Round 2 or On Turn 2
-            if (__instance.Item != null && __instance.Item.Activation == Enums.EventActivation.BeginTurnCardsDealt && __instance.Item.ExactRound >= 2)
-            {
-                LogDebug($"Attempting to alter description for {__instance.Id}");
-                LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
-                stringBuilder1.Replace("Every turn", $"On turn {__instance.Item.ExactRound}");
-            }
-            if (__instance.Item != null && __instance.Item.Activation == Enums.EventActivation.BeginRound && __instance.Item.ExactRound >= 2)
-            {
-                LogDebug($"Attempting to alter description for {__instance.Id}");
-                // LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
-                stringBuilder1.Replace("Every round", $"On round {__instance.Item.ExactRound}");
-            }
+            // // Handles things like On Round 2 or On Turn 2
+            // if (__instance.Item != null && __instance.Item.Activation == Enums.EventActivation.BeginTurnCardsDealt && __instance.Item.ExactRound >= 2)
+            // {
+            //     LogDebug($"Attempting to alter description for {__instance.Id}");
+            //     LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
+            //     stringBuilder1.Replace("Every turn", $"On turn {__instance.Item.ExactRound}");
+            // }
+            // if (__instance.Item != null && __instance.Item.Activation == Enums.EventActivation.BeginRound && __instance.Item.ExactRound >= 2)
+            // {
+            //     LogDebug($"Attempting to alter description for {__instance.Id}");
+            //     // LogDebug($"Current description {__instance.Id}: {stringBuilder1}");
+            //     stringBuilder1.Replace("Every round", $"On round {__instance.Item.ExactRound}");
+            // }
 
-            // Handles "Heal Sides"
-            if (__instance.HealSides != 0)
-            {
-                LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
-                string healSprite = SpriteText("heal");
-                string healAmount = ColorTextArray("heal", NumFormatItem(__instance.HealSides, plus: false));
+            // // Handles "Heal Sides"
+            // if (__instance.HealSides != 0)
+            // {
+            //     LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
+            //     string healSprite = SpriteText("heal");
+            //     string healAmount = ColorTextArray("heal", NumFormatItem(__instance.HealSides, plus: false));
 
-                stringBuilder1.Append($"Heal sides {healAmount} {healSprite}");
+            //     stringBuilder1.Append($"Heal sides {healAmount} {healSprite}");
 
-            }
+            // }
 
             if (__instance.EnergyRecharge != 0 && __instance.TargetSide == Enums.CardTargetSide.Enemy)
             {
                 LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
-                string energySprite = SpriteText("energy");
+                // string energySprite = SpriteText("energy");
                 // stringBuilder1.Replace($"Grant {energySprite}", $"Gain {energySprite}");
                 stringBuilder1.Replace($"Grant", $"Gain");
             }
 
-            if (__instance.Item != null && __instance.Item.CardNum > 1 && __instance.Item.CardToGainList.Count < 1)
-            {
-                LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
-                stringBuilder1.Replace($"cast card", $"Cast card {__instance.Item.CardNum}");
-            }
+            // if (__instance.Item != null && __instance.Item.CardNum > 1 && __instance.Item.CardToGainList.Count < 1)
+            // {
+            //     LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
+            //     stringBuilder1.Replace($"cast card", $"Cast card {__instance.Item.CardNum}");
+            // }
 
-            if ((__instance.SpecialAuraCurseName1 != null && __instance.SpecialAuraCurseName1.Id == "stealthbonus") || (__instance.SpecialAuraCurseNameGlobal != null && __instance.SpecialAuraCurseNameGlobal.Id == "stealthbonus"))
-            {
-                LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
-                stringBuilder1.Replace($"<sprite name=>", $"<sprite name=stealth>");
-            }
+            // if ((__instance.SpecialAuraCurseName1 != null && __instance.SpecialAuraCurseName1.Id == "stealthbonus") || (__instance.SpecialAuraCurseNameGlobal != null && __instance.SpecialAuraCurseNameGlobal.Id == "stealthbonus"))
+            // {
+            //     LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
+            //     stringBuilder1.Replace($"<sprite name=>", $"<sprite name=stealth>");
+            // }
 
-            if (__instance.DamageSides > 0 && __instance.DamageSpecialValueGlobal)
-            {
-                LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
+            // if (__instance.DamageSides > 0 && __instance.DamageSpecialValueGlobal)
+            // {
+            //     LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
 
-                Enums.DamageType damageType = __instance.DamageType;
-                string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
-                string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
-                stringBuilder1.Replace(oldText, newText);
-            }
+            //     Enums.DamageType damageType = __instance.DamageType;
+            //     string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+            //     string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+            //     stringBuilder1.Replace(oldText, newText);
+            // }
 
-            if (__instance.DamageSides2 > 0 && __instance.Damage2SpecialValueGlobal)
-            {
-                LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
+            // if (__instance.DamageSides2 > 0 && __instance.Damage2SpecialValueGlobal)
+            // {
+            //     LogDebug($"Current description for {__instance.Id}: {stringBuilder1}");
 
-                Enums.DamageType damageType = __instance.DamageType2;
-                string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
-                string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
-                stringBuilder1.Replace(oldText, newText);
-            }
+            //     Enums.DamageType damageType = __instance.DamageType2;
+            //     string oldText = "Target sides <nobr><color=#B00A00><size=+.1>1</size>"; //ColorTextArray("damage", "1", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+            //     string newText = "Target sides <nobr><color=#B00A00><size=+.1>X</size>"; // ColorTextArray("damage", "X", SpriteText(Enum.GetName(typeof(Enums.DamageType), damageType)));
+            //     stringBuilder1.Replace(oldText, newText);
+            // }
 
 
             AppendDescriptionsToCards(__instance, ref stringBuilder1);
@@ -284,7 +286,6 @@ namespace UnofficialBalancePatch
 
             switch (_acId)
             {
-
                 case "bleed":
                     itemID = "bloodstone";
                     UpdateMaxMadnessChargesByItem(ref __result, characterOfInterest, itemID);
